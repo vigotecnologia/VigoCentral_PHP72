@@ -35,14 +35,14 @@ class segvia extends Controller {
         $bloqueto->id_banco = $query[1];
         $bloqueto->id_cliente = $query[2];
         $bloqueto->id_empresa = $query[3];
-        $bloqueto->nome = utf8_encode(trim($query[4]));
+        $bloqueto->nome = $query[4];
         $bloqueto->cpfcgc = $query[5];
-        $bloqueto->endereco = utf8_encode(trim($query[6]));
-        $bloqueto->cidade = utf8_encode(trim($query[7]));
-        $bloqueto->bairro = utf8_encode(trim($query[8]));
+        $bloqueto->endereco = $query[6];
+        $bloqueto->cidade = $query[7];
+        $bloqueto->bairro = $query[8];
         $bloqueto->uf = $query[9];
         $bloqueto->cep = $query[10];
-        $bloqueto->referencia = utf8_encode(trim($query[11]));
+        $bloqueto->referencia = $query[11];
         $bloqueto->numero = $query[12];
         $bloqueto->nossonumero = $query[13];
         $bloqueto->seunumero = $query[14];
@@ -67,7 +67,7 @@ class segvia extends Controller {
         $bloqueto->convenio = $query[33];
         $bloqueto->complemento = $query[34];
         $bloqueto->numerobanco = $query[35];
-        $bloqueto->localpagamento = utf8_encode(trim($query[36]));
+        $bloqueto->localpagamento = $query[36];
         $bloqueto->codigocedente = $query[37];
         $bloqueto->carteira = $query[38];
         $bloqueto->ativo = $query[39];
@@ -230,7 +230,7 @@ class segvia extends Controller {
         $this->view->bloqueto_final->adicional = $ValorMultaJuros;
         $this->view->bloqueto_final->valor = $ValorCalculado;
         $this->view->bloqueto_final->vencimento = $Vencimento;
-        $this->view->bloqueto_final->cedente = utf8_encode(trim($banco->cedente));
+        $this->view->bloqueto_final->cedente = $banco->cedente;
 
         // Renderiza a view enviando os dados da empresa
         $this->view->empresa = $empresa;

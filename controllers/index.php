@@ -42,7 +42,7 @@ class Index extends Controller {
         endif;
         if (!$config_model->Sistema_Config('CENTRAL_MOD_NFS')) : $config_model->Chave_Add('CENTRAL_MOD_NFS', 'S', 'Permite o cliente visualizar as notas fiscais');
         endif;
-        if (!$config_model->Sistema_Config('CENTRAL_MOD_SERVICOS')) : $config_model->Chave_Add('CENTRAL_MOD_SERVICOS', 'S', 'Permite o cliente visualizar os servi�os contratados');
+        if (!$config_model->Sistema_Config('CENTRAL_MOD_SERVICOS')) : $config_model->Chave_Add('CENTRAL_MOD_SERVICOS', 'S', 'Permite o cliente visualizar os servicos contratados');
         endif;
         if (!$config_model->Sistema_Config('CENTRAL_MOD_ACESSOS')) : $config_model->Chave_Add('CENTRAL_MOD_ACESSOS', 'S', 'Permite o cliente visualizar o extrato de acessos');
         endif;

@@ -158,7 +158,7 @@ unset($_SESSION['ALERTA_MENSAGEM']);
                                     <p  id="leitor<?php echo $atendimento['id']; ?>" class="boxLeitor">
                                         <span>N&uacute;mero O.S.: <strong><?php echo $atendimento[numero_os]; ?></strong><br /></span>
                                         <span>Assunto: <strong><?php echo $atendimento[descricao]; ?></strong><br /><br /></span>
-        <?php echo nl2br($atendimento[historico]); ?>
+        <?php echo nl2br(utf8_encode($atendimento[historico])); ?>
                                     </p>
                                 </div>
                             </div>
