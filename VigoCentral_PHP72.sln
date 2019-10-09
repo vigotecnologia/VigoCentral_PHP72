@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.852
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{A0786B88-2ADB-4C21-ABE8-AA2D79766269}") = "VigoCentral_PHP72", "VigoCentral_PHP72.phpproj", "{666383D1-ACE2-4D67-82A3-7C28C288D5AB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{666383D1-ACE2-4D67-82A3-7C28C288D5AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{666383D1-ACE2-4D67-82A3-7C28C288D5AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D667A2DF-F2F4-4509-9F50-1D2608FAF315}
+	EndGlobalSection
+EndGlobal
