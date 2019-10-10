@@ -7,6 +7,7 @@ class GerarBarcode {
     private $digitArray = array(0 => "00110", 1 => "10001", 2 => "01001", 3 => "11000", 4 => "00101", 5 => "10100", 6 => "01100", 7 => "00011", 8 => "10010", 9 => "01010");
 
     function __construct($value, $into = 1, $filename = 'barcode.gif') {
+
         $lower = 1;
         $hight = 50;
         $this->into = $into;

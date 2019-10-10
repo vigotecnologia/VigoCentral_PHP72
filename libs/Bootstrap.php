@@ -18,6 +18,7 @@ class Bootstrap {
 
         if (file_exists($file)) {
             require $file;
+
         } else {
             require 'controllers/erro.php';
             $controller = new Erro();
