@@ -28,7 +28,7 @@ class Sessao_Model extends Model {
         $result = ($result_set[0][total] != 0);
 
         if (!$result) {
-            $query = "SELECT COUNT(*) AS total FROM mikrotik_erp.radcheck WHERE username='$login' LIMIT 1";
+            $query = "SELECT COUNT(*) AS total FROM mikrotik_erp.radcheck WHERE username='$login'";
             $result_set = $this->read($query);
             $result = ($result_set[0][total] != 0);
         }
