@@ -5,10 +5,8 @@ class MkSenha_Model extends Model {
     public function Lista_MkLogins($cliente) {
 
         $this->Conecta("mikrotik");
-
-        $query = "SELECT UserName, value FROM radcheck WHERE id_cliente='" . $cliente . "' AND Attribute IN ('MD5-Password', 'User-Password') ORDER BY UserName";
+        $query = "SELECT username, value FROM radcheck WHERE id_cliente='" . $cliente . "' AND attribute='MD5-Password' ORDER BY username";
         $row = $this->read($query);
-
         $this->Desconecta();
 
         return $row;
@@ -18,7 +16,10 @@ class MkSenha_Model extends Model {
 
         $this->Conecta("mikrotik");
 
-        $query = "UPDATE radcheck SET value='" . $mk_senha . "' WHERE id_cliente='" . $id_cliente . "' AND UserName='" . $mk_login . "' AND Attribute IN ('MD5-Password', 'User-Password')";
+        $query = "UPDATE radcheck SET value='" . $mk_senha . "' WHERE id_cliente='" . $id_cliente . "' AND username='" . $mk_login . "' AND attribute='ClearText-Password'";
+        $row = $this->read($query);
+
+        $query = "UPDATE radcheck SET value=md5('" . $mk_senha . "') WHERE id_cliente='" . $id_cliente . "' AND username='" . $mk_login . "' AND attribute='MD5-Password'";
         $row = $this->read($query);
 
         $this->Desconecta();
