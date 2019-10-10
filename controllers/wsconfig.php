@@ -105,11 +105,11 @@ class WSConfig extends Controller {
         }
 
         // Alterar Multa e Juros
-        if (($_POST['txtModMultaJuros']) && ($_POST['txtModMultaJuros'] == 'AlterarMultaJuros')) {
+        if ((@$_POST['txtModMultaJuros']) && (@$_POST['txtModMultaJuros'] == 'AlterarMultaJuros')) {
 
             // Remove aspas do conteúdo postado (segurança contra SQL Injection) limitando a 30 caracteres
-            $txtMulta = substr($this->funcoes->removeAspas($_POST['txtModTaxaMulta']), 0, 30);
-            $txtJuros = substr($this->funcoes->removeAspas($_POST['txtModTaxaJuros']), 0, 30);
+            @$txtMulta = substr($this->funcoes->removeAspas($_POST['txtModTaxaMulta']), 0, 30);
+            @$txtJuros = substr($this->funcoes->removeAspas($_POST['txtModTaxaJuros']), 0, 30);
 
             // Altera a taxa de multa
             $config_model->Chave_Edit('MULTA', $txtMulta);
@@ -127,7 +127,7 @@ class WSConfig extends Controller {
         }
 
         // Alterar Tema
-        if (($_POST['txtModTema']) && ($_POST['txtModTema'] == 'AlterarTema')) {
+        if ((@$_POST['txtModTema']) && (@$_POST['txtModTema'] == 'AlterarTema')) {
 
             // Remove aspas do conteúdo postado (segurança contra SQL Injection) limitando a 30 caracteres
             $txtTema = substr($this->funcoes->removeAspas($_POST['txtTema']), 0, 30);
@@ -145,7 +145,7 @@ class WSConfig extends Controller {
         }
 
         // Alterar Gráfico
-        if (($_POST['txtModGrafico']) && ($_POST['txtModGrafico'] == 'AlterarGrafico')) {
+        if ((@$_POST['txtModGrafico']) && (@$_POST['txtModGrafico'] == 'AlterarGrafico')) {
 
             // Remove aspas do conteúdo postado (segurança contra SQL Injection) limitando a 30 caracteres
             $txtGrafico = substr($this->funcoes->removeAspas($_POST['txtGrafico']), 0, 30);
@@ -163,7 +163,7 @@ class WSConfig extends Controller {
         }
 
         // Alterar Permissões
-        if (($_POST['txtPermissoes']) && ($_POST['txtPermissoes'] == 'AlterarPermissoes')) {
+        if ((@$_POST['txtPermissoes']) && (@$_POST['txtPermissoes'] == 'AlterarPermissoes')) {
 
             // Remove aspas do conteúdo postado (segurança contra SQL Injection) limitando a 30 caracteres
             $txtFaturas = substr($this->funcoes->removeAspas($_POST['txtFaturas']), 0, 30);
@@ -297,7 +297,7 @@ class WSConfig extends Controller {
         }
 
         // Alterar Tipo de Contrato
-        if (($_POST['txtContrato']) && ($_POST['txtContrato'] == 'AlterarContrato')) {
+        if ((@$_POST['txtContrato']) && (@$_POST['txtContrato'] == 'AlterarContrato')) {
 
             // Remove aspas do conteúdo postado (segurança contra SQL Injection) limitando a 15 caracteres
             $txtTipoArquivo = substr($this->funcoes->removeAspas($_POST['txtTipoArquivo']), 0, 15);

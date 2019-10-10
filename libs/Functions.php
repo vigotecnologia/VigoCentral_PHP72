@@ -239,8 +239,9 @@ class Functions {
         $dataFinal = strtotime($dataFinal);
 
         $dias = ($dataFinal - $dataInicial) / 86400;
-
         $tempo = $dataFinal - $dataInicial;
+        $horas = 0;
+        $minutos = 0;
 
         if ($tempo % 86400 <= 0) {
             $dias = $tempo / 86400;
@@ -328,7 +329,8 @@ class Functions {
             'Session-Timeout' => 'Tempo de conex&atilde;o esgotado.',
             'Admin-Reboot' => 'Reboot do administrador.',
             'Lost-Carrier' => 'Conex&atilde;o interrompida.',
-            'NAS-Reboot' => 'Concentrador reiniciado.'
+            'NAS-Reboot' => 'Concentrador reiniciado.',
+            '' => ''
         );
         return $motivos[$motivo];
     }
