@@ -1,10 +1,7 @@
 a{color:#0000ff;}
 a:hover{cursor:pointer}
 h5{margin-bottom:10px;}
-
 .login_topo{border:1px solid #fff;width:100%;height:100px;line-height:20px;background-color:#fff;vertical-align:top;text-align:center;margin-bottom:15px;box-sizing:border-box;}
-
-/* LOGO DA CENTRAL */
 .login_topo span{font-size:18pt;font-family:"Trebuchet MS", Helvetica, sans-serif;color:#61AB4B;opacity:0.5;filter:alpha(opacity=50);cursor:default;}
 .box_logo{position:relative;width:82px;height:47px;line-height:47px;background-color:#fff;vertical-align:top;text-align:center;margin:7px auto;box-sizing:border-box;}
 .login_topo > span{color:#61AB4B;opacity:0.5;filter:alpha(opacity=50);}
@@ -17,7 +14,6 @@ h5{margin-bottom:10px;}
 .seta-06:before{top:15px;left:50px;position:absolute;content:"";display:inline-block;vertical-align:middle;margin-right:0px;width:0;height:0;border-left:15px solid transparent;border-right:15px solid transparent;border-bottom:15px solid #61AB4B;opacity:0.5;filter:alpha(opacity=50);}
 .seta-07:before{top:30px;left:0px;position:absolute;content:"";display:inline-block;vertical-align:middle;margin-right:0px;width:0;height:0;border-left:15px solid transparent;border-right:15px solid transparent;border-bottom:15px solid #61AB4B;opacity:0.2;filter:alpha(opacity=20);}
 .seta-08:before{top:30px;left:15px;position:absolute;content:"";display:inline-block;vertical-align:middle;margin-right:0px;width:0;height:0;border-left:15px solid transparent;border-right:15px solid transparent;border-top:15px solid #61AB4B;opacity:0.5;filter:alpha(opacity=50);}
-
 .login_msg{width:100%;height:50px;line-height:50px;background-color:#61ab4b;vertical-align:top;text-align:center;font-weight:normal;font-style:bold;font-size:13pt;color:#fff;margin-bottom:15px;}
 .login_meio{width:100%;height:400px;line-height:400px;background-color:#fff;vertical-align:top;}
 .login_meio_interno{width:350px;height:400px;line-height:400px;background-color:#fafafa;vertical-align:top;margin: 0 auto;text-align:center;}
