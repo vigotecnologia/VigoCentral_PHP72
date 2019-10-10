@@ -18,7 +18,7 @@ $funcoes = new Functions(); // Instancia a classe de FUNÇÕES BÁSICAS
                     <link rel="icon" href="<?php echo $funcoes->baseProjeto(); ?>/public/images/favicon_32.png" sizes="32x32">
                         <link rel="stylesheet" type="text/css" href="<?php echo $funcoes->baseProjeto(); ?>/public/css/default.css" />
                         <link rel="stylesheet" type="text/css" href="<?php echo $funcoes->baseProjeto(); ?>/public/css/style.css" />
-                        <link rel="stylesheet" type="text/css" href="<?php echo $funcoes->baseProjeto(); ?>/public/css/style_<?php $_SESSION['CENTRAL_TEMA']; ?>.css" />
+                        <link rel="stylesheet" type="text/css" href="<?php echo $funcoes->baseProjeto(); ?>/public/css/style_verde.css" />
                         <link href="<?php echo $funcoes->baseProjeto(); ?>/public/css/fonts.css?family=Open+Sans:300,400,600,700,800" rel="stylesheet" type="text/css">
                             <script type="text/javascript" src="<?php echo $funcoes->baseProjeto(); ?>/public/js/jquery.js"></script>
                             <script type="text/javascript" src="<?php echo $funcoes->baseProjeto(); ?>/public/js/jquery.maskMoney.js"></script>
