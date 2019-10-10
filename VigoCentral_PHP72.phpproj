@@ -52,6 +52,9 @@
     <Compile Include="libs\classes\Barcode.php" />
     <Compile Include="libs\classes\Boleto.php" />
     <Compile Include="libs\classes\Cliente.php" />
+    <Compile Include="libs\classes\Email.php" />
+    <Compile Include="libs\classes\PHPMailer.php" />
+    <Compile Include="libs\classes\SMTP.php" />
     <Compile Include="libs\setup\.htaccess" />
     <Compile Include="libs\setup\bd.conf" />
     <Compile Include="libs\.htaccess" />

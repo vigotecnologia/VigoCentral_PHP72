@@ -77,35 +77,56 @@ class Recupera extends Controller {
                     $headerAssunto = 'SENHA DE ACESSO RECUPERADA';
 
                     // Define a estrutura da mensagem do email
-                    $headerMensagem = "============ SENHA RECUPERADA ============\n\n";
-                    $headerMensagem.= "Login...: $clienteLogin\n";
-                    $headerMensagem.= "Senha...: $clienteSenha\n";
-                    $headerMensagem.= "\n\n";
-                    $headerMensagem.= "$empresaFantasia\n";
-                    $headerMensagem.= "Telefone: $empresaTelefone\n";
-                    $headerMensagem.= "End: $empresaEndereco\n";
-                    $headerMensagem.= "$empresaCEP - $empresaCidade/$empresaUF\n";
-                    $headerMensagem.= "$empresaSite\n\n";
-                    $headerMensagem.= "==========================================\n";
-                    $headerMensagem.= "Enviada em " . date("d/m/Y") . " às " . date("h:i") . "\n\n";
-                    $headerMensagem.= "==========================================\n\n";
+                    $headerMensagem = "============ SENHA RECUPERADA ============<br><br>";
+                    $headerMensagem.= "Login...: $clienteLogin<br>";
+                    $headerMensagem.= "Senha...: $clienteSenha<br>";
+                    $headerMensagem.= "<br><br>";
+                    $headerMensagem.= "$empresaFantasia<br>";
+                    $headerMensagem.= "Telefone: $empresaTelefone<br>";
+                    $headerMensagem.= "End: $empresaEndereco<br>";
+                    $headerMensagem.= "$empresaCEP - $empresaCidade/$empresaUF<br>";
+                    $headerMensagem.= "$empresaSite";
 
-                    // Define o remetente do email
-                    $headerRemetente = "From: $empresaFantasia <$empresaEmail>";
+                    // Envia o e-mail com a nova senha
 
-                    // Envia o email de recuperação da senha
-                    @mail($clienteEmail, $headerAssunto, $headerMensagem, $headerRemetente);
+                    $Mensagem_Recupera['RemetenteNome'] = $empresaFantasia;
+                    $Mensagem_Recupera['RemetenteEmail'] = $empresaEmail;
+                    $Mensagem_Recupera['Assunto'] = "Recuperação de senha - " . $empresaFantasia;
+                    $Mensagem_Recupera['DestinoNome'] = $clienteEmail;
+                    $Mensagem_Recupera['DestinoEmail'] = $clienteEmail;
+                    $Mensagem_Recupera['Mensagem'] = $headerMensagem;
 
-                    // Exibe a mensagem informando que a senha foi recuperada e encaminhada no email
-                    @session_start();
-                    $_SESSION['ALERTA_TIPO'] = 'sucesso';
-                    $_SESSION['ALERTA_TITULO'] = 'TUDO CERTO: SENHA RECUPERADA';
-                    $_SESSION['ALERTA_MENSAGEM'] = 'Sua senha foi enviada para o e-mail: <b>' . $clienteEmail . '</b>';
+                    require 'libs/classes/PHPMailer.php';
+                    require 'libs/classes/SMTP.php';
+                    require 'libs/classes/Email.php';
 
-                    // Redireciona para o controller relacionado
-                    header("Location: index");
-                    exit;
+                    $SendMail = new Email();
+                    $SendMail->Enviar($Mensagem_Recupera);
 
+                    if (!$SendMail->getResult()) {
+
+                        // Aviso de erro
+                        @session_start();
+                        $_SESSION['ALERTA_TIPO'] = 'erro';
+                        $_SESSION['ALERTA_TITULO'] = 'ERRO';
+                        $_SESSION['ALERTA_MENSAGEM'] = 'N&atilde;o foi possivel enviar o e-mail.';
+
+                        // Redireciona para o controller relacionado
+                        header("Location: recupera");
+                        exit;
+                    }
+                    else {
+
+                        // Exibe a mensagem informando que a senha foi recuperada e encaminhada no email
+                        @session_start();
+                        $_SESSION['ALERTA_TIPO'] = 'sucesso';
+                        $_SESSION['ALERTA_TITULO'] = 'TUDO CERTO: SENHA RECUPERADA';
+                        $_SESSION['ALERTA_MENSAGEM'] = 'Sua senha foi enviada para o e-mail: <b>' . $clienteEmail . '</b>';
+
+                        // Redireciona para o controller relacionado
+                        header("Location: index");
+                        exit;
+                    }
                 endif;
 
             endif;
@@ -136,7 +157,5 @@ class Recupera extends Controller {
 
         $this->view->render('recupera/index');
     }
-
 }
-
 ?>
