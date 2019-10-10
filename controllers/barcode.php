@@ -17,6 +17,8 @@ class Barcode extends Controller {
 
         // Instancia a classe de geracao de codigo de barras
         require 'libs/classes/Barcode.php';
+
+        $barcode = new stdClass();
         $barcode->imagem = new GerarBarcode($id, 0);
 
         // Renderiza a view relacionada

@@ -76,9 +76,9 @@ unset($_SESSION['ALERTA_MENSAGEM']);
 
                         <label id="lblMensagem" for="txtMensagem" class="lblMensagem">
                             <span>Mensagem:</span>
-                            <textarea class="input textarea" name="txtMensagem" id="txtMensagem" cols="40" rows="5" required="required" onKeyUp="blocTexto(this.value, this.id, <?php echo $limiteTextArea; ?>, contaLimite.id)"></textarea>
+                            <textarea class="input textarea" name="txtMensagem" id="txtMensagem" cols="40" rows="5" required="required" onKeyUp="blocTexto(this.value, this.id, 500, contaLimite.id)"></textarea>
                             <div class="barStatus">
-                                <div id="statusLimite" class="span">Caracteres restantes:&nbsp;</div><div name="contaLimite" id="contaLimite" class="span"><?php echo $limiteTextArea; ?></div>
+                                <div id="statusLimite" class="span">Caracteres restantes:&nbsp;</div><div name="contaLimite" id="contaLimite" class="span">500</div>
                             </div>
                         </label>
 

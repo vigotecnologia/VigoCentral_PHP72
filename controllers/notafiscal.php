@@ -27,6 +27,7 @@ class NotaFiscal extends Controller {
             // Consulta dados da empresa para impressao na nota
             $dados_empresa = $empresa_model->Dados_Empresa($nf_idempresa); // Executa a query no BD e armazena o resultado numa array
 
+            $empresa = new stdClass();
             $empresa->foto = $dados_empresa[0]['foto'];
             $empresa->fantasia = utf8_encode($dados_empresa[0]['fantasia']);
             $empresa->endereco = utf8_encode($dados_empresa[0]['endereco']);
@@ -46,9 +47,9 @@ class NotaFiscal extends Controller {
             // Consulta registro da nota fiscal no arquivo Mestre
             $dados_mestre = $notasfiscais_model->Nota_Fiscal_Mestre($nf_arquivo, $nf_cnpjcpf, $nf_numero);
 
-            if ($dados_mestre[0]['modelo'] == 21 ? $tipoNF = 'COMUNICA&Ccedil;&Atilde;O' : $tipoNF = 'TELECOMUNICA&Ccedil;&Atilde;O')
-                ;
+            if ($dados_mestre[0]['modelo'] == 21 ? $tipoNF = 'COMUNICA&Ccedil;&Atilde;O' : $tipoNF = 'TELECOMUNICA&Ccedil;&Atilde;O');
 
+            $mestre = new stdClass();
             $mestre->numero = utf8_encode($dados_mestre[0]['numero']);
             $mestre->referencia = utf8_encode($dados_mestre[0]['referencia']);
             $mestre->serie = utf8_encode($dados_mestre[0]['serie']);
@@ -96,6 +97,7 @@ class NotaFiscal extends Controller {
 
             endif;
 
+            $cadastro = new stdClass();
             $cadastro->id = utf8_decode(utf8_encode($dados_cadastro[0]['id']));
             $cadastro->razao_social = utf8_decode(utf8_encode($dados_cadastro[0]['rsocial']));
             $cadastro->endereco = utf8_decode(utf8_encode($dados_cadastro[0]['logradouro']));
@@ -123,6 +125,7 @@ class NotaFiscal extends Controller {
             $nf_mensagem = $config_model->Sistema_Config('NF_MENSAGEM');
 
             // Recupera o valor das chaves de configuracao
+            $config = new stdClass();
             $config->nf_boleto = utf8_decode(utf8_encode($nf_boleto[0]['valor']));
             $config->nf_ibpt = utf8_decode(utf8_encode($nf_ibpt[0]['valor']));
             $config->nf_ibpt_municipal = utf8_decode(utf8_encode($nf_ibpt_municipal[0]['valor']));

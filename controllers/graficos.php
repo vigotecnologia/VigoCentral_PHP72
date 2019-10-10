@@ -13,9 +13,9 @@ class Graficos extends Controller {
 
         ########## DADOS DO FORMULARIO ##########
         // Remove aspas do conteúdo postado (segurança contra SQL Injection) limitando a 30 caracteres
-        $mkLogin = substr($this->funcoes->removeAspas($_POST['txtLogin']), 0, 30);
-        $dtInicio = substr($this->funcoes->removeAspas($_POST['txtInicio']), 0, 30);
-        $dtFinal = substr($this->funcoes->removeAspas($_POST['txtFinal']), 0, 30);
+        @$mkLogin = substr($this->funcoes->removeAspas($_POST['txtLogin']), 0, 30);
+        @$dtInicio = substr($this->funcoes->removeAspas($_POST['txtInicio']), 0, 30);
+        @$dtFinal = substr($this->funcoes->removeAspas($_POST['txtFinal']), 0, 30);
 
         ########## FIM -> DADOS DO FORMULARIO ##########
         ########## PADRAO DE DATAS PARA FILTRAGEM ##########
@@ -53,7 +53,7 @@ class Graficos extends Controller {
             $txtInicio = $this->funcoes->dataToBR($dtInicio);
             $txtFinal = $this->funcoes->dataToBR($dtFinal);
         } else { // Para dados via GET
-            $mkLogin = $query[0]['Username'];
+            $mkLogin = $query[0]['UserName'];
             $txtInicio = $txtInicio07;
             $txtFinal = $this->funcoes->dataToBR($txtDataAtual);
         }

@@ -92,7 +92,9 @@ $funcoes->verificaSessao();
                                     @session_start();
                                     // Cria a lista de dados para o grafico
 
+                                    $linha = 0;
                                     $total1 = 0;
+                                    $listaJSON = "";
 
                                     foreach ($this->lista_acessos as $acessos) {
 
@@ -107,13 +109,8 @@ $funcoes->verificaSessao();
                                     $dados = substr_replace($listaJSON, "", -1, 1);
 
                                     // Captura o login e plano do cliente
-                                    foreach ($this->lista_plano as $plano)
-                                        ;
+                                    foreach ($this->lista_plano as $plano);
                                     ?>
-                                    <!-- /FIM - LISTA DE DADOS DO GRAFICO -->
-
-        <?php ?>
-
                                     <link rel="stylesheet" href="public/js/jqwidgets/styles/jqx.base.css" type="text/css" />
                                     <script type="text/javascript" src="public/js/jquery.js"></script>
                                     <script type="text/javascript" src="public/js/jqwidgets/jqxcore.js"></script>
@@ -128,8 +125,8 @@ $funcoes->verificaSessao();
 
                                                     // Prepara as configuracoes do grafico
                                                     var settings = {
-                                                        title: "<?php echo utf8_decode('Total de Tráfego'); ?> - <?php echo utf8_decode(utf8_encode($plano['username'])); ?>",
-                                                                    description: "<?php echo utf8_decode('Período'); ?>: <?php echo $_SESSION['DT_INICIO']; ?> - <?php echo $_SESSION['DT_FINAL']; ?>",
+                                                        title: "<?php echo 'Total de Tráfego'; ?> - <?php echo $plano['username']; ?>",
+                                                                    description: "<?php echo 'Período'; ?>: <?php echo $_SESSION['DT_INICIO']; ?> - <?php echo $_SESSION['DT_FINAL']; ?>",
                                                                                 padding: {left: 5, top: 5, right: 20, bottom: 5},
                                                                                 titlePadding: {left: 10, top: 0, right: 0, bottom: 10},
                                                                                 source: sampleData,
@@ -140,7 +137,7 @@ $funcoes->verificaSessao();
                                                                                                 //angle: -90,
                                                                                                 visible: false
                                                                                             },
-                                                                                            description: '<?php echo utf8_decode('Conexões'); ?>',
+                                                                                            description: '<?php echo 'Conexões'; ?>',
                                                                                             tickMarks: {visible: true},
                                                                                             gridLines: {visible: false}
                                                                                         },

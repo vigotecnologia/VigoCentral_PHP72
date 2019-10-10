@@ -23,6 +23,9 @@ class Core extends Controller {
             require 'models/sessao_model.php'; // O MODEL não é "auto-carregado" como as libs
             $core_model = new Sessao_Model();
 
+            require 'models/config_model.php'; // O MODEL não é "auto-carregado" como as libs
+            $config_model = new Config_Model();
+
             // Consulta as credenciais de login
             $existe = $core_model->Pesquisa_Credenciais($login_informado); // Executa a query no BD e armazena o resultado numa array
 
@@ -58,7 +61,13 @@ class Core extends Controller {
                 $_SESSION['FANTASIA'] = $dados[0]['fantasia'];
                 $_SESSION['FOTO_EMPRESA'] = $dados[0]['foto'];
 
+                // Aplica o tema da central
+                $central_tema = $config_model->Sistema_Config('CENTRAL_TEMA');
+
                 // Renderiza a view relacionada
+                $this->view->config = new stdClass();
+                $this->view->config->tema = $central_tema[0]['valor'];
+
                 $this->view->renderJQ('core/index');
             }
         }

@@ -2,6 +2,11 @@
 <?php
 require_once 'libs/Functions.php';
 $funcoes = new Functions(); // Instancia a classe de FUNÇÕES BÁSICAS
+
+if (!isset($this->config->tema)) {
+  $this->config = new stdClass();
+  $this->config->tema = "verde";
+}
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br">
     <head>
@@ -19,8 +24,7 @@ $funcoes = new Functions(); // Instancia a classe de FUNÇÕES BÁSICAS
                         <link rel="stylesheet" type="text/css" href="<?php echo $funcoes->baseProjeto(); ?>/public/css/style.css" />
                         <link rel="stylesheet" type="text/css" href="<?php echo $funcoes->baseProjeto(); ?>/public/css/style_<?php echo $this->config->tema; ?>.css" />
                         <link href="<?php echo $funcoes->baseProjeto(); ?>/public/css/fonts.css?family=Open+Sans:300,400,600,700,800" rel="stylesheet" type="text/css">
-                            <script>document.addEventListener("touchstart", function () {
-                    }, true);</script>
+                            <script>document.addEventListener("touchstart", function () {}, true);</script>
                             <script>
                                 function fecha(id) {
                                     document.getElementById(id).style.display = 'none';

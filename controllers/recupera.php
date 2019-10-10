@@ -6,8 +6,10 @@ class Recupera extends Controller {
 
         parent::__construct();
 
+        @session_start();
+
         // Recuperar senha de acesso
-        if (($_POST['txtRecuperar']) && ($_POST['txtRecuperar'] == 'RecuperarSenha')) {
+        if ((@$_POST['txtRecuperar']) && (@$_POST['txtRecuperar'] == 'RecuperarSenha')) {
 
             // Remove aspas do conteúdo postado (segurança contra SQL Injection) limitando a 30 caracteres
             $login_informado = substr($this->funcoes->removeAspas($_POST['txtLogin']), 0, 30);
@@ -140,6 +142,7 @@ class Recupera extends Controller {
         $id_empresa = 1;
         $dados_empresa = $empresa_model->Dados_Empresa($id_empresa);
 
+        $empresa = new stdClass();
         $empresa->foto = $dados_empresa[0]['foto'];
         $empresa->fantasia = utf8_encode($dados_empresa[0]['fantasia']);
 
@@ -149,11 +152,11 @@ class Recupera extends Controller {
 
         // Aplica o tema da central
         $central_tema = $config_model->Sistema_Config('CENTRAL_TEMA');
-        $config->tema = $central_tema[0]['valor'];
 
         // Renderiza a view relacionada
-        $this->view->config = $config_model;
-        $this->view->empresa = $dados_empresa;
+        $this->view->config = new stdClass();
+        $this->view->config->tema = $central_tema[0]['valor'];
+        $this->view->empresa = $empresa;
 
         $this->view->render('recupera/index');
     }

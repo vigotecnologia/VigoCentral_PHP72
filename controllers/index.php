@@ -64,9 +64,9 @@ class Index extends Controller {
 
         // Aplica o tema da central
         $central_tema = $config_model->Sistema_Config('CENTRAL_TEMA');
-        $config->tema = $central_tema[0]['valor'];
 
         // Renderiza a view relacionada
+        $this->view->config = new stdClass();
         $this->view->config->tema = $central_tema[0]['valor'];
         $this->view->empresa = $empresa;
 

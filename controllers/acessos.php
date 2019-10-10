@@ -13,9 +13,9 @@ class Acessos extends Controller {
 
         ########## DADOS DO FORMULARIO ##########
         // Remove aspas do conteúdo postado (segurança contra SQL Injection) limitando a 30 caracteres
-        $mkLogin = substr($this->funcoes->removeAspas($_POST['txtLogin']), 0, 30);
-        $dtInicio = substr($this->funcoes->removeAspas($_POST['txtInicio']), 0, 30);
-        $dtFinal = substr($this->funcoes->removeAspas($_POST['txtFinal']), 0, 30);
+        @$mkLogin = substr($this->funcoes->removeAspas($_POST['txtLogin']), 0, 30);
+        @$dtInicio = substr($this->funcoes->removeAspas($_POST['txtInicio']), 0, 30);
+        @$dtFinal = substr($this->funcoes->removeAspas($_POST['txtFinal']), 0, 30);
 
         ########## FIM -> DADOS DO FORMULARIO ##########
         ########## PADRAO DE DATAS PARA FILTRAGEM ##########

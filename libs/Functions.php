@@ -110,14 +110,14 @@ class Functions {
     // Formatar valor com duas casas decimais
     public function valor($valor) {
 
-        $formatado = number_format(($valor / 100), 2, ',', '.');
+        @$formatado = number_format(($valor / 100), 2, ',', '.');
         return $formatado;
     }
 
     // Formatar valor com duas casas decimais padrão EN-US
     public function valorUS($valor) {
 
-        $formatado = number_format(($valor / 100), 2, '.', ',');
+        @$formatado = number_format(($valor / 100), 2, '.', ',');
         return $formatado;
     }
 
@@ -326,7 +326,9 @@ class Functions {
             'Idle-Timeout' => 'Expirado por falta de atividade na rede.',
             'Admin-Reset' => 'Resetada pelo administrador.',
             'Session-Timeout' => 'Tempo de conex&atilde;o esgotado.',
-            'Admin-Reboot' => 'Reboot do administrador.'
+            'Admin-Reboot' => 'Reboot do administrador.',
+            'Lost-Carrier' => 'Conex&atilde;o interrompida.',
+            'NAS-Reboot' => 'Concentrador reiniciado.'
         );
         return $motivos[$motivo];
     }

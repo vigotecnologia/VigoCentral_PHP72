@@ -15,7 +15,8 @@ class Extrato_Model extends Model {
     public function Lista_Acessos($login, $dtInicio, $dtFinal) {
 
         $this->Conecta("mikrotik");
-        $query = "SELECT * FROM radacct WHERE (UserName='" . $login . "') AND (AcctStartTime BETWEEN '" . $dtInicio . "' AND '" . $dtFinal . "') AND (AcctStopTime is null) ORDER by AcctStartTime ASC";
+        $query = "SELECT * FROM radacct WHERE (UserName='" . $login . "') AND (AcctStartTime BETWEEN '" . $dtInicio . "' AND '" . $dtFinal . "') ORDER by AcctStartTime ASC";
+
         $row = $this->read($query);
         $this->Desconecta();
 

@@ -91,6 +91,7 @@ class segvia extends Controller {
         // Consulta dados da empresa para impressao na nota
         $dados_empresa = $empresa_model->Dados_Empresa($bloqueto->id_empresa); // Executa a query no BD e armazena o resultado numa array
 
+        $empresa = new stdClass();
         $empresa->foto = $dados_empresa[0]['foto'];
         $empresa->fantasia = utf8_encode($dados_empresa[0]['fantasia']);
         $empresa->endereco = utf8_encode($dados_empresa[0]['endereco']);
