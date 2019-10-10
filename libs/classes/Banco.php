@@ -13,7 +13,5 @@ class Banco {
     public $tipo;
     public $cedente;
     public $idempresa;
-
 }
-
 ?>

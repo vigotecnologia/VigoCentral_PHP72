@@ -47,7 +47,5 @@ class Bloqueto {
     public $nf_arquivo;
     public $nf_numero;
     public $nf_situacao;
-
 }
-
 ?>

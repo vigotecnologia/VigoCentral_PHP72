@@ -10,7 +10,5 @@ class Controller {
         // Instancia a view
         $this->view = new View();
     }
-
 }
-
 ?>

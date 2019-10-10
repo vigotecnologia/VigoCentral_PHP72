@@ -61,7 +61,5 @@ class Cliente {
     public $idempresa;
     public $anotacoes;
     public $cfop;
-
 }
-
 ?>

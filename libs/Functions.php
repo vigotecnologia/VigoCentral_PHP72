@@ -94,7 +94,7 @@ class Functions {
 
         $transformado = $this->mesExtenso(substr($referencia, 2, 2)) . "/20" . substr($referencia, 0, 2);
         $transformado = ($transformado == "//") ? "" : $transformado;
-        //utf8_encode($funcoes->
+
         return $transformado;
     }
 
@@ -103,7 +103,7 @@ class Functions {
 
         $transformado = substr($referencia, 2, 2) . "/20" . substr($referencia, 0, 2);
         $transformado = ($transformado == "//") ? "" : $transformado;
-        //utf8_encode($funcoes->
+
         return $transformado;
     }
 
@@ -330,7 +330,5 @@ class Functions {
         );
         return $motivos[$motivo];
     }
-
 }
-
 ?>

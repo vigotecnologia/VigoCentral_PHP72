@@ -46,7 +46,7 @@ class GerarBarcode {
         }
 
         while (strlen($text) > 0) {
-            $i = round($this->JSK_left($text, 2));
+            $i = round(floatval($this->JSK_left($text, 2)));
             $text = $this->JSK_right($text, strlen($text) - 2);
 
             $f = $this->digitArray[$i];
@@ -99,7 +99,5 @@ class GerarBarcode {
         }
         imagedestroy($image);
     }
-
 }
-
 ?>
