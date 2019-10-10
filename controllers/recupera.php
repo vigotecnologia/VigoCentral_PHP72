@@ -18,7 +18,6 @@ class Recupera extends Controller {
             if (!isset($login_informado) OR empty($login_informado)):
 
                 // Aviso informando da necessidade de informar login
-                @session_start();
                 $_SESSION['ALERTA_TIPO'] = 'alerta';
                 $_SESSION['ALERTA_TITULO'] = 'OPSSS: ALGO FICOU FALTANDO';
                 $_SESSION['ALERTA_MENSAGEM'] = 'Para recuperar sua senha informe seu login.';
@@ -39,7 +38,6 @@ class Recupera extends Controller {
                 if (($existe[0]['total'] == 0)):
 
                     // Aviso de login invalido e força um logout
-                    @session_start();
                     $_SESSION['ALERTA_TIPO'] = 'erro';
                     $_SESSION['ALERTA_TITULO'] = 'ERRO: LOGIN INV&Aacute;LIDO';
                     $_SESSION['ALERTA_MENSAGEM'] = 'N&atilde;o encontramos nenhum usu&aacute;rio com o login informado.';
@@ -108,7 +106,6 @@ class Recupera extends Controller {
                     if (!$SendMail->getResult()) {
 
                         // Aviso de erro
-                        @session_start();
                         $_SESSION['ALERTA_TIPO'] = 'erro';
                         $_SESSION['ALERTA_TITULO'] = 'ERRO';
                         $_SESSION['ALERTA_MENSAGEM'] = 'N&atilde;o foi possivel enviar o e-mail.';
@@ -120,7 +117,6 @@ class Recupera extends Controller {
                     else {
 
                         // Exibe a mensagem informando que a senha foi recuperada e encaminhada no email
-                        @session_start();
                         $_SESSION['ALERTA_TIPO'] = 'sucesso';
                         $_SESSION['ALERTA_TITULO'] = 'TUDO CERTO: SENHA RECUPERADA';
                         $_SESSION['ALERTA_MENSAGEM'] = 'Sua senha foi enviada para o e-mail: <b>' . $clienteEmail . '</b>';

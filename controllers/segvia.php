@@ -8,8 +8,7 @@ class segvia extends Controller {
         // Verifica se existe uma seção criada
         $this->funcoes->verificaSessao();
 
-        // Captura o ID que está na URL
-        // Limita a 10 caracteres, tira os espaços e as aspas (segurança básica)
+        // Captura o ID que está na URL, limita a 10 caracteres, tira os espaços e as aspas (segurança básica)
         $id = explode('/', $_SERVER['QUERY_STRING']);
         $id = $this->funcoes->removeAspas(rtrim(substr($id[1], 0, 10), ' '));
 
@@ -119,8 +118,6 @@ class segvia extends Controller {
         $banco->cedente = $query[9];
         $banco->idempresa = $query[10];
 
-        /* CONFIGURAÇÃO DO C▒?LCULO A SER EFETUADO */
-
         // Consulta a taxa de multa
         $taxa_multa = $config_model->Sistema_Config('MULTA');
         $taxa_multa = $this->funcoes->valorUS($taxa_multa[0]['valor']);
@@ -159,9 +156,7 @@ class segvia extends Controller {
             $ValorMultaJuros = 0;
         } else {
 
-            // Desativar o cálculo automático de multa/juros
-            // Agora na carteira registrada isto não é mais necessário
-
+            // Desativar o cálculo automático de multa/juros, agora na carteira registrada isto não é mais necessário
             if ($dias_em_atraso > 999999) {
 
                 $bloqueto->obs = "O pagamento deste n&atilde;o quita d&eacute;bitos anteriores."; // Muda a mensagem caso haja algum desconto da mesma

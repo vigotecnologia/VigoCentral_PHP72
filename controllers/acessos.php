@@ -11,14 +11,11 @@ class Acessos extends Controller {
         // Verifica se existe uma seção criada
         $this->funcoes->verificaSessao();
 
-        ########## DADOS DO FORMULARIO ##########
         // Remove aspas do conteúdo postado (segurança contra SQL Injection) limitando a 30 caracteres
         @$mkLogin = substr($this->funcoes->removeAspas($_POST['txtLogin']), 0, 30);
         @$dtInicio = substr($this->funcoes->removeAspas($_POST['txtInicio']), 0, 30);
         @$dtFinal = substr($this->funcoes->removeAspas($_POST['txtFinal']), 0, 30);
 
-        ########## FIM -> DADOS DO FORMULARIO ##########
-        ########## PADRAO DE DATAS PARA FILTRAGEM ##########
         // Data atual
         $txtDataAtual = date('Y-m-d');
 
@@ -39,8 +36,6 @@ class Acessos extends Controller {
         $this->view->dataInicio15 = $txtInicio15;
         $this->view->dataInicio30 = $txtInicio30;
 
-        ########## FIM -> PADRAO DE DATAS ##########
-        ########## MODELO DA CLASSE ##########
         // Instancia a classe de MODEL relacionado
         require 'models/extrato_model.php'; // O MODEL não é "auto-carregado" como as libs
         $extrato_model = new Extrato_Model();
@@ -55,7 +50,7 @@ class Acessos extends Controller {
             $txtInicio = $this->funcoes->dataToBR($dtInicio);
             $txtFinal = $this->funcoes->dataToBR($dtFinal);
 
-            // Para dados via GET
+        // Para dados via GET
         } else {
 
             $mkLogin = $query[0]['UserName'];

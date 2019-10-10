@@ -1,11 +1,5 @@
 <?php
 
-///////////////////////////////////////////////////////////////////////////////////////
-// Funções para cálculo da segunda-via com vencimento e valor re-calculados          //
-//                                                                                   //
-// NÃO ALTERAR NADA DESTE PONTO PARA BAIXO, A NÃO SER QUE SAIBA O QUE ESTÁ FAZENDO ! //
-///////////////////////////////////////////////////////////////////////////////////////
-//
 function NovoVencimento($hoje = NULL) {
     if (!is_null($hoje))
         $d = getdate($hoje);
@@ -237,7 +231,7 @@ class Boleto {
             }
         }
 
-        return ( floor(( 146097 * $century) / 4) + floor(( 1461 * $year) / 4) + floor(( 153 * $month + 2) / 5) + $day + 1721119);
+        return (floor((146097 * $century) / 4) + floor((1461 * $year) / 4) + floor((153 * $month + 2) / 5) + $day + 1721119);
     }
 
     function prepara_conta($conta, $len = NULL) {

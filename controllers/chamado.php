@@ -11,9 +11,9 @@ class Chamado extends Controller {
         $this->funcoes->verificaSessao();
 
         // Remove aspas do conteúdo postado (segurança contra SQL Injection) e limitando a 50 caracteres
-        $txtAssunto = substr($this->funcoes->removeAspas($_POST['txtAssunto']), 0, 30);
-        $txtTipo = substr($this->funcoes->removeAspas($_POST['txtTipo']), 0, 50);
-        $txtMensagem = $this->funcoes->removeAspas($_POST['txtMensagem']);
+        @$txtAssunto = substr($this->funcoes->removeAspas($_POST['txtAssunto']), 0, 30);
+        @$txtTipo = substr($this->funcoes->removeAspas($_POST['txtTipo']), 0, 50);
+        @$txtMensagem = $this->funcoes->removeAspas($_POST['txtMensagem']);
 
         if (($txtAssunto != '') && ($txtTipo != '') && ($txtMensagem != '')) {
 

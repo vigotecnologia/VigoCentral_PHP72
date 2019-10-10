@@ -6,6 +6,8 @@ class WSSenha extends Controller {
 
         parent::__construct();
 
+        @session_start();
+
         // Instancia a classe de MODEL relacionado
         require 'models/config_model.php';
         $config_model = new Config_Model();
@@ -20,7 +22,6 @@ class WSSenha extends Controller {
             if (empty($senhaNova) OR empty($senhaConfirma)):
 
                 // Exibe a mensagem informando que os dados não foram preenchidos
-                @session_start();
                 $_SESSION['ALERTA_TIPO'] = 'alerta';
                 $_SESSION['ALERTA_TITULO'] = 'OPSSS: ALGO FICOU FALTANDO';
                 $_SESSION['ALERTA_MENSAGEM'] = 'Para efetuar a troca da senha, voc&ecirc; deve informar a senha atual, a nova senha e confirmar a nova senha.';
@@ -44,7 +45,6 @@ class WSSenha extends Controller {
                         $config_model->Chave_Edit('CENTRAL_SENHA', $senhaNova);
 
                         // Exibe a mensagem informando que a senha foi alterada
-                        @session_start();
                         $_SESSION['ALERTA_TIPO'] = 'sucesso';
                         $_SESSION['ALERTA_TITULO'] = 'TUDO CERTO: SENHA ALTERADA';
                         $_SESSION['ALERTA_MENSAGEM'] = 'Sua senha foi alterada com sucesso. Fa&ccedil;a novamente o acesso utilizando sua nova senha.';
@@ -55,7 +55,6 @@ class WSSenha extends Controller {
                     else:
 
                         // Exibe a mensagem informando que não pode utilizar a senha wsc1234
-                        @session_start();
                         $_SESSION['ALERTA_TIPO'] = 'erro';
                         $_SESSION['ALERTA_TITULO'] = 'ERRO: SENHA INV&Aacute;LIDA';
                         $_SESSION['ALERTA_MENSAGEM'] = 'Voc&ecirc; n&atilde;o pode utilizar "<strong>wsc1234</strong>" como senha. Por favor, informe outra !';
@@ -68,7 +67,6 @@ class WSSenha extends Controller {
                 else:
 
                     // Exibe a mensagem informando que as senhas são diferentes
-                    @session_start();
                     $_SESSION['ALERTA_TIPO'] = 'erro';
                     $_SESSION['ALERTA_TITULO'] = 'ERRO: SENHAS DIFERENTES';
                     $_SESSION['ALERTA_MENSAGEM'] = 'Voc&ecirc; digitou duas senhas diferentes no formul&aacute;rio. Para alterar sua senha informe e repita os mesmos caracteres !';
@@ -81,7 +79,6 @@ class WSSenha extends Controller {
             else:
 
                 // Exibe a mensagem informando que algo deu errado
-                @session_start();
                 $_SESSION['ALERTA_TIPO'] = 'erro';
                 $_SESSION['ALERTA_TITULO'] = 'ERRO: ALGO DEU ERRADO';
                 $_SESSION['ALERTA_MENSAGEM'] = 'Por favor, tente executar o processo novamente !';

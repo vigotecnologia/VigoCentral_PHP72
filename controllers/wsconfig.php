@@ -6,6 +6,8 @@ class WSConfig extends Controller {
 
         parent::__construct();
 
+        @session_start();
+
         // Instancia a classe de MODEL relacionado
         require 'models/config_model.php';
         $config_model = new Config_Model();
@@ -21,7 +23,6 @@ class WSConfig extends Controller {
             if (empty($senhaAtual) OR empty($senhaNova) OR empty($senhaConfirma)):
 
                 // Exibe a mensagem informando que os dados não foram preenchidos
-                @session_start();
                 $_SESSION['ALERTA_TIPO'] = 'alerta';
                 $_SESSION['ALERTA_TITULO'] = 'OPSSS: ALGO FICOU FALTANDO';
                 $_SESSION['ALERTA_MENSAGEM'] = 'Para efetuar a troca da senha, voc&ecirc; deve informar a senha atual, a nova senha e confirmar a nova senha.';
@@ -47,7 +48,6 @@ class WSConfig extends Controller {
                             $config_model->Chave_Edit('CENTRAL_SENHA', $senhaNova);
 
                             // Exibe a mensagem informando que a senha foi alterada
-                            @session_start();
                             $_SESSION['ALERTA_TIPO'] = 'sucesso';
                             $_SESSION['ALERTA_TITULO'] = 'TUDO CERTO: SENHA ALTERADA';
                             $_SESSION['ALERTA_MENSAGEM'] = 'Sua senha foi alterada com sucesso. A nova senha entrar&aacute; em vigor no pr&oacute;ximo acesso.';
@@ -58,7 +58,6 @@ class WSConfig extends Controller {
                         else:
 
                             // Exibe a mensagem informando que não pode utilizar a senha wsc1234
-                            @session_start();
                             $_SESSION['ALERTA_TIPO'] = 'erro';
                             $_SESSION['ALERTA_TITULO'] = 'ERRO: SENHA INV&Aacute;LIDA';
                             $_SESSION['ALERTA_MENSAGEM'] = 'Voc&ecirc; n&atilde;o pode utilizar "<strong>wsc1234</strong>" como senha. Por favor, informe outra !';
@@ -71,7 +70,6 @@ class WSConfig extends Controller {
                     else:
 
                         // Exibe a mensagem informando que as senhas são diferentes
-                        @session_start();
                         $_SESSION['ALERTA_TIPO'] = 'erro';
                         $_SESSION['ALERTA_TITULO'] = 'ERRO: SENHAS DIFERENTES';
                         $_SESSION['ALERTA_MENSAGEM'] = 'Voc&ecirc; digitou duas senhas diferentes no formul&aacute;rio. Para alterar sua senha informe e repita os mesmos caracteres !';
@@ -84,7 +82,6 @@ class WSConfig extends Controller {
                 else:
 
                     // Exibe a mensagem informando que a senha atual é inválida
-                    @session_start();
                     $_SESSION['ALERTA_TIPO'] = 'erro';
                     $_SESSION['ALERTA_TITULO'] = 'ERRO: SENHA ATUAL INV&Aacute;LIDA';
                     $_SESSION['ALERTA_MENSAGEM'] = 'A senha atual informada n&atilde;o confere com a registrada em nossa base de dados !';
@@ -97,7 +94,6 @@ class WSConfig extends Controller {
             else:
 
                 // Exibe a mensagem informando que algo deu errado
-                @session_start();
                 $_SESSION['ALERTA_TIPO'] = 'erro';
                 $_SESSION['ALERTA_TITULO'] = 'ERRO: ALGO DEU ERRADO';
                 $_SESSION['ALERTA_MENSAGEM'] = 'Por favor, tente executar o processo novamente !';
@@ -122,7 +118,6 @@ class WSConfig extends Controller {
             $config_model->Chave_Edit('JUROS', $txtJuros);
 
             // Exibe a mensagem informando que as taxas foram alteradas
-            @session_start();
             $_SESSION['ALERTA_TIPO'] = 'sucesso';
             $_SESSION['ALERTA_TITULO'] = 'TUDO CERTO: TAXA DE MULTA E JUROS ALTERADO';
             $_SESSION['ALERTA_MENSAGEM'] = 'A taxa de multa e juros foram alteradas com sucesso e entrar&aacute; em vigor no pr&oacute;ximo acesso.';
@@ -141,7 +136,6 @@ class WSConfig extends Controller {
             $config_model->Chave_Edit('CENTRAL_TEMA', $txtTema);
 
             // Exibe a mensagem informando que o tema foi alterado
-            @session_start();
             $_SESSION['ALERTA_TIPO'] = 'sucesso';
             $_SESSION['ALERTA_TITULO'] = 'TUDO CERTO: TEMA ALTERADO';
             $_SESSION['ALERTA_MENSAGEM'] = 'O tema foi alterado com sucesso e entrar&aacute; em vigor no pr&oacute;ximo acesso.';
@@ -160,7 +154,6 @@ class WSConfig extends Controller {
             $config_model->Chave_Edit('CENTRAL_GRAFICO', $txtGrafico);
 
             // Exibe a mensagem informando que o grafico foi alterado
-            @session_start();
             $_SESSION['ALERTA_TIPO'] = 'sucesso';
             $_SESSION['ALERTA_TITULO'] = 'TUDO CERTO: GR&Aacute;FICO ALTERADO';
             $_SESSION['ALERTA_MENSAGEM'] = 'O tipo de gr&aacute;fico foi alterado com sucesso.';
@@ -295,7 +288,6 @@ class WSConfig extends Controller {
             endif;
 
             // Exibe a mensagem informando que as permissoes foram alteradas
-            @session_start();
             $_SESSION['ALERTA_TIPO'] = 'sucesso';
             $_SESSION['ALERTA_TITULO'] = 'TUDO CERTO: PERMISS&Otilde;ES ALTERADAS';
             $_SESSION['ALERTA_MENSAGEM'] = 'As permiss&otilde;es foram alteradas com sucesso.';
@@ -340,7 +332,6 @@ class WSConfig extends Controller {
                 if ((is_uploaded_file($txtArquivo['tmp_name'])) && (!in_array($txtArquivo['type'], $tiposPermitidos))) {
 
                     // Exibe a mensagem de erro informando tipo invalido
-                    @session_start();
                     $_SESSION['ALERTA_TIPO'] = 'erro';
                     $_SESSION['ALERTA_TITULO'] = 'ERRO: TIPO DE ARQUIVO INV&Aacute;LIDO';
                     $_SESSION['ALERTA_MENSAGEM'] = '&Eacute; permitido somente arquivo no formato <strong>PDF</strong> !';
@@ -353,7 +344,6 @@ class WSConfig extends Controller {
                 if (!is_uploaded_file($txtArquivo['tmp_name'])) {
 
                     // Exibe a mensagem de erro informando que nenhum arquivo foi enviado
-                    @session_start();
                     $_SESSION['ALERTA_TIPO'] = 'alerta';
                     $_SESSION['ALERTA_TITULO'] = 'OPSSS: ALGO FICOU FALTANDO';
                     $_SESSION['ALERTA_MENSAGEM'] = 'Nenhum arquivo enviado. Por favor, selecione um arquivo !';
@@ -374,7 +364,6 @@ class WSConfig extends Controller {
                     }
 
                     // Exibe a mensagem informando que o tipo de contrato foi alterado
-                    @session_start();
                     $_SESSION['ALERTA_TIPO'] = 'sucesso';
                     $_SESSION['ALERTA_TITULO'] = 'TUDO CERTO: TIPO DE CONTRATO ALTERADO';
                     $_SESSION['ALERTA_MENSAGEM'] = 'O tipo de contrato foi alterado com sucesso.';
@@ -387,7 +376,6 @@ class WSConfig extends Controller {
                 $config_model->Chave_Edit('CENTRAL_CONTRATO', 'custom');
 
                 // Exibe a mensagem informando que o tipo de contrato foi alterado
-                @session_start();
                 $_SESSION['ALERTA_TIPO'] = 'sucesso';
                 $_SESSION['ALERTA_TITULO'] = 'TUDO CERTO: TIPO DE CONTRATO ALTERADO';
                 $_SESSION['ALERTA_MENSAGEM'] = 'O tipo de contrato foi alterado com sucesso.';
@@ -397,7 +385,6 @@ class WSConfig extends Controller {
             } else {
 
                 // Exibe a mensagem de erro informando tipo invalido
-                @session_start();
                 $_SESSION['ALERTA_TIPO'] = 'erro';
                 $_SESSION['ALERTA_TITULO'] = 'ERRO: TIPO INV&Aacute;LIDO';
                 $_SESSION['ALERTA_MENSAGEM'] = 'O tipo informado &eacute; incorreto. Tente novamente !';

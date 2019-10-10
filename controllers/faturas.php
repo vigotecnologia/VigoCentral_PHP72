@@ -61,7 +61,6 @@ class Faturas extends Controller {
                 $boletos_model = new Boletos_Model();
 
                 // Cria a seção
-                @session_start();
                 $_SESSION['ID_CLIENTE'] = $dados[0]['id'];
                 $_SESSION['CPFCNPJ'] = $dados[0]['cpfcgc'];
                 $_SESSION['LOGIN'] = $dados[0]['login'];

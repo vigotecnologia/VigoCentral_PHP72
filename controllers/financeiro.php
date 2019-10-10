@@ -57,7 +57,6 @@ class Financeiro extends Controller {
                 $this->view->login = $dados[0]['login'];
 
                 // Cria a seção
-                @session_start();
                 $_SESSION['ID_CLIENTE'] = $dados[0]['id'];
                 $_SESSION['CPFCNPJ'] = $dados[0]['cpfcgc'];
                 $_SESSION['LOGIN'] = $dados[0]['login'];

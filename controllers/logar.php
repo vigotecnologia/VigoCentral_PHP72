@@ -5,6 +5,7 @@ class Logar extends Controller {
     function __construct() {
 
         parent::__construct();
+
         @session_start();
 
         // Remove aspas do conteúdo postado (segurança contra SQL Injection) limitando a 30 caracteres
@@ -15,7 +16,6 @@ class Logar extends Controller {
         if (!isset($login_informado) OR ! isset($senha_informada) OR empty($login_informado) OR empty($senha_informada)) {
 
             // Aviso informando da necessidade de login e senha
-            @session_start();
             $_SESSION['ALERTA_TIPO'] = 'alerta';
             $_SESSION['ALERTA_TITULO'] = 'OPSSS: ALGO FICOU FALTANDO';
             $_SESSION['ALERTA_MENSAGEM'] = 'Para ter acesso ao sistema informe seu login e senha.';
@@ -36,17 +36,10 @@ class Logar extends Controller {
             // Verifica se a senha informada é a senha padrão
             if (($senha_informada == 'wsc1234') && ($senha_informada == $senha_central)) {
 
-                ###################################################################################
-                /* 		   NO PRIMEIRO ACESSO, FORÇAR TROCA DA SENHA WSCONFIG PADRAO 			 */
-                ###################################################################################
                 // Se for a senha padrão, força a troca da senha
                 @@header("Location: wssenha");
                 //exit;
-                ###################################################################################
-                // Senão
             } else {
-
-                @session_start();
 
                 $_SESSION['CENTRAL_TEMA'] = NULL;
                 unset($_SESSION['CENTRAL_TEMA']);
@@ -72,7 +65,6 @@ class Logar extends Controller {
                 } else {
 
                     // Aviso que a senha wsconfig está errada e força um logout
-                    @session_start();
                     $_SESSION['ALERTA_TIPO'] = 'erro';
                     $_SESSION['ALERTA_TITULO'] = 'ERRO: SENHA INV&Aacute;LIDA';
                     $_SESSION['ALERTA_MENSAGEM'] = 'A senha informada est&aacute; incorreta. Tente novamente !';
@@ -93,7 +85,6 @@ class Logar extends Controller {
             if (!$existe) {
 
                 // Aviso de login invalido e força um logout
-                @session_start();
                 $_SESSION['ALERTA_TIPO'] = 'erro';
                 $_SESSION['ALERTA_TITULO'] = 'ERRO: LOGIN INV&Aacute;LIDO';
                 $_SESSION['ALERTA_MENSAGEM'] = 'N&atilde;o encontramos nenhum usu&aacute;rio com o login informado. Por favor, verifique !';
@@ -106,7 +97,6 @@ class Logar extends Controller {
                 if (!$existe) {
 
                     // Aviso de senha errada e força um logout
-                    @session_start();
                     $_SESSION['ALERTA_TIPO'] = 'erro';
                     $_SESSION['ALERTA_TITULO'] = 'ERRO: SENHA INV&Aacute;LIDA';
                     $_SESSION['ALERTA_MENSAGEM'] = 'A senha informada est&aacute; incorreta. Tente novamente !';
@@ -138,7 +128,6 @@ class Logar extends Controller {
                     $central_mod_alterar_mksenha = $config_model->Sistema_Config('CENTRAL_MOD_ALTERAR_MKSENHA');
 
                     // Cria $_SESSION com as chaves de configurações
-                    @session_start();
                     $_SESSION['CENTRAL_TEMA'] = $central_tema[0]['valor'];
                     $_SESSION['CENTRAL_TIPO_CONTRATO'] = $central_contrato[0]['valor'];
                     $_SESSION['SISTEMA_MULTA'] = $sistema_multa[0]['valor'];
@@ -171,7 +160,6 @@ class Logar extends Controller {
                     $this->view->login = $dados[0]['login'];
 
                     // Cria $_SESSION do cliente logando
-                    @session_start();
                     $_SESSION['ID_CLIENTE'] = $dados[0]['id'];
                     $_SESSION['CPFCNPJ'] = $dados[0]['cpfcgc'];
                     $_SESSION['LOGIN'] = $dados[0]['login'];

@@ -6,6 +6,8 @@ class Mksenha extends Controller {
 
         parent::__construct();
 
+        @session_start();
+
         // Verifica se existe uma seção criada
         $this->funcoes->verificaSessao();
 
@@ -32,7 +34,6 @@ class Mksenha extends Controller {
                     $mksenha_model2->Troca_MkSenha($_SESSION['ID_CLIENTE'], $mkLogin, $senhaNova);
 
                     // Exibe a mensagem informando que a senha foi alterada
-                    @session_start();
                     $_SESSION['ALERTA_TIPO'] = 'sucesso';
                     $_SESSION['ALERTA_TITULO'] = 'TUDO CERTO: SENHA ALTERADA';
                     $_SESSION['ALERTA_MENSAGEM'] = 'Sua senha foi alterada com sucesso.';
@@ -43,7 +44,6 @@ class Mksenha extends Controller {
                 else:
 
                     // Exibe a mensagem informando que as senhas são diferentes
-                    @session_start();
                     $_SESSION['ALERTA_TIPO'] = 'erro';
                     $_SESSION['ALERTA_TITULO'] = 'ERRO: SENHAS DIFERENTES';
                     $_SESSION['ALERTA_MENSAGEM'] = 'As senhas digitadas n&atilde;o correspondem. Por favor, verifique !';
@@ -56,7 +56,6 @@ class Mksenha extends Controller {
             else:
 
                 // Exibe a mensagem informando que a senha atual é inválida
-                @session_start();
                 $_SESSION['ALERTA_TIPO'] = 'erro';
                 $_SESSION['ALERTA_TITULO'] = 'ERRO: SENHA ATUAL INV&Aacute;LIDA';
                 $_SESSION['ALERTA_MENSAGEM'] = 'A senha informada est&aacute; incorreta. Tente novamente !';
