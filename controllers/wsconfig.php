@@ -37,7 +37,7 @@ class WSConfig extends Controller {
                 // Consulta a senha registrada no banco
                 $senhaAnterior = $config_model->Sistema_Config('CENTRAL_SENHA');
 
-                if ($senhaAnterior[0][valor] == $senhaAtual):
+                if ($senhaAnterior[0]['valor'] == $senhaAtual):
 
                     if ($senhaNova == $senhaConfirma):
 
@@ -409,69 +409,69 @@ class WSConfig extends Controller {
 
         // Consulta a taxa de multa
         $taxa_multa = $config_model->Sistema_Config('MULTA');
-        $this->view->taxa_multa_valor = $taxa_multa[0][valor];
-        $this->view->taxa_multa_descricao = utf8_encode($taxa_multa[0][descricao]);
+        $this->view->taxa_multa_valor = $taxa_multa[0]['valor'];
+        $this->view->taxa_multa_descricao = utf8_encode($taxa_multa[0]['descricao']);
 
         // Consulta a taxa de juros
         $taxa_juros = $config_model->Sistema_Config('JUROS');
-        $this->view->taxa_juros_valor = $taxa_juros[0][valor];
-        $this->view->taxa_juros_descricao = utf8_encode($taxa_juros[0][descricao]);
+        $this->view->taxa_juros_valor = $taxa_juros[0]['valor'];
+        $this->view->taxa_juros_descricao = utf8_encode($taxa_juros[0]['descricao']);
 
         // Consulta tema
         $central_tema = $config_model->Sistema_Config('CENTRAL_TEMA');
-        $this->view->central_tema_valor = $central_tema[0][valor];
-        $this->view->central_tema_descricao = utf8_encode($central_tema[0][descricao]);
+        $this->view->central_tema_valor = $central_tema[0]['valor'];
+        $this->view->central_tema_descricao = utf8_encode($central_tema[0]['descricao']);
 
         // Consulta tipo de gráfico
         $central_grafico = $config_model->Sistema_Config('CENTRAL_GRAFICO');
-        $this->view->central_grafico_valor = $central_grafico[0][valor];
-        $this->view->central_grafico_descricao = utf8_encode($central_grafico[0][descricao]);
+        $this->view->central_grafico_valor = $central_grafico[0]['valor'];
+        $this->view->central_grafico_descricao = utf8_encode($central_grafico[0]['descricao']);
 
         // Consulta tipo de contrato
         $central_contrato = $config_model->Sistema_Config('CENTRAL_CONTRATO');
-        $this->view->central_contrato_valor = $central_contrato[0][valor];
-        $this->view->central_contrato_descricao = utf8_encode($central_contrato[0][descricao]);
+        $this->view->central_contrato_valor = $central_contrato[0]['valor'];
+        $this->view->central_contrato_descricao = utf8_encode($central_contrato[0]['descricao']);
 
         // Consulta permissões
         $modulo_senha = $config_model->Sistema_Config('CENTRAL_MOD_ALTERAR_SENHA');
-        $this->view->modulo_senha_permissao = $modulo_senha[0][valor];
-        $this->view->modulo_senha_descricao = utf8_encode($modulo_senha[0][descricao]);
+        $this->view->modulo_senha_permissao = $modulo_senha[0]['valor'];
+        $this->view->modulo_senha_descricao = utf8_encode($modulo_senha[0]['descricao']);
 
         $modulo_faturas = $config_model->Sistema_Config('CENTRAL_MOD_FATURAS');
-        $this->view->modulo_faturas_permissao = $modulo_faturas[0][valor];
-        $this->view->modulo_faturas_descricao = utf8_encode($modulo_faturas[0][descricao]);
+        $this->view->modulo_faturas_permissao = $modulo_faturas[0]['valor'];
+        $this->view->modulo_faturas_descricao = utf8_encode($modulo_faturas[0]['descricao']);
 
         $modulo_notafiscal = $config_model->Sistema_Config('CENTRAL_MOD_NFS');
-        $this->view->modulo_notafiscal_permissao = $modulo_notafiscal[0][valor];
-        $this->view->modulo_notafiscal_descricao = utf8_encode($modulo_notafiscal[0][descricao]);
+        $this->view->modulo_notafiscal_permissao = $modulo_notafiscal[0]['valor'];
+        $this->view->modulo_notafiscal_descricao = utf8_encode($modulo_notafiscal[0]['descricao']);
 
         $modulo_servicos = $config_model->Sistema_Config('CENTRAL_MOD_SERVICOS');
-        $this->view->modulo_servicos_permissao = $modulo_servicos[0][valor];
-        $this->view->modulo_servicos_descricao = utf8_encode($modulo_servicos[0][descricao]);
+        $this->view->modulo_servicos_permissao = $modulo_servicos[0]['valor'];
+        $this->view->modulo_servicos_descricao = utf8_encode($modulo_servicos[0]['descricao']);
 
         $modulo_acessos = $config_model->Sistema_Config('CENTRAL_MOD_ACESSOS');
-        $this->view->modulo_acessos_permissao = $modulo_acessos[0][valor];
-        $this->view->modulo_acessos_descricao = utf8_encode($modulo_acessos[0][descricao]);
+        $this->view->modulo_acessos_permissao = $modulo_acessos[0]['valor'];
+        $this->view->modulo_acessos_descricao = utf8_encode($modulo_acessos[0]['descricao']);
 
         $modulo_graficos = $config_model->Sistema_Config('CENTRAL_MOD_GRAFICOS');
-        $this->view->modulo_graficos_permissao = $modulo_graficos[0][valor];
-        $this->view->modulo_graficos_descricao = utf8_encode($modulo_graficos[0][descricao]);
+        $this->view->modulo_graficos_permissao = $modulo_graficos[0]['valor'];
+        $this->view->modulo_graficos_descricao = utf8_encode($modulo_graficos[0]['descricao']);
 
         $modulo_contratos = $config_model->Sistema_Config('CENTRAL_MOD_CONTRATOS');
-        $this->view->modulo_contratos_permissao = $modulo_contratos[0][valor];
-        $this->view->modulo_contratos_descricao = utf8_encode($modulo_contratos[0][descricao]);
+        $this->view->modulo_contratos_permissao = $modulo_contratos[0]['valor'];
+        $this->view->modulo_contratos_descricao = utf8_encode($modulo_contratos[0]['descricao']);
 
         $modulo_atendimentos = $config_model->Sistema_Config('CENTRAL_MOD_ATENDIMENTOS');
-        $this->view->modulo_atendimentos_permissao = $modulo_atendimentos[0][valor];
-        $this->view->modulo_atendimentos_descricao = utf8_encode($modulo_atendimentos[0][descricao]);
+        $this->view->modulo_atendimentos_permissao = $modulo_atendimentos[0]['valor'];
+        $this->view->modulo_atendimentos_descricao = utf8_encode($modulo_atendimentos[0]['descricao']);
 
         $modulo_abrir_atendimento = $config_model->Sistema_Config('CENTRAL_MOD_ABRIR_ATENDIMENTO');
-        $this->view->modulo_abrir_atendimento_permissao = $modulo_abrir_atendimento[0][valor];
-        $this->view->modulo_abrir_atendimento_descricao = utf8_encode($modulo_abrir_atendimento[0][descricao]);
+        $this->view->modulo_abrir_atendimento_permissao = $modulo_abrir_atendimento[0]['valor'];
+        $this->view->modulo_abrir_atendimento_descricao = utf8_encode($modulo_abrir_atendimento[0]['descricao']);
 
         $modulo_mksenha = $config_model->Sistema_Config('CENTRAL_MOD_ALTERAR_MKSENHA');
-        $this->view->modulo_mksenha_permissao = $modulo_mksenha[0][valor];
-        $this->view->modulo_mksenha_descricao = utf8_encode($modulo_mksenha[0][descricao]);
+        $this->view->modulo_mksenha_permissao = $modulo_mksenha[0]['valor'];
+        $this->view->modulo_mksenha_descricao = utf8_encode($modulo_mksenha[0]['descricao']);
 
         // Renderiza a view relacionada
         $this->view->renderConfig('wsconfig/index');

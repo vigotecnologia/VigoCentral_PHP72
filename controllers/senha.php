@@ -23,7 +23,7 @@ class Senha extends Controller {
             // Processar a troca da senha
             $senha_anterior = $senha_model->Pega_Senha($_SESSION['ID_CLIENTE']);
 
-            if ($senha_anterior[0][senha] == $senhaAtual):
+            if ($senha_anterior[0]['senha'] == $senhaAtual):
 
                 if ($senhaNova == $senhaConfirma):
 

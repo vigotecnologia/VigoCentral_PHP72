@@ -26,7 +26,7 @@ class Chamado extends Controller {
             // Captura as informações do cliente autenticado corretamente
             $dados = $core_model->Dados_Cliente($_SESSION['LOGIN']);
 
-            $idCliente = $dados[0][id];
+            $idCliente = $dados[0]['id'];
 
             if (($idCliente >= 0) && ($idCliente < 10)) {
                 $idCliente = '00000' . $idCliente;
@@ -48,19 +48,19 @@ class Chamado extends Controller {
             $hora = date('H:i');
 
             // Dados a serem gravados
-            $id_empresa = $dados[0][idempresa];
-            $id_cliente = $dados[0][id];
+            $id_empresa = $dados[0]['idempresa'];
+            $id_cliente = $dados[0]['id'];
             $id_funcionario = '9999';
             $desc_funcionario = 'ABERTO PELA CENTRAL';
-            $nome = $dados[0][nome];
-            $endereco = $dados[0][endereco];
-            $bairro = $dados[0][bairro];
-            $cep = $dados[0][cep];
-            $cidade = $dados[0][cidade];
-            $uf = $dados[0][uf];
-            $telefone = $dados[0][telefone];
-            $celular = $dados[0][celular];
-            $email = $dados[0][email];
+            $nome = $dados[0]['nome'];
+            $endereco = $dados[0]['endereco'];
+            $bairro = $dados[0]['bairro'];
+            $cep = $dados[0]['cep'];
+            $cidade = $dados[0]['cidade'];
+            $uf = $dados[0]['uf'];
+            $telefone = $dados[0]['telefone'];
+            $celular = $dados[0]['celular'];
+            $email = $dados[0]['email'];
             $numero_os = date('dm') . $idCliente . rand(1000, 9999);
             $dt_abertura = $data;
             $dt_agendamento = $data;

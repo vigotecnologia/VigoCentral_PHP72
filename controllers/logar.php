@@ -31,7 +31,7 @@ class Logar extends Controller {
 
             // Consulta a senha wsconfig
             $central_senha = $config_model->Sistema_Config('CENTRAL_SENHA');
-            $senha_central = strtolower($central_senha[0][valor]);
+            $senha_central = strtolower($central_senha[0]['valor']);
 
             // Verifica se a senha informada é a senha padrão
             if (($senha_informada == 'wsc1234') && ($senha_informada == $senha_central)) {
@@ -53,17 +53,17 @@ class Logar extends Controller {
 
                 // Consulta o login wsconfig
                 $central_login = $config_model->Sistema_Config('CENTRAL_LOGIN');
-                $login_central = $central_login[0][valor];
+                $login_central = $central_login[0]['valor'];
 
                 // Consulta a senha wsconfig
                 $central_senha = $config_model->Sistema_Config('CENTRAL_SENHA');
-                $senha_central = $central_senha[0][valor];
+                $senha_central = $central_senha[0]['valor'];
 
                 if (($login_informado == $login_central) && ($senha_informada == $senha_central)) {
 
                     // Consulta o tema da central
                     $central_tema = $config_model->Sistema_Config('CENTRAL_TEMA');
-                    $_SESSION['CENTRAL_TEMA'] = $central_tema[0][valor];
+                    $_SESSION['CENTRAL_TEMA'] = $central_tema[0]['valor'];
 
                     $_SESSION['LOGIN'] = $login_central;
 
@@ -139,45 +139,45 @@ class Logar extends Controller {
 
                     // Cria $_SESSION com as chaves de configurações
                     @session_start();
-                    $_SESSION['CENTRAL_TEMA'] = $central_tema[0][valor];
-                    $_SESSION['CENTRAL_TIPO_CONTRATO'] = $central_contrato[0][valor];
-                    $_SESSION['SISTEMA_MULTA'] = $sistema_multa[0][valor];
-                    $_SESSION['SISTEMA_JUROS'] = $sistema_juros[0][valor];
-                    $_SESSION['CENTRAL_GRAFICO'] = $central_grafico[0][valor];
-                    $_SESSION['CENTRAL_MOD_SENHA'] = $central_mod_alterar_senha[0][valor];
-                    $_SESSION['CENTRAL_MOD_FATURAS'] = $central_mod_faturas[0][valor];
-                    $_SESSION['CENTRAL_MOD_NFS'] = $central_mod_nfs[0][valor];
-                    $_SESSION['CENTRAL_MOD_SERVICOS'] = $central_mod_servicos[0][valor];
-                    $_SESSION['CENTRAL_MOD_ACESSOS'] = $central_mod_acessos[0][valor];
-                    $_SESSION['CENTRAL_MOD_GRAFICOS'] = $central_mod_graficos[0][valor];
-                    $_SESSION['CENTRAL_MOD_CONTRATOS'] = $central_mod_contratos[0][valor];
-                    $_SESSION['CENTRAL_MOD_ATENDIMENTOS'] = $central_mod_atendimentos[0][valor];
-                    $_SESSION['CENTRAL_MOD_ABRIR_ATENDIMENTO'] = $central_mod_abrir_atendimento[0][valor];
-                    $_SESSION['CENTRAL_MOD_MKSENHA'] = $central_mod_alterar_mksenha[0][valor];
+                    $_SESSION['CENTRAL_TEMA'] = $central_tema[0]['valor'];
+                    $_SESSION['CENTRAL_TIPO_CONTRATO'] = $central_contrato[0]['valor'];
+                    $_SESSION['SISTEMA_MULTA'] = $sistema_multa[0]['valor'];
+                    $_SESSION['SISTEMA_JUROS'] = $sistema_juros[0]['valor'];
+                    $_SESSION['CENTRAL_GRAFICO'] = $central_grafico[0]['valor'];
+                    $_SESSION['CENTRAL_MOD_SENHA'] = $central_mod_alterar_senha[0]['valor'];
+                    $_SESSION['CENTRAL_MOD_FATURAS'] = $central_mod_faturas[0]['valor'];
+                    $_SESSION['CENTRAL_MOD_NFS'] = $central_mod_nfs[0]['valor'];
+                    $_SESSION['CENTRAL_MOD_SERVICOS'] = $central_mod_servicos[0]['valor'];
+                    $_SESSION['CENTRAL_MOD_ACESSOS'] = $central_mod_acessos[0]['valor'];
+                    $_SESSION['CENTRAL_MOD_GRAFICOS'] = $central_mod_graficos[0]['valor'];
+                    $_SESSION['CENTRAL_MOD_CONTRATOS'] = $central_mod_contratos[0]['valor'];
+                    $_SESSION['CENTRAL_MOD_ATENDIMENTOS'] = $central_mod_atendimentos[0]['valor'];
+                    $_SESSION['CENTRAL_MOD_ABRIR_ATENDIMENTO'] = $central_mod_abrir_atendimento[0]['valor'];
+                    $_SESSION['CENTRAL_MOD_MKSENHA'] = $central_mod_alterar_mksenha[0]['valor'];
 
                     // Captura as informações do cliente autenticado corretamente
                     $dados = $logar_model->Dados_Cliente($login_informado);
 
-                    $this->view->id_cliente = $dados[0][id];
-                    $this->view->id_empresa = $dados[0][idempresa];
-                    $this->view->nome = $dados[0][nome];
-                    $this->view->sexo = $dados[0][sexo];
-                    $this->view->endereco = $dados[0][endereco];
-                    $this->view->bairro = $dados[0][bairro];
-                    $this->view->cpfcgc = $dados[0][cpfcgc];
-                    $this->view->cidade = $dados[0][cidade];
-                    $this->view->uf = $dados[0][uf];
-                    $this->view->dt_entrada = $this->funcoes->dataToBR($dados[0][dt_entrada]);
-                    $this->view->login = $dados[0][login];
+                    $this->view->id_cliente = $dados[0]['id'];
+                    $this->view->id_empresa = $dados[0]['idempresa'];
+                    $this->view->nome = $dados[0]['nome'];
+                    $this->view->sexo = $dados[0]['sexo'];
+                    $this->view->endereco = $dados[0]['endereco'];
+                    $this->view->bairro = $dados[0]['bairro'];
+                    $this->view->cpfcgc = $dados[0]['cpfcgc'];
+                    $this->view->cidade = $dados[0]['cidade'];
+                    $this->view->uf = $dados[0]['uf'];
+                    $this->view->dt_entrada = $this->funcoes->dataToBR($dados[0]['dt_entrada']);
+                    $this->view->login = $dados[0]['login'];
 
                     // Cria $_SESSION do cliente logando
                     @session_start();
-                    $_SESSION['ID_CLIENTE'] = $dados[0][id];
-                    $_SESSION['CPFCNPJ'] = $dados[0][cpfcgc];
-                    $_SESSION['LOGIN'] = $dados[0][login];
-                    $_SESSION['ID_EMPRESA'] = $dados[0][idempresa];
-                    $_SESSION['FANTASIA'] = $dados[0][fantasia];
-                    $_SESSION['FOTO_EMPRESA'] = $dados[0][foto];
+                    $_SESSION['ID_CLIENTE'] = $dados[0]['id'];
+                    $_SESSION['CPFCNPJ'] = $dados[0]['cpfcgc'];
+                    $_SESSION['LOGIN'] = $dados[0]['login'];
+                    $_SESSION['ID_EMPRESA'] = $dados[0]['idempresa'];
+                    $_SESSION['FANTASIA'] = $dados[0]['fantasia'];
+                    $_SESSION['FOTO_EMPRESA'] = $dados[0]['foto'];
 
                     // Redireciona para o controller relacionado
                     @@header("Location: core");

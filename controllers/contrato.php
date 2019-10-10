@@ -26,8 +26,8 @@ class Contrato extends Controller {
             $dados = $contratos_model->Exibir_Contrato($_SESSION['ID_CLIENTE'], $id_contrato); // Executa a query no BD e armazena o resultado numa array
 
             @session_start();
-            $_SESSION['DESCRICAO'] = $dados[0][descricao];
-            $_SESSION['CONTEUDO'] = $dados[0][conteudo];
+            $_SESSION['DESCRICAO'] = $dados[0]['descricao'];
+            $_SESSION['CONTEUDO'] = $dados[0]['conteudo'];
 
             // Renderiza a view relacionada
             $this->view->renderLimpo('contrato/index');

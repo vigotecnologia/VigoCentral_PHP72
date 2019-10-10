@@ -22,7 +22,5 @@ class Barcode extends Controller {
         // Renderiza a view relacionada
         $this->view->barcode = $barcode->imagem;
     }
-
 }
-
 ?>

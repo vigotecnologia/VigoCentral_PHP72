@@ -34,7 +34,7 @@ class Recupera extends Controller {
                 // Consulta se existe algum cliente com login informado
                 $existe = $logar_model->Pesquisa_Credenciais($login_informado);
 
-                if (($existe[0][total] == 0)):
+                if (($existe[0]['total'] == 0)):
 
                     // Aviso de login invalido e força um logout
                     @session_start();
@@ -51,10 +51,10 @@ class Recupera extends Controller {
                     // Recupera as informações do cliente
                     $dados = $logar_model->Dados_Cliente($login_informado);
 
-                    $clienteIdEmpresa = $dados[0][idempresa];
-                    $clienteLogin = $dados[0][login];
-                    $clienteSenha = $dados[0][senha];
-                    $clienteEmail = $dados[0][email];
+                    $clienteIdEmpresa = $dados[0]['idempresa'];
+                    $clienteLogin = $dados[0]['login'];
+                    $clienteSenha = $dados[0]['senha'];
+                    $clienteEmail = $dados[0]['email'];
 
                     // Instancia a classe de MODEL relacionado
                     require 'models/empresa_model.php';
@@ -63,14 +63,14 @@ class Recupera extends Controller {
                     // Consulta dados da empresa para assinar o email
                     $dados_empresa = $empresa_model->Dados_Empresa($clienteIdEmpresa);
 
-                    $empresaFantasia = utf8_encode($dados_empresa[0][fantasia]);
-                    $empresaTelefone = utf8_encode($dados_empresa[0][telefone]);
-                    $empresaEndereco = utf8_encode($dados_empresa[0][endereco]);
-                    $empresaCEP = utf8_encode($dados_empresa[0][cep]);
-                    $empresaCidade = utf8_encode($dados_empresa[0][cidade]);
-                    $empresaUF = utf8_encode($dados_empresa[0][uf]);
-                    $empresaSite = utf8_encode($dados_empresa[0][site]);
-                    $empresaEmail = utf8_encode($dados_empresa[0][email]);
+                    $empresaFantasia = utf8_encode($dados_empresa[0]['fantasia']);
+                    $empresaTelefone = utf8_encode($dados_empresa[0]['telefone']);
+                    $empresaEndereco = utf8_encode($dados_empresa[0]['endereco']);
+                    $empresaCEP = utf8_encode($dados_empresa[0]['cep']);
+                    $empresaCidade = utf8_encode($dados_empresa[0]['cidade']);
+                    $empresaUF = utf8_encode($dados_empresa[0]['uf']);
+                    $empresaSite = utf8_encode($dados_empresa[0]['site']);
+                    $empresaEmail = utf8_encode($dados_empresa[0]['email']);
 
                     ##### MONTA A ESTRUTURA DO EMAIL #####
                     // Define o assunto do email
@@ -140,8 +140,8 @@ class Recupera extends Controller {
         $id_empresa = 1;
         $dados_empresa = $empresa_model->Dados_Empresa($id_empresa);
 
-        $empresa->foto = $dados_empresa[0][foto];
-        $empresa->fantasia = utf8_encode($dados_empresa[0][fantasia]);
+        $empresa->foto = $dados_empresa[0]['foto'];
+        $empresa->fantasia = utf8_encode($dados_empresa[0]['fantasia']);
 
         // Instancia a classe de MODEL relacionado
         require 'models/config_model.php'; // O MODEL não é "auto-carregado" como as libs
@@ -149,7 +149,7 @@ class Recupera extends Controller {
 
         // Aplica o tema da central
         $central_tema = $config_model->Sistema_Config('CENTRAL_TEMA');
-        $config->tema = $central_tema[0][valor];
+        $config->tema = $central_tema[0]['valor'];
 
         // Renderiza a view relacionada
         $this->view->config = $config_model;

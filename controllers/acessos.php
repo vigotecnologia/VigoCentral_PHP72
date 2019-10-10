@@ -58,7 +58,7 @@ class Acessos extends Controller {
             // Para dados via GET
         } else {
 
-            $mkLogin = $query[0][UserName];
+            $mkLogin = $query[0]['UserName'];
             $txtInicio = $txtInicio07;
             $txtFinal = $this->funcoes->dataToBR($txtDataAtual);
         }
@@ -77,7 +77,5 @@ class Acessos extends Controller {
         // Renderiza a view relacionada 
         $this->view->renderJQ('acessos/index');
     }
-
 }
-
 ?>

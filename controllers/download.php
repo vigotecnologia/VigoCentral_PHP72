@@ -22,17 +22,15 @@ class Download extends Controller {
 
             // Baixa o arquivo
             $retorno = $suporte_model->Baixa_Anexo($id);
-            $nome = "arquivo_central." . $retorno[0][extensao];
+            $nome = "arquivo_central." . $retorno[0]['extensao'];
 
-            header("Content-type: {$retorno[0][tipo]}");
+            header("Content-type: {$retorno[0]['tipo']}");
             header("Content-Disposition: attachment; filename={$nome}");
-            print $retorno[0][dados];
+            print $retorno[0]['dados'];
         } else {
 
             header("Location: erro");
         }
     }
-
 }
-
 ?>

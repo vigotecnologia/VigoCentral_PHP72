@@ -25,12 +25,12 @@ class Sessao_Model extends Model {
 
         $query = "SELECT COUNT(*) AS total FROM cadastro_clientes WHERE login='" . $login . "'";
         $result_set = $this->read($query);
-        $result = ($result_set[0][total] != 0);
+        $result = ($result_set[0]['total'] != 0);
 
         if (!$result) {
             $query = "SELECT COUNT(*) AS total FROM mikrotik_erp.radcheck WHERE username='$login'";
             $result_set = $this->read($query);
-            $result = ($result_set[0][total] != 0);
+            $result = ($result_set[0]['total'] != 0);
         }
 
         $this->Desconecta();
@@ -44,7 +44,7 @@ class Sessao_Model extends Model {
 
         $query = "SELECT COUNT(*) AS total FROM cadastro_clientes WHERE login='$login' AND senha='$senha'";
         $result_set = $this->read($query);
-        $result = ($result_set[0][total] != 0);
+        $result = ($result_set[0]['total'] != 0);
 
         if (!$result) {
             $query = "
@@ -52,18 +52,18 @@ class Sessao_Model extends Model {
                 FROM mikrotik_erp.radcheck rad
                 LEFT JOIN vigo_erp.cadastro_clientes cli ON (cli.id=rad.id_cliente)
                 WHERE
-                    username='$login'
+                    Username='$login'
                     AND (
-                        ((attribute='MD5-Password') AND (value=MD5('$senha')))
+                        ((attribute='MD5-Password') AND (Value=MD5('$senha')))
                         OR
-                        ((attribute='ClearText-Password') AND (value='$senha'))
+                        ((attribute='ClearText-Password') AND (Value='$senha'))
                     )
                 LIMIT 1
             ";
             $result_set = $this->read($query);
             $result = (count($result_set) > 0);
             if ($result) {
-                $login = $result_set[0][login];
+                $login = $result_set[0]['login'];
             }
         }
 

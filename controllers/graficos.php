@@ -53,7 +53,7 @@ class Graficos extends Controller {
             $txtInicio = $this->funcoes->dataToBR($dtInicio);
             $txtFinal = $this->funcoes->dataToBR($dtFinal);
         } else { // Para dados via GET
-            $mkLogin = $query[0][UserName];
+            $mkLogin = $query[0]['UserName'];
             $txtInicio = $txtInicio07;
             $txtFinal = $this->funcoes->dataToBR($txtDataAtual);
         }
@@ -73,5 +73,4 @@ class Graficos extends Controller {
         $this->view->renderJQ('graficos/index');
     }
 }
-
 ?>

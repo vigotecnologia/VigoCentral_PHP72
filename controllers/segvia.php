@@ -91,17 +91,17 @@ class segvia extends Controller {
         // Consulta dados da empresa para impressao na nota
         $dados_empresa = $empresa_model->Dados_Empresa($bloqueto->id_empresa); // Executa a query no BD e armazena o resultado numa array
 
-        $empresa->foto = $dados_empresa[0][foto];
-        $empresa->fantasia = utf8_encode($dados_empresa[0][fantasia]);
-        $empresa->endereco = utf8_encode($dados_empresa[0][endereco]);
-        $empresa->cidade = utf8_encode($dados_empresa[0][cidade]);
-        $empresa->uf = utf8_encode($dados_empresa[0][uf]);
-        $empresa->cep = utf8_encode($dados_empresa[0][cep]);
-        $empresa->cnpj = utf8_encode($dados_empresa[0][cnpj]);
-        $empresa->ie = utf8_encode($dados_empresa[0][ie]);
-        $empresa->im = utf8_encode($dados_empresa[0][im]);
-        $empresa->telefone = utf8_encode($dados_empresa[0][telefone]);
-        $empresa->site = utf8_encode($dados_empresa[0][site]);
+        $empresa->foto = $dados_empresa[0]['foto'];
+        $empresa->fantasia = utf8_encode($dados_empresa[0]['fantasia']);
+        $empresa->endereco = utf8_encode($dados_empresa[0]['endereco']);
+        $empresa->cidade = utf8_encode($dados_empresa[0]['cidade']);
+        $empresa->uf = utf8_encode($dados_empresa[0]['uf']);
+        $empresa->cep = utf8_encode($dados_empresa[0]['cep']);
+        $empresa->cnpj = utf8_encode($dados_empresa[0]['cnpj']);
+        $empresa->ie = utf8_encode($dados_empresa[0]['ie']);
+        $empresa->im = utf8_encode($dados_empresa[0]['im']);
+        $empresa->telefone = utf8_encode($dados_empresa[0]['telefone']);
+        $empresa->site = utf8_encode($dados_empresa[0]['site']);
 
         // Captura o banco relativo ao bloqueto
         $query = $segvia_model->Pesquisa_Banco($bloqueto->id_banco);
@@ -122,11 +122,11 @@ class segvia extends Controller {
 
         // Consulta a taxa de multa
         $taxa_multa = $config_model->Sistema_Config('MULTA');
-        $taxa_multa = $this->funcoes->valorUS($taxa_multa[0][valor]);
+        $taxa_multa = $this->funcoes->valorUS($taxa_multa[0]['valor']);
 
         // Consulta a taxa de juros
         $taxa_juros = $config_model->Sistema_Config('JUROS');
-        $taxa_juros = $this->funcoes->valorDecimalUS($taxa_juros[0][valor]);
+        $taxa_juros = $this->funcoes->valorDecimalUS($taxa_juros[0]['valor']);
 
         $LstBancos = array(
             '001' => '001-9',

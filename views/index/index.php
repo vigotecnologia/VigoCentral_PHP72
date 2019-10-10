@@ -1,5 +1,4 @@
 <div class="telaLogin">
-
     <?php if ($this->empresa->foto == ''): ?>
         <div class="login_topo">
             <div class="box_logo">
@@ -20,7 +19,6 @@
         </div>
     <?php endif; ?>
 
-
     <h1>Acesse sua conta e tenha acesso aos boletos, notas fiscais e extrato de conex&otilde;es.</h1>
 
     <div class="boxLogin">
@@ -29,7 +27,7 @@
             <?php
             @session_start();
 
-            if (isset($_SESSION['ALERTA_MENSAGEM']) AND ( $_SESSION['ALERTA_MENSAGEM'] != NULL)) {
+            if (isset($_SESSION['ALERTA_MENSAGEM'])) {
                 echo "<div class='messageBox' id='messageBox'><span class='close' onclick=\"javascript:document.getElementById('messageBox').className='fecharMessage';\">&nbsp;</span><div class='" . $_SESSION['ALERTA_TIPO'] . "'><p><strong>" . $_SESSION['ALERTA_TITULO'] . "...</strong></p><p>" . $_SESSION['ALERTA_MENSAGEM'] . "</p></div></div>";
             }
 

@@ -24,7 +24,7 @@ class Mksenha extends Controller {
 
         if (($senhaAtual != '') && ($senhaNova != '') && ($senhaConfirma != '')) {
 
-            if (md5($senhaAtual) == $query_lista[0][Value]):
+            if (md5($senhaAtual) == $query_lista[0]['Value']):
 
                 if ($senhaNova == $senhaConfirma):
 
