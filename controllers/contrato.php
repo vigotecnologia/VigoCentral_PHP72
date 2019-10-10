@@ -11,8 +11,6 @@ class Contrato extends Controller {
         // Verifica se existe uma seção criada
         $this->funcoes->verificaSessao();
 
-        //echo $_POST['id_contrato'];
-
         if (isset($_POST['id_contrato']) AND ! empty($_POST['id_contrato'])) {
 
             // Remove aspas do conteúdo postado (segurança contra SQL Injection) limitando a 30 caracteres
@@ -40,7 +38,5 @@ class Contrato extends Controller {
             header("Location: erro");
         }
     }
-
 }
-
 ?>

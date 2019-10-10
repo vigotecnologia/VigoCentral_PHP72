@@ -96,7 +96,5 @@ class Chamado extends Controller {
             exit;
         }
     }
-
 }
-
 ?>

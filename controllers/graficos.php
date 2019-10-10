@@ -53,7 +53,7 @@ class Graficos extends Controller {
             $txtInicio = $this->funcoes->dataToBR($dtInicio);
             $txtFinal = $this->funcoes->dataToBR($dtFinal);
         } else { // Para dados via GET
-            $mkLogin = $query[0]['UserName'];
+            $mkLogin = $query[0]['Username'];
             $txtInicio = $txtInicio07;
             $txtFinal = $this->funcoes->dataToBR($txtDataAtual);
         }

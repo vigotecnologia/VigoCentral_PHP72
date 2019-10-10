@@ -30,11 +30,11 @@ $funcoes->verificaSessao();
                         <span>Login de acesso</span>
                         <select name="txtLogin" id="login">
                             <?php foreach ($this->lista_mklogins as $mklogins) { ?>
-                                <option value="<?php echo utf8_decode(utf8_encode($mklogins[UserName])); ?>" <?php if (utf8_decode(utf8_encode($mklogins[UserName])) == $_SESSION['MK_LOGIN']) {
+                                <option value="<?php echo utf8_decode(utf8_encode($mklogins['UserName'])); ?>" <?php if (utf8_decode(utf8_encode($mklogins['UserName'])) == $_SESSION['MK_LOGIN']) {
                             echo 'selected';
                         } else {
                             echo '';
-                        } ?> ><?php echo utf8_decode(utf8_encode($mklogins[UserName])); ?></option>
+                        } ?> ><?php echo utf8_decode(utf8_encode($mklogins['UserName'])); ?></option>
     <?php } ?>
                         </select>
                     </label>
@@ -99,7 +99,7 @@ $funcoes->verificaSessao();
                                         if ($acessos['AcctOutputOctets'] > $total1)
                                             $total1 = $acessos['AcctOutputOctets'];
 
-                                        $listaJSON .= "{ Tempo: '" . $funcoes->tempoConexao($acessos[AcctStartTime], $acessos[AcctStopTime]) . "', Upload:'" . $funcoes->bandaToGB($acessos['AcctInputOctets']) . "', Download:'" . $funcoes->bandaToGB($acessos['AcctOutputOctets']) . "'},";
+                                        $listaJSON .= "{ Tempo: '" . $funcoes->tempoConexao($acessos['AcctStartTime'], $acessos['AcctStopTime']) . "', Upload:'" . $funcoes->bandaToGB($acessos['AcctInputOctets']) . "', Download:'" . $funcoes->bandaToGB($acessos['AcctOutputOctets']) . "'},";
                                         $listaJSON = substr_replace($listaJSON, ",\n", -1, 1);
                                         $linha++;
                                     }
@@ -128,7 +128,7 @@ $funcoes->verificaSessao();
 
                                                     // Prepara as configuracoes do grafico
                                                     var settings = {
-                                                        title: "<?php echo utf8_decode('Total de Tráfego'); ?> - <?php echo utf8_decode(utf8_encode($plano[username])); ?>",
+                                                        title: "<?php echo utf8_decode('Total de Tráfego'); ?> - <?php echo utf8_decode(utf8_encode($plano['username'])); ?>",
                                                                     description: "<?php echo utf8_decode('Período'); ?>: <?php echo $_SESSION['DT_INICIO']; ?> - <?php echo $_SESSION['DT_FINAL']; ?>",
                                                                                 padding: {left: 5, top: 5, right: 20, bottom: 5},
                                                                                 titlePadding: {left: 10, top: 0, right: 0, bottom: 10},

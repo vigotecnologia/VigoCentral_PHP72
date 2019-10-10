@@ -72,7 +72,5 @@ class Senha extends Controller {
             $this->view->renderJQ('senha/index');
         }
     }
-
 }
-
 ?>

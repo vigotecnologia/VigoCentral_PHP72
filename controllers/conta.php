@@ -66,7 +66,5 @@ class Conta extends Controller {
             }
         }
     }
-
 }
-
 ?>

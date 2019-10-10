@@ -9,7 +9,5 @@ class Erro extends Controller {
         // Renderiza a view relacionada
         $this->view->render('erro/index');
     }
-
 }
-
 ?>

@@ -74,5 +74,4 @@ class Faturas extends Controller {
         }
     }
 }
-
 ?>

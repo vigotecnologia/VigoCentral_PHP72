@@ -74,10 +74,10 @@ $funcoes->verificaSessao();
                                                 foreach ($this->lista_contratos as $contratos) {
                                                     ?>
                                                     <li class="tRow">
-                                                        <span data-th="Descri&ccedil;&atilde;o" class="align-l maiusculo"><div class="lColorAcqua legenda flaticon-checkedCirc">&nbsp;<?php echo utf8_encode($contratos[descricao]); ?></div></span>
+                                                        <span data-th="Descri&ccedil;&atilde;o" class="align-l maiusculo"><div class="lColorAcqua legenda flaticon-checkedCirc">&nbsp;<?php echo utf8_encode($contratos['descricao']); ?></div></span>
                                                         <span style="width:100px;" class="align-r">
                                                             <form id="formContrato" name="formContrato" action="contrato" method="post" target="_blank">
-                                                                <input type="hidden" class="input" value="<?php echo utf8_encode($contratos[id]); ?>" readonly name="id_contrato" id="id_contrato" size="20" maxlength="30" />
+                                                                <input type="hidden" class="input" value="<?php echo utf8_encode($contratos['id']); ?>" readonly name="id_contrato" id="id_contrato" size="20" maxlength="30" />
                                                                 <button type="submit" class="botao btnLarge" value=""><div class="flaticon-busca align-c"><span class="print">&nbsp;Visualizar<span></div></button>
                                                                                 </form>
                                                                             </span>

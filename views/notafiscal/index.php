@@ -97,11 +97,11 @@ $funcoes->verificaSessao();
                     <?php foreach ($this->nota_fiscal_itens as $nota_fiscal_itens): ?>
 
                         <tr>
-                            <td style="text-align:left;"><?php echo utf8_decode(utf8_encode($nota_fiscal_itens[desc_servico])); ?></td>
-                            <td style="width:60px;text-align:center;"><?php echo $funcoes->numero($nota_fiscal_itens[quant_contratada]); ?></td>
-                            <td style="width:60px;text-align:center;"><?php echo utf8_decode(utf8_encode($nota_fiscal_itens[cfop])); ?></td>
-                            <td style="width:100px;text-align:right;"><?php echo $funcoes->valor($nota_fiscal_itens[total]); ?></td>
-                            <td style="width:100px;text-align:right;"><?php echo $funcoes->valor($nota_fiscal_itens[total]); ?></td>
+                            <td style="text-align:left;"><?php echo utf8_decode(utf8_encode($nota_fiscal_itens['desc_servico'])); ?></td>
+                            <td style="width:60px;text-align:center;"><?php echo $funcoes->numero($nota_fiscal_itens['quant_contratada']); ?></td>
+                            <td style="width:60px;text-align:center;"><?php echo utf8_decode(utf8_encode($nota_fiscal_itens['cfop'])); ?></td>
+                            <td style="width:100px;text-align:right;"><?php echo $funcoes->valor($nota_fiscal_itens['total']); ?></td>
+                            <td style="width:100px;text-align:right;"><?php echo $funcoes->valor($nota_fiscal_itens['total']); ?></td>
                         </tr>
 
                     <?php endforeach; ?>

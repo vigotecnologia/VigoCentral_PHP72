@@ -9,7 +9,5 @@ class Login extends Controller {
         // Renderiza a view relacionada
         $this->view->render('login/index');
     }
-
 }
-
 ?>

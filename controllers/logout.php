@@ -9,7 +9,5 @@ class Logout extends Controller {
         // Renderiza a view relacionada
         $this->view->render('logout/index');
     }
-
 }
-
 ?>

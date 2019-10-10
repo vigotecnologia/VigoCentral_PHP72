@@ -30,11 +30,11 @@ $funcoes->verificaSessao();
                         <span>Login de acesso</span>
                         <select name="txtLogin" id="login">
                             <?php foreach ($this->lista_mklogins as $mklogins) { ?>
-                                <option value="<?php echo utf8_decode(utf8_encode($mklogins[UserName])); ?>" <?php if (utf8_decode(utf8_encode($mklogins[UserName])) == $_SESSION['MK_LOGIN']) {
+                                <option value="<?php echo utf8_decode(utf8_encode($mklogins['UserName'])); ?>" <?php if (utf8_decode(utf8_encode($mklogins['UserName'])) == $_SESSION['MK_LOGIN']) {
                             echo 'selected';
                         } else {
                             echo '';
-                        } ?> ><?php echo utf8_decode(utf8_encode($mklogins[UserName])); ?></option>
+                        } ?> ><?php echo utf8_decode(utf8_encode($mklogins['UserName'])); ?></option>
     <?php } ?>
                         </select>
                     </label>
@@ -97,8 +97,8 @@ $funcoes->verificaSessao();
                                         <div class="tBody">
                                     <?php foreach ($this->lista_plano as $plano) { ?>
                                                 <li class="tRow trClear">
-                                                    <span data-th="Usu&aacute;rio" class="align-l"><?php echo utf8_decode(utf8_encode($plano[username])); ?></span>
-                                                    <span data-th="Plano" class="align-l"><?php echo utf8_encode($plano[groupname]); ?></span>
+                                                    <span data-th="Usu&aacute;rio" class="align-l"><?php echo utf8_decode(utf8_encode($plano['username'])); ?></span>
+                                                    <span data-th="Plano" class="align-l"><?php echo utf8_encode($plano['groupname']); ?></span>
                                                 </li>
                                     <?php } ?>
                                         </div>
@@ -140,10 +140,10 @@ $funcoes->verificaSessao();
                                                 <li class="tRow">
 
                                                     <span data-th="In&iacute;cio" class="align-l">
-            <?php echo @date("d/m/Y - H:i:s", @strtotime($acessos[AcctStartTime])); ?>
+            <?php echo @date("d/m/Y - H:i:s", @strtotime($acessos['AcctStartTime'])); ?>
                                                     </span>
                                                     <span data-th="Final" class="align-l">
-            <?php echo @date("d/m/Y - H:i:s", @strtotime($acessos[AcctStopTime])); ?>
+            <?php echo @date("d/m/Y - H:i:s", @strtotime($acessos['AcctStopTime'])); ?>
                                                     </span>
                                                     <span data-th="Upload" class="align-r">
             <?php echo $funcoes->bandaToMB($acessos['AcctInputOctets']); ?>
@@ -168,9 +168,9 @@ $funcoes->verificaSessao();
 
                                                                                     <legend>Conex&atilde;o:</legend>
 
-                                                                                    <span>In&iacute;cio: <strong class="infoData"><?php echo @date("d/m/Y - H:i:s", @strtotime($acessos[AcctStartTime])); ?></strong></span>
-                                                                                    <span>T&eacute;rmino: <strong class="infoData"><?php echo @date("d/m/Y - H:i:s", @strtotime($acessos[AcctStopTime])); ?></strong></span>
-                                                                                    <span>Dura&ccedil;&atilde;o: <strong class="infoData"><?php echo $funcoes->tempoConexao($acessos[AcctStartTime], $acessos[AcctStopTime]); ?></strong></span>
+                                                                                    <span>In&iacute;cio: <strong class="infoData"><?php echo @date("d/m/Y - H:i:s", @strtotime($acessos['AcctStartTime'])); ?></strong></span>
+                                                                                    <span>T&eacute;rmino: <strong class="infoData"><?php echo @date("d/m/Y - H:i:s", @strtotime($acessos['AcctStopTime'])); ?></strong></span>
+                                                                                    <span>Dura&ccedil;&atilde;o: <strong class="infoData"><?php echo $funcoes->tempoConexao($acessos['AcctStartTime'], $acessos['AcctStopTime']); ?></strong></span>
 
                                                                                 </fieldset>
 
@@ -178,10 +178,10 @@ $funcoes->verificaSessao();
 
                                                                                     <legend>Endere&ccedil;o:</legend>
 
-                                                                                    <span>IP: <strong class="infoData"><?php echo $acessos[FramedIPAddress]; ?></strong></span>
-                                                                                    <span>MAC: <strong class="infoData"><?php echo $acessos[CallingStationId]; ?></strong></span>
+                                                                                    <span>IP: <strong class="infoData"><?php echo $acessos['FramedIPAddress']; ?></strong></span>
+                                                                                    <span>MAC: <strong class="infoData"><?php echo $acessos['CallingStationId']; ?></strong></span>
                                                                                     <span class="fieldset">Motivo da desconex&atilde;o:</span>
-                                                                                    <span><strong class="infoData"><?php echo $funcoes->motivoDesconexao($acessos[AcctTerminateCause]); ?></strong></span>
+                                                                                    <span><strong class="infoData"><?php echo $funcoes->motivoDesconexao($acessos['AcctTerminateCause']); ?></strong></span>
 
                                                                                 </fieldset>
                                                                                 </p>
@@ -241,4 +241,4 @@ $funcoes->verificaSessao();
 
                                                 <div class="clear"></div>
                                             </div><div class="clear"></div>
-                                        </section><!-- /FIM - SECAO: ACESSOS -->
+                                        </section>

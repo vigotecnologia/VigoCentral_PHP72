@@ -68,7 +68,7 @@ unset($_SESSION['ALERTA_MENSAGEM']);
                                 <option value="" disabled="disabled">&nbsp;</option>
 
 <?php foreach ($this->lista_tipos_atendimentos as $tipos_atendimentos) { ?>
-                                    <option value="<?php echo $tipos_atendimentos[id]; ?> - <?php echo $tipos_atendimentos[descricao]; ?>"><?php echo $tipos_atendimentos[descricao]; ?></option>
+                                    <option value="<?php echo $tipos_atendimentos['id']; ?> - <?php echo $tipos_atendimentos['descricao']; ?>"><?php echo $tipos_atendimentos['descricao']; ?></option>
                                 <?php } ?>
 
                             </select>
@@ -127,7 +127,7 @@ unset($_SESSION['ALERTA_MENSAGEM']);
         $total_chamados ++;
         $id_sub ++;
 
-        if ($atendimento[situacao] == 'FECHADO') {
+        if ($atendimento['situacao'] == 'FECHADO') {
             $txtAtendimentos = 'tRow';
             $legAtendimentos = 'lColorDark';
         } else {
@@ -136,11 +136,11 @@ unset($_SESSION['ALERTA_MENSAGEM']);
         }
         ?>
                         <li class="<?php echo $txtAtendimentos; ?>">
-                            <span data-th="N&uacute;mero" class="align-l"><?php echo $atendimento[numero_os]; ?></span>
-                            <span data-th="Data" class="align-c"><?php echo $funcoes->dataToBR($atendimento[dt_abertura]) . " - " . $atendimento[h_abertura]; ?></span>
-                            <span data-th="Tipo" class="align-l maiusculo"><?php echo $atendimento[desc_tatendimento]; ?></span>
-                            <span data-th="Assunto" class="align-l maiusculo"><?php echo $atendimento[descricao]; ?></span>
-                            <span data-th="Situa&ccedil;&atilde;o" class="align-l maiusculo"><?php echo $atendimento[situacao]; ?></span>
+                            <span data-th="N&uacute;mero" class="align-l"><?php echo $atendimento['numero_os']; ?></span>
+                            <span data-th="Data" class="align-c"><?php echo $funcoes->dataToBR($atendimento['dt_abertura']) . " - " . $atendimento['h_abertura']; ?></span>
+                            <span data-th="Tipo" class="align-l maiusculo"><?php echo $atendimento['desc_tatendimento']; ?></span>
+                            <span data-th="Assunto" class="align-l maiusculo"><?php echo $atendimento['descricao']; ?></span>
+                            <span data-th="Situa&ccedil;&atilde;o" class="align-l maiusculo"><?php echo $atendimento['situacao']; ?></span>
 
                             <span style="width:100px;position:relative;" class="align-r">
                                 <a class="botao btnDefault" id="<?php echo $atendimento['id'] ?>" href="#box<?php echo $atendimento['id'] ?>"><div class="flaticon-busca align-l"><span class="print">&nbsp;Visualizar</span></div></a>
@@ -156,9 +156,9 @@ unset($_SESSION['ALERTA_MENSAGEM']);
                                 <div class="info" id="info<?php echo $atendimento['id']; ?>">
                                     <h2 class="align-c">Detalhes do Atendimento</h2>
                                     <p  id="leitor<?php echo $atendimento['id']; ?>" class="boxLeitor">
-                                        <span>N&uacute;mero O.S.: <strong><?php echo $atendimento[numero_os]; ?></strong><br /></span>
-                                        <span>Assunto: <strong><?php echo $atendimento[descricao]; ?></strong><br /><br /></span>
-        <?php echo nl2br(utf8_encode($atendimento[historico])); ?>
+                                        <span>N&uacute;mero O.S.: <strong><?php echo $atendimento['numero_os']; ?></strong><br /></span>
+                                        <span>Assunto: <strong><?php echo $atendimento['descricao']; ?></strong><br /><br /></span>
+        <?php echo nl2br(utf8_encode($atendimento['historico'])); ?>
                                     </p>
                                 </div>
                             </div>
@@ -181,14 +181,14 @@ unset($_SESSION['ALERTA_MENSAGEM']);
 
         foreach ($this->lista_anexos as $anexo_item) {
 
-            if ($anexo_item[id_atendimento] == $atendimento['id']) {
+            if ($anexo_item['id_atendimento'] == $atendimento['id']) {
 
                 echo "<tr style=\"height:30px;\">";
-                echo "<td style=\"border-top:1px solid #333;padding:5px;text-align:center;\">{$anexo_item[id]}</td>";
-                echo "<td style=\"border-top:1px solid #333;padding:5px;text-align:center;\">{$anexo_item[tipo]}</td>";
-                echo "<td style=\"border-top:1px solid #333;padding:5px;text-align:center;\">{$anexo_item[extensao]}</td>";
-                echo "<td style=\"border-top:1px solid #333;padding:5px;\">{$anexo_item[descricao]}</td>";
-                echo "<td style=\"border-top:1px solid #333;padding:5px;text-align:right;\"><a href=\"download?id={$anexo_item[id]}\" class=\"botao btnDefault2\"><div class=\"flaticon-pasta align-r\"><span class=\"print\">&nbsp;Fazer Download</span></div></a></td>";
+                echo "<td style=\"border-top:1px solid #333;padding:5px;text-align:center;\">{$anexo_item['id']}</td>";
+                echo "<td style=\"border-top:1px solid #333;padding:5px;text-align:center;\">{$anexo_item['tipo']}</td>";
+                echo "<td style=\"border-top:1px solid #333;padding:5px;text-align:center;\">{$anexo_item['extensao']}</td>";
+                echo "<td style=\"border-top:1px solid #333;padding:5px;\">{$anexo_item['descricao']}</td>";
+                echo "<td style=\"border-top:1px solid #333;padding:5px;text-align:right;\"><a href=\"download?id={$anexo_item['id']}\" class=\"botao btnDefault2\"><div class=\"flaticon-pasta align-r\"><span class=\"print\">&nbsp;Fazer Download</span></div></a></td>";
                 echo "</tr>";
             }
         }

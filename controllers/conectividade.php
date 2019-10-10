@@ -66,7 +66,5 @@ class Conectividade extends Controller {
             }
         }
     }
-
 }
-
 ?>

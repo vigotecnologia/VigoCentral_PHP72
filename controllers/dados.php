@@ -83,7 +83,5 @@ class Dados extends Controller {
         $this->view->cliente = $cliente;
         $this->view->renderJQ('dados/index');
     }
-
 }
-
 ?>

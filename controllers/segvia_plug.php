@@ -838,6 +838,5 @@ class BoletoBancoAilos extends Boleto {
         $dv = $this->digitoVerificador_barra($this->numbanco . $this->moeda . $fator . $valor . $campo_livre);
         $this->codigo_barras = $this->numbanco . $this->moeda . $dv . $fator . $valor . $campo_livre;
     }
-
 }
 ?>

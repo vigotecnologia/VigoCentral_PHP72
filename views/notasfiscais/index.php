@@ -48,22 +48,22 @@ $funcoes->verificaSessao();
                     foreach ($this->lista_notas as $notafiscal) {
 
                         $total_notas ++;
-                        $valor_total += $notafiscal[valor_total];
+                        $valor_total += $notafiscal['valor_total'];
                         ?>
                         <li class="tRow">
-                            <span data-th="Nome" class="align-l"><div class="lColorAcqua legenda flaticon-checkedCirc">&nbsp;<?php echo utf8_decode(utf8_encode($notafiscal[rsocial])); ?></div></span>
-                            <span data-th="Emiss&atilde;o" class="align-c"><?php echo $funcoes->dataToNF($notafiscal[emissao]); ?></span>
-                            <span data-th="N&uacute;mero" class="align-l"><?php echo $notafiscal[numero]; ?></span>
-                            <span data-th="Refer&ecirc;ncia" class="align-l"><?php echo utf8_decode(utf8_encode($funcoes->refNF($notafiscal[ano_mes]))); ?></span>
-                            <span data-th="Valor" class="align-r"><?php echo number_format(($notafiscal[valor_total] / 100), 2, ',', '.'); ?></span>
+                            <span data-th="Nome" class="align-l"><div class="lColorAcqua legenda flaticon-checkedCirc">&nbsp;<?php echo utf8_decode(utf8_encode($notafiscal['rsocial'])); ?></div></span>
+                            <span data-th="Emiss&atilde;o" class="align-c"><?php echo $funcoes->dataToNF($notafiscal['emissao']); ?></span>
+                            <span data-th="N&uacute;mero" class="align-l"><?php echo $notafiscal['numero']; ?></span>
+                            <span data-th="Refer&ecirc;ncia" class="align-l"><?php echo utf8_decode(utf8_encode($funcoes->refNF($notafiscal['ano_mes']))); ?></span>
+                            <span data-th="Valor" class="align-r"><?php echo number_format(($notafiscal['valor_total'] / 100), 2, ',', '.'); ?></span>
                             <span style="width:120px;" class="align-r">
 
                                 <form id="formContrato" name="formContrato" action="notafiscal" method="post" target="_blank">
 
                                     <input type="hidden" class="input" value="1" readonly name="nf_idempresa" id="nf_idempresa" size="20" maxlength="11" />
-                                    <input type="hidden" class="input" value="<?php echo utf8_encode($notafiscal[nome_arquivo]); ?>" readonly name="nf_arquivo" id="nf_arquivo" size="20" maxlength="15" />
-                                    <input type="hidden" class="input" value="<?php echo utf8_encode($notafiscal[cnpjcpf]); ?>" readonly name="nf_cnpjcpf" id="nf_cnpjcpf" size="20" maxlength="14" />
-                                    <input type="hidden" class="input" value="<?php echo utf8_encode($notafiscal[numero]); ?>" readonly name="nf_numero" id="nf_numero" size="20" maxlength="9" />
+                                    <input type="hidden" class="input" value="<?php echo utf8_encode($notafiscal['nome_arquivo']); ?>" readonly name="nf_arquivo" id="nf_arquivo" size="20" maxlength="15" />
+                                    <input type="hidden" class="input" value="<?php echo utf8_encode($notafiscal['cnpjcpf']); ?>" readonly name="nf_cnpjcpf" id="nf_cnpjcpf" size="20" maxlength="14" />
+                                    <input type="hidden" class="input" value="<?php echo utf8_encode($notafiscal['numero']); ?>" readonly name="nf_numero" id="nf_numero" size="20" maxlength="9" />
 
                                     <button type="submit" class="botao btnLarge" value=""><div class="flaticon-impressao align-c"><span class="print">&nbsp;Imprimir<span></div></button>
                                                     </form>

@@ -38,7 +38,7 @@ if (!empty($this->lista_mklogins2)) { ?>
                         <select name="txtLogin" id="login" onchange="AlteraClasse();">
                             <option value="Selecione">Selecione um login</option>
                             <?php foreach ($this->lista_mklogins2 as $mklogins2) {
-                                echo '<option value="'. $mklogins2[Username] . '">' . $mklogins2[Username] . '</option>';
+                                echo '<option value="'. $mklogins2['Username'] . '">' . $mklogins2['Username'] . '</option>';
                             } ?>
                         </select>
                     </label>

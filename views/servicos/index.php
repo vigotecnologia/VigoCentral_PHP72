@@ -39,11 +39,11 @@ $funcoes->verificaSessao();
                     foreach ($this->lista_servicos as $servicos) {
 
                         $total_servicos ++;
-                        $valor_total += $servicos[total];
+                        $valor_total += $servicos['total'];
                         ?>
                         <li class="tRow">
-                            <span data-th="Descri&ccedil;&atilde;o" class="align-l maiusculo"><div class="lColorAcqua legenda flaticon-checkedCirc">&nbsp;<?php echo utf8_decode(utf8_encode($servicos[descricao])); ?></div></span>
-                            <span data-th="Valor" class="align-r mobile"><?php echo number_format($servicos[total], 2, ',', '.'); ?></span>
+                            <span data-th="Descri&ccedil;&atilde;o" class="align-l maiusculo"><div class="lColorAcqua legenda flaticon-checkedCirc">&nbsp;<?php echo utf8_decode(utf8_encode($servicos['descricao'])); ?></div></span>
+                            <span data-th="Valor" class="align-r mobile"><?php echo number_format($servicos['total'], 2, ',', '.'); ?></span>
                             <span class="align-r noVisible">&nbsp;</span>
                         </li>
     <?php } ?>

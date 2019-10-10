@@ -238,7 +238,5 @@ class segvia extends Controller {
         // Renderiza a view segvia
         $this->view->renderLIMPO('segvia/index');
     }
-
 }
-
 ?>

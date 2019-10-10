@@ -21,7 +21,5 @@ class Contratos extends Controller {
         // Renderiza a view relacionada
         $this->view->renderJQ('contratos/index');
     }
-
 }
-
 ?>

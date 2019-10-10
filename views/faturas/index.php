@@ -53,22 +53,22 @@ $funcoes->verificaSessao();
                     foreach ($this->lista_boletos as $boletos) {
 
                         $total_boletos ++;
-                        $valor_total += $boletos[valor];
-                        $total_pago += $boletos[pago_valor];
+                        $valor_total += $boletos['valor'];
+                        $total_pago += $boletos['pago_valor'];
 
-                        $data_pgto = $funcoes->dataToBR($boletos[pago_data]);
+                        $data_pgto = $funcoes->dataToBR($boletos['pago_data']);
                         if ($data_pgto == '01/01/0001')
                             $data_pgto = '';
 
-                        $valor_pago = number_format($boletos[pago_valor], 2, ',', '.');
+                        $valor_pago = number_format($boletos['pago_valor'], 2, ',', '.');
                         //if($valor_pago == "0,00") $valor_pago = '';
                         if ($valor_pago <= 0)
                             $valor_pago = '';
 
-                        if ($boletos[pago_valor] <= 0) {
+                        if ($boletos['pago_valor'] <= 0) {
                             $txtBoletos = 'tRow tBoletoAberto';
                             $legBoletos = 'lColorRed';
-                            $btnBoletos = '<a class="botao btnDefault" href="segvia/' . $boletos[id] . '" target="_blank"><div class="flaticon-impressao align-r"><span class="print"> Imprimir<span></div></a>';
+                            $btnBoletos = '<a class="botao btnDefault" href="segvia/' . $boletos['id'] . '" target="_blank"><div class="flaticon-impressao align-r"><span class="print"> Imprimir<span></div></a>';
                         } else {
                             $txtBoletos = 'tRow';
                             $legBoletos = 'lColorDark';
@@ -76,10 +76,10 @@ $funcoes->verificaSessao();
                         }
                         ?>
                         <li class="<?php echo $txtBoletos; ?>">
-                            <span data-th="Nosso N&uacute;mero" class="align-l"><div class="<?php echo $legBoletos; ?> legenda flaticon-legenda">&nbsp;<?php echo utf8_encode($boletos[nossonumero]); ?></div></span>
-                            <span data-th="Refer&ecirc;ncia" class="align-l maiusculo"><?php echo utf8_decode(utf8_encode($boletos[referencia])); ?></span>
-                            <span data-th="Vencimento" class="align-c"><?php echo $funcoes->dataToBR($boletos[vencimento]); ?></span>
-                            <span data-th="Valor" class="align-r"><?php echo number_format($boletos[valor], 2, ',', '.'); ?></span>
+                            <span data-th="Nosso N&uacute;mero" class="align-l"><div class="<?php echo $legBoletos; ?> legenda flaticon-legenda">&nbsp;<?php echo utf8_encode($boletos['nossonumero']); ?></div></span>
+                            <span data-th="Refer&ecirc;ncia" class="align-l maiusculo"><?php echo utf8_decode(utf8_encode($boletos['referencia'])); ?></span>
+                            <span data-th="Vencimento" class="align-c"><?php echo $funcoes->dataToBR($boletos['vencimento']); ?></span>
+                            <span data-th="Valor" class="align-r"><?php echo number_format($boletos['valor'], 2, ',', '.'); ?></span>
                             <span data-th="Pagamento" class="align-c"><?php echo $data_pgto; ?></span>
                             <span data-th="Valor Pago" class="align-r"><?php echo $valor_pago; ?></span>
                             <span class="align-r"><?php echo $btnBoletos; ?></span>
