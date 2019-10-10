@@ -95,7 +95,5 @@ class WSSenha extends Controller {
         // Renderiza a view relacionada
         $this->view->renderConfig('wssenha/index');
     }
-
 }
-
 ?>

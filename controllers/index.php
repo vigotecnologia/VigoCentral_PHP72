@@ -21,7 +21,7 @@ class Index extends Controller {
         require 'models/config_model.php'; // O MODEL não é "auto-carregado" como as libs
         $config_model = new Config_Model();
 
-        // Se n�o existir, adiciona as chaves na tabela: sistema_config
+        // Se não existir, adiciona as chaves na tabela: sistema_config
         if (!$config_model->Sistema_Config('MULTA')) : $config_model->Chave_Add('MULTA', '2,00', 'Define a taxa de multa por atraso');
         endif;
         if (!$config_model->Sistema_Config('JUROS')) : $config_model->Chave_Add('JUROS', '0,33', 'Define a taxa de juros ao dia');
@@ -64,12 +64,10 @@ class Index extends Controller {
         $config->tema = $central_tema[0][valor];
 
         // Renderiza a view relacionada
-        $this->view->config = $config;
-        $this->view->empresa = $empresa;
+        $this->view->config = $config_model;
+        $this->view->empresa = $dados_empresa;
 
         $this->view->render('index/index');
     }
-
 }
-
 ?>

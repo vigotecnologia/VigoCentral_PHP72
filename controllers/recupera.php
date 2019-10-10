@@ -131,8 +131,8 @@ class Recupera extends Controller {
         $config->tema = $central_tema[0][valor];
 
         // Renderiza a view relacionada
-        $this->view->config = $config;
-        $this->view->empresa = $empresa;
+        $this->view->config = $config_model;
+        $this->view->empresa = $dados_empresa;
 
         $this->view->render('recupera/index');
     }

@@ -228,7 +228,7 @@ class WSConfig extends Controller {
 
             endif;
 
-            // Altera permissão: SERVI�OS
+            // Altera permissão: SERVICOS
             if ($txtServicos == 'on'):
 
                 $config_model->Chave_Edit('CENTRAL_MOD_SERVICOS', 'S');
@@ -476,7 +476,5 @@ class WSConfig extends Controller {
         // Renderiza a view relacionada
         $this->view->renderConfig('wsconfig/index');
     }
-
 }
-
 ?>

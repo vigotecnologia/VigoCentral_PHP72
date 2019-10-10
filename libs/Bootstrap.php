@@ -12,7 +12,7 @@ class Bootstrap {
         if (empty($url[0])) {
             require 'controllers/index.php';
             $controller = new Index();
-            return false;
+            die;
         }
 
         if (file_exists($file)) {
@@ -20,12 +20,10 @@ class Bootstrap {
         } else {
             require 'controllers/erro.php';
             $controller = new Erro();
-            return false;
+            die;
         }
 
         $controller = new $url[0];
     }
-
 }
-
 ?>

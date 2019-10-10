@@ -6,13 +6,12 @@ class Empresa_Model extends Model {
 
         $this->Conecta();
 
-        // Faz a pesquisa
         $query = "SELECT * FROM sistema_empresas WHERE id='" . $id_empresa . "'";
-        return $this->read($query);
+        $row = $this->read($query);
 
         $this->Desconecta();
+
+        return $row;
     }
-
 }
-
 ?>

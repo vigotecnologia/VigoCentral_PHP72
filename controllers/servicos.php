@@ -21,7 +21,5 @@ class Servicos extends Controller {
         // Renderiza a view relacionada
         $this->view->renderJQ('servicos/index');
     }
-
 }
-
 ?>

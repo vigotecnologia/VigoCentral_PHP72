@@ -6,13 +6,12 @@ class Servicos_Model extends Model {
 
         $this->Conecta();
 
-        // Faz a pesquisa
         $query = "SELECT * FROM financeiro_planos_clientes WHERE idcliente='" . $cliente . "'";
-        return $this->read($query);
+        $row = $this->read($query);
 
         $this->Desconecta();
+
+        return $row;
     }
-
 }
-
 ?>

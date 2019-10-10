@@ -71,11 +71,8 @@ class Mksenha extends Controller {
 
         $this->view->lista_mklogins = $query;
 
-        //$this->view->login = $senha_anterior[0][username];
         // Renderiza a view relacionada
         $this->view->renderJQ('mksenha/index');
     }
-
 }
-
 ?>

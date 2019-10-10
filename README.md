@@ -1,6 +1,8 @@
 # VigoCentral_PHP72
 *** Atualização para execução no PHP 7.2.11 (CentOS 8) ***
 
+Revisão: 09/10/2019: Rafael Labiak Olivastro
+
 Central do assinante para os usuários cadastrados no Sistema Vigo, permitindo aos clientes as seguintes opções:
 
 - Impressão da segunda-via do boleto da mensalidade.

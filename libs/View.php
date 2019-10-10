@@ -29,7 +29,5 @@ class View {
         require 'views/' . $name . '.php';
         require 'views/inc.footer.php';
     }
-
 }
-
 ?>

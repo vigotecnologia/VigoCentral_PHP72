@@ -50,7 +50,6 @@ class Graficos extends Controller {
         $this->view->lista_mklogins = $query;
 
         if (!empty($mkLogin) OR ! empty($dtInicio) OR ! empty($dtFinal)) { // Para dados via POST
-            $mkLogin = $mkLogin;
             $txtInicio = $this->funcoes->dataToBR($dtInicio);
             $txtFinal = $this->funcoes->dataToBR($dtFinal);
         } else { // Para dados via GET
@@ -73,7 +72,6 @@ class Graficos extends Controller {
         // Renderiza a view relacionada 
         $this->view->renderJQ('graficos/index');
     }
-
 }
 
 ?>

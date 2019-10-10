@@ -73,26 +73,6 @@ class Faturas extends Controller {
             }
         }
     }
-
-    /*
-      function __construct() {
-
-      parent::__construct();
-
-      // Instancia a classe de MODEL relacionado
-      require 'models/boletos_model.php'; // O MODEL não é "auto-carregado" como as libs
-      $boletos_model = new Boletos_Model();
-
-      echo "<BR><BR><BR><BR><BR><BR><BR><BR>".$_SESSION['ID_CLIENTE'];
-
-      // Consulta os boletos do cliente logado
-      $this->view->lista_boletos = $boletos_model->Lista_Boletos($_SESSION['ID_CLIENTE']);
-
-      // Renderiza a view relacionada
-      $this->view->renderJQ('faturas/index');
-
-      }
-     */
 }
 
 ?>

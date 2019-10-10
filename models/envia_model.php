@@ -6,14 +6,11 @@ class Envia_Model extends Model {
         $this->Conecta();
 
         $query = "SELECT login, senha FROM cadastro_clientes WHERE email='" . $email . "' LIMIT 1";
-        $this->result = mysql_query($query);
-        $row = mysql_fetch_row($this->result);
+        $row = $this->read2($query);
 
         $this->Desconecta();
 
         return $row; // Array, [0] = Login, [1] = Senha
     }
-
 }
-
 ?>

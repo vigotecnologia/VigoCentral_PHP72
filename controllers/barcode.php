@@ -20,7 +20,7 @@ class Barcode extends Controller {
         $barcode->imagem = new GerarBarcode($id, 0);
 
         // Renderiza a view relacionada
-        $this->view->barcode = $barcode;
+        $this->view->barcode = $barcode->imagem;
     }
 
 }

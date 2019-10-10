@@ -17,10 +17,9 @@ class NotasFiscais extends Controller {
 
         // Consulta as notas fiscais do cliente logado
         $this->view->lista_notas = $notasfiscais_model->Lista_Notas($_SESSION['ID_CLIENTE'], $_SESSION['CPFCNPJ']); // Executa a query no BD e armazena o resultado numa array
+        
         // Renderiza a view relacionada
         $this->view->renderJQ('notasfiscais/index');
     }
-
 }
-
 ?>

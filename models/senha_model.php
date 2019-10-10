@@ -7,9 +7,11 @@ class Senha_Model extends Model {
         $this->Conecta();
 
         $query = "SELECT senha FROM cadastro_clientes WHERE id='" . $cliente . "'";
-        return $this->read($query);
+        $row = $this->read($query);
 
         $this->Desconecta();
+
+        return $row;
     }
 
     public function Troca_Senha($cliente, $senha) {
@@ -17,11 +19,11 @@ class Senha_Model extends Model {
         $this->Conecta();
 
         $query = "UPDATE cadastro_clientes SET senha='" . $senha . "' WHERE id='" . $cliente . "'";
-        return $this->read($query);
+        $row = $this->read($query);
 
         $this->Desconecta();
+
+        return $row;
     }
-
 }
-
 ?>

@@ -38,8 +38,6 @@ class Chamado extends Controller {
                 $idCliente = '00' . $idCliente;
             } elseif (($idCliente >= 10000) && ($idCliente < 100000)) {
                 $idCliente = '0' . $idCliente;
-            } else {
-                $idCliente = $idCliente;
             }
 
             // Instancia a classe de MODEL relacionado

@@ -27,7 +27,5 @@ class Suporte extends Controller {
         // Renderiza a view relacionada
         $this->view->renderJQ('suporte/index');
     }
-
 }
-
 ?>

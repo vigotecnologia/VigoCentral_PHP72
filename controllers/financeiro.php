@@ -67,7 +67,6 @@ class Financeiro extends Controller {
             }
         }
     }
-
 }
 
 ?>

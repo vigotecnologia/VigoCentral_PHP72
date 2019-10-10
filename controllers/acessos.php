@@ -52,7 +52,6 @@ class Acessos extends Controller {
         // Para dados via POST
         if (!empty($mkLogin) OR ! empty($dtInicio) OR ! empty($dtFinal)) {
 
-            $mkLogin = $mkLogin;
             $txtInicio = $this->funcoes->dataToBR($dtInicio);
             $txtFinal = $this->funcoes->dataToBR($dtFinal);
 
