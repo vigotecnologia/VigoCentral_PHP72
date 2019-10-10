@@ -5,7 +5,7 @@ class Extrato_Model extends Model {
     public function Lista_MkLogins($cliente) {
 
         $this->Conecta("mikrotik");
-        $query = "SELECT DISTINCT username FROM radcheck WHERE id_cliente='" . $cliente . "' AND attribute='MD5-Password' ORDER BY username";
+        $query = "SELECT DISTINCT UserName FROM radcheck WHERE id_cliente='" . $cliente . "' ORDER BY UserName";
         $row = $this->read($query);
         $this->Desconecta();
 
@@ -15,7 +15,7 @@ class Extrato_Model extends Model {
     public function Lista_Acessos($login, $dtInicio, $dtFinal) {
 
         $this->Conecta("mikrotik");
-        $query = "SELECT * FROM radacct WHERE (username='" . $login . "') AND (acctstarttime BETWEEN '" . $dtInicio . "' AND '" . $dtFinal . "') AND (acctstoptime is null) ORDER by acctstarttime ASC";
+        $query = "SELECT * FROM radacct WHERE (UserName='" . $login . "') AND (AcctStartTime BETWEEN '" . $dtInicio . "' AND '" . $dtFinal . "') AND (AcctStopTime is null) ORDER by AcctStartTime ASC";
         $row = $this->read($query);
         $this->Desconecta();
 

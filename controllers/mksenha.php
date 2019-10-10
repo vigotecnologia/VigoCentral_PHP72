@@ -17,21 +17,19 @@ class Mksenha extends Controller {
 
         // Instancia a classe de MODEL relacionado
         require 'models/mksenha_model.php'; // O MODEL não é "auto-carregado" como as libs
-        $mksenha_model = new MkSenha_Model();
+        $mksenha_model2 = new MkSenha_Model();
 
-        // Processar a troca da senha
-        //$senha_anterior = $mksenha_model->Pega_MkSenha($_SESSION['ID_CLIENTE']);
         // Consulta os mk_logins do cliente
-        $query = $mksenha_model->Lista_MkLogins($_SESSION['ID_CLIENTE']);
+        $query_lista = $mksenha_model2->Lista_MkLogins($_SESSION['ID_CLIENTE']);
 
         if (($senhaAtual != '') && ($senhaNova != '') && ($senhaConfirma != '')) {
 
-            if (md5($senhaAtual) == $query[0][value]):
+            if (md5($senhaAtual) == $query_lista[0][Value]):
 
                 if ($senhaNova == $senhaConfirma):
 
                     // Troca a senha
-                    $mksenha_model->Troca_MkSenha($_SESSION['ID_CLIENTE'], $mkLogin, md5($senhaNova));
+                    $mksenha_model2->Troca_MkSenha($_SESSION['ID_CLIENTE'], $mkLogin, $senhaNova);
 
                     // Exibe a mensagem informando que a senha foi alterada
                     @session_start();
@@ -69,7 +67,7 @@ class Mksenha extends Controller {
             endif;
         }
 
-        $this->view->lista_mklogins = $query;
+        $this->view->lista_mklogins2 = $query_lista;
 
         // Renderiza a view relacionada
         $this->view->renderJQ('mksenha/index');
