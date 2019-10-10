@@ -9,7 +9,7 @@ class Envia_Model extends Model {
         $row = $this->read2($query);
         $this->Desconecta();
 
-        return $row; // Array, [0] = Login, [1] = Senha
+        return $row;
     }
 }
 ?>
