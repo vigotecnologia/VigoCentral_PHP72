@@ -1,13 +1,12 @@
-<!DOCTYPE html>
 <?php
 require_once 'libs/Functions.php';
 $funcoes = new Functions(); // Instancia a classe de FUNÇÕES BÁSICAS
 
 if (!isset($this->config->tema)) {
-  $this->config = new stdClass();
-  $this->config->tema = "verde";
+   $this->config = new stdClass();
+   $this->config->tema = "verde";
 }
-?>
+?><!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br">
     <head>
         <meta name="robots" content="noindex, nofollow">

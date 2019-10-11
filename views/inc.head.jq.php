@@ -1,9 +1,8 @@
-<!DOCTYPE html>
 <?php
 require_once 'libs/Functions.php';
 $funcoes = new Functions(); // Instancia a classe de FUNÇÕES BÁSICAS
 @session_start();
-?>
+?><!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br">
     <head>
         <meta name="robots" content="noindex, nofollow">
@@ -13,8 +12,7 @@ $funcoes = new Functions(); // Instancia a classe de FUNÇÕES BÁSICAS
                 <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no" />
                 <meta content="Vigo Tecnologia" name="Title" />
                 <meta content="Jorge Valdez" name="Author" />
-                <title><?php $fantasia = explode(' ', utf8_decode(utf8_encode($_SESSION['FANTASIA'])));
-echo $fantasia[0]; ?> - Central do Cliente</title>
+                <title><?php $fantasia = explode(' ', utf8_decode(utf8_encode($_SESSION['FANTASIA']))); echo $fantasia[0]; ?> - Central do Cliente</title>
                 <link rel="shortcut icon" href="<?php echo $funcoes->baseProjeto(); ?>/public/images/favicon.ico" type="image/x-icon">
                     <link rel="icon" href="<?php echo $funcoes->baseProjeto(); ?>/public/images/favicon_32.png" sizes="32x32">
                         <link rel="stylesheet" type="text/css" href="<?php echo $funcoes->baseProjeto(); ?>/public/css/default.css" />
@@ -22,8 +20,7 @@ echo $fantasia[0]; ?> - Central do Cliente</title>
                         <link rel="stylesheet" type="text/css" href="<?php echo $funcoes->baseProjeto(); ?>/public/css/style_<?php echo $_SESSION['CENTRAL_TEMA']; ?>.css" />
                         <link href="<?php echo $funcoes->baseProjeto(); ?>/public/css/fonts.css?family=Open+Sans:300,400,600,700,800" rel="stylesheet" type="text/css">
                             <script type="text/javascript" src="<?php echo $funcoes->baseProjeto(); ?>/public/js/jquery.js"></script>
-                            <script>document.addEventListener("touchstart", function () {
-                    }, true);</script>
+                            <script>document.addEventListener("touchstart", function () { }, true);</script>
                             <script>
                                 function fecha(id) {
                                     document.getElementById(id).style.display = 'none';

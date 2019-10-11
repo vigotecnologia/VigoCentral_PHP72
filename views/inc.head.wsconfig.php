@@ -1,9 +1,8 @@
-<!DOCTYPE html>
 <?php
 require_once 'libs/Functions.php';
 $funcoes = new Functions(); // Instancia a classe de FUNÇÕES BÁSICAS
 @session_start();
-?>
+?><!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br">
     <head>
         <meta name="robots" content="noindex, nofollow">
@@ -22,8 +21,7 @@ $funcoes = new Functions(); // Instancia a classe de FUNÇÕES BÁSICAS
                         <link href="<?php echo $funcoes->baseProjeto(); ?>/public/css/fonts.css?family=Open+Sans:300,400,600,700,800" rel="stylesheet" type="text/css">
                             <script type="text/javascript" src="<?php echo $funcoes->baseProjeto(); ?>/public/js/jquery.js"></script>
                             <script type="text/javascript" src="<?php echo $funcoes->baseProjeto(); ?>/public/js/jquery.maskMoney.js"></script>
-                            <script>document.addEventListener("touchstart", function () {
-                    }, true);</script>
+                            <script>document.addEventListener("touchstart", function () { }, true);</script>
                             <script>
                                 function fecha(id) {
                                     document.getElementById(id).style.display = 'none';
