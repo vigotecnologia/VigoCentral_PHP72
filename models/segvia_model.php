@@ -15,7 +15,7 @@ class Segvia_Model extends Model {
     public function Pesquisa_Boleto($id, $idcliente) {
 
         $this->Conecta();
-        $query = "SELECT id, id_banco, id_cliente, id_empresa, nome, cpfcgc, endereco, cidade, bairro, uf, cep, referencia, numero, nossonumero, seunumero, emissao, vencimento, valor, obs, grupo_cliente, plano_conta, pago, pago_agencia, pago_data, pago_valor, pago_credito, pago_tarifa, pago_local, linhadigitavel, codigobarras, banco, agencia, conta, convenio, complemento, numerobanco, localpagamento, codigocedente, carteira, ativo, considerado, enviado, nf_arquivo, nf_numero, nf_situacao FROM financeiro_boletos WHERE id='" . $id . "' AND id_cliente='" . $idcliente . "'";
+        $query = "SELECT id, id_banco, id_cliente, id_empresa, nome, cpfcgc, endereco, cidade, bairro, uf, cep, referencia, numero, nossonumero, seunumero, emissao, vencimento, valor, obs, grupo_cliente, plano_conta, pago, pago_agencia, pago_data, pago_valor, pago_credito, pago_tarifa, pago_local, linhadigitavel, codigobarras, banco, agencia, conta, convenio, complemento, numerobanco, localpagamento, codigocedente, carteira, ativo, considerado, enviado, nf_arquivo, nf_numero, nf_situacao FROM financeiro_boletos WHERE id='" . $id . "' AND id_cliente='" . $idcliente . "' AND ativo='S'";
         $row = $this->read2($query);
         $this->Desconecta();
 

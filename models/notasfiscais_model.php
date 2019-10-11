@@ -13,7 +13,7 @@ class NotasFiscais_Model extends Model {
             $cnpjcpf = "000" . $cnpjcpf;
 
         $this->Conecta();
-        $query = "SELECT * FROM financeiro_nf_arquivo_mestre WHERE codigo='" . $cliente . "' AND cnpjcpf='" . $cnpjcpf . "' AND situacao='N' ORDER BY ano_mes DESC LIMIT 12";
+        $query = "SELECT * FROM financeiro_nf_arquivo_mestre WHERE codigo='" . $cliente . "' AND cnpjcpf='" . $cnpjcpf . "' AND situacao='N' ORDER BY ano_mes DESC";
         $row = $this->read($query);
         $this->Desconecta();
 
