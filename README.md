@@ -1,9 +1,6 @@
 # VigoCentral_PHP72
-Central do assinante para os usuários cadastrados no Sistema Vigo.
 
 ![screenshot](http://downloads.vigo.com.br/downloads/central-screenshot.png)
-
-*** Atualização para execução no PHP7 (CentOS 8) ***
 
 Revisão: 11/10/2019: Rafael Labiak Olivastro
 
