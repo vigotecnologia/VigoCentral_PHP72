@@ -1,9 +1,12 @@
 # VigoCentral_PHP72
-*** Atualização para execução no PHP 7.2.11 ou superior (CentOS 8) ***
-
-Revisão: 10/10/2019: Rafael Labiak Olivastro
-
 Central do assinante para os usuários cadastrados no Sistema Vigo, permitindo aos clientes as seguintes opções:
+
+![screenshot](http://downloads.vigo.com.br/downloads/central-screenshot.png)
+![License](https://img.shields.io/github/license/yuk7/CentWSL.svg?style=flat-square)
+
+*** Atualização para execução no PHP7 (CentOS 8) ***
+
+Revisão: 11/10/2019: Rafael Labiak Olivastro
 
 - Impressão da segunda-via do boleto da mensalidade.
 - Impressão da nota fiscal de comunicação/telecomunicação.
