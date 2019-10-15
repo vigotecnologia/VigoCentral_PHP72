@@ -6,8 +6,6 @@ class Contrato extends Controller {
 
         parent::__construct();
 
-        @session_start();
-
         // Verifica se existe uma seção criada
         $this->funcoes->verificaSessao();
 
