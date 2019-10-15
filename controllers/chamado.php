@@ -5,6 +5,7 @@ class Chamado extends Controller {
     function __construct() {
 
         parent::__construct();
+
         session_start();
 
         // Verifica se existe uma seção criada
@@ -76,7 +77,6 @@ class Chamado extends Controller {
             $abrirAtendimento = $suporte_model->Abrir_Atendimento($id_empresa, $id_cliente, $id_funcionario, $desc_funcionario, $nome, $endereco, $bairro, $cep, $cidade, $uf, $telefone, $celular, $email, $numero_os, $dt_abertura, $dt_agendamento, $h_abertura, $h_agendamento, $descricao, $historico, $id_tatendimento, $desc_tatendimento, $aberto_por);
 
             // Exibe a mensagem informando que o atendimento foi aberto 
-            @session_start();
             $_SESSION['ALERTA_TIPO'] = 'sucesso';
             $_SESSION['ALERTA_TITULO'] = 'TUDO CERTO: ATENDIMENTO ENVIADO';
             $_SESSION['ALERTA_MENSAGEM'] = 'Seu atendimento foi enviado com sucesso.';
@@ -87,7 +87,6 @@ class Chamado extends Controller {
         } else {
 
             // Exibe a mensagem de falha na abertura do atendimento
-            @session_start();
             $_SESSION['ALERTA_TIPO'] = 'erro';
             $_SESSION['ALERTA_TITULO'] = 'ERRO: FALHA AO ABRIR O ATENDIMENTO';
             $_SESSION['ALERTA_MENSAGEM'] = 'Ocorreu um erro ao abrir seu atendimento. Por favor, tente novamente !';

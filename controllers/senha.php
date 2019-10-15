@@ -67,7 +67,6 @@ class Senha extends Controller {
 
             // Renderiza a view relacionada
             $this->view->login = $_SESSION['LOGIN'];
-
             $this->view->renderJQ('senha/index');
         }
     }
