@@ -1,11 +1,8 @@
 <?php
-
 require_once 'libs/Functions.php';
+
 $funcoes = new Functions(); // Instancia a classe de FUNÇÕES BÁSICAS
 $funcoes->verificaSessao();
-
-// Cria a sessão
-@session_start();
 
 // Cria a variável PDF
 $title = $_SESSION['DESCRICAO'] . ' - ' . strtoupper($_SESSION['LOGIN']);
