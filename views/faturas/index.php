@@ -3,34 +3,24 @@ require_once 'libs/Functions.php';
 $funcoes = new Functions(); // Instancia a classe de FUNÇÕES BÁSICAS
 $funcoes->verificaSessao();
 ?>
-
-<!-- SECAO: MINHAS FATURAS -->
-<section class="dados">			
+<section class="dados">
     <div class="container">
         <h1>Minhas Faturas</h1>
-
         <ul class="caminho">
             <span>Voc&ecirc; est&aacute; em: </span>
             <li class="target"><a href="core">HOME</a></li>
             <li class="target"><a href="financeiro">FINANCEIRO</a></li>
             <li class="target">MINHAS FATURAS</li>
         </ul>
-
         <p>O quadro abaixo segue um padr&atilde;o l&oacute;gico de demonstra&ccedil;&atilde;o dos &uacute;ltimos 12 (doze) boletos emitidos para sua conta e permite um controle de f&aacute;cil visualiza&ccedil;&atilde;o das cobran&ccedil;as por data.</p>
         <p>Possui uma legenda colorida para ajudar a compreender a sua situa&ccedil;&atilde;o atual. Uma forma inteligente de administrar a sua conta.</p>
-
         <div class="lColorDark legenda flaticon-legenda">&nbsp;Boletos pagos</div><div class="separador">&nbsp;</div><div class="lColorRed legenda flaticon-legenda">&nbsp;Boletos em aberto</div>
-
         <h3>Boletos Banc&aacute;rios</h3>
-
         <?php if (empty($this->lista_boletos)) { ?>
-
             <div class="tHeader">
                 <span class="align-c vazio">&nbsp;Nenhum boleto bancário emitido para este cliente !</span>
             </div>
-
         <?php } else { ?>
-
             <ul class="tabela">
                 <div class="tHeader">
                     <li class="tRow">
@@ -44,7 +34,6 @@ $funcoes->verificaSessao();
                     </li>
                 </div>
                 <div class="tBody">
-
                     <?php
                     $total_boletos = 0;
                     $valor_total = 0;
@@ -61,7 +50,7 @@ $funcoes->verificaSessao();
                             $data_pgto = '';
 
                         $valor_pago = number_format($boletos['pago_valor'], 2, ',', '.');
-                        //if($valor_pago == "0,00") $valor_pago = '';
+
                         if ($valor_pago <= 0)
                             $valor_pago = '';
 
@@ -85,9 +74,7 @@ $funcoes->verificaSessao();
                             <span class="align-r"><?php echo $btnBoletos; ?></span>
                         </li>
                     <?php } ?>
-
                 </div>
-
                 <div class="tHeader">
                     <li class="tRow">
                         <span class="align-l">Boletos: <strong><?php echo ($total_boletos < 10) ? '0' . $total_boletos : $total_boletos; ?></strong></span>
@@ -99,11 +86,8 @@ $funcoes->verificaSessao();
                         <span class="align-l">&nbsp;</span>
                     </li>
                 </div>
-
             </ul>
-
 <?php } ?>
-
         <div class="clear"></div>
     </div><div class="clear"></div>
-</section><!-- /FIM - SECAO: MINHAS FATURAS -->
+</section>
