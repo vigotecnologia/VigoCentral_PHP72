@@ -18,12 +18,9 @@
             <img class="img_ico_topo" width="200" height="90" title="<?php echo $this->empresa->fantasia; ?>" src="data:image/jpeg;base64,<?php echo base64_encode($this->empresa->foto); ?>" />
         </div>
     <?php endif; ?>
-
     <h1>Acesse sua conta e tenha acesso aos boletos, notas fiscais e extrato de conex&otilde;es.</h1>
-
     <div class="boxLogin">
         <div class="container">
-
             <?php
             @session_start();
 
@@ -46,7 +43,6 @@
             @session_destroy();
             ?>
             <div style="display:none;" class="messageBox" id="messageBox"></div>
-
             <form name="formLogin" action="logar" method="post">
                 <label>
                     <span>Login</span>
