@@ -7,10 +7,7 @@ $funcoes->verificaSessao();
 <title>NOTA FISCAL <?php echo $this->mestre->numero; ?></title>
 <link rel="stylesheet" type="text/css" href="<?php echo BASE; ?>/public/css/notafiscal.css" />
 <link rel="stylesheet" type="text/css" href="<?php echo BASE; ?>/public/css/nf_print.css" media="print" />
-
-<!-- SECAO: NOTA FISCAL -->
-<section>			
-
+<section>
     <table border="0" style="width:100%;height:100%;margin:0 auto;" cellpadding="0" cellspacing="0">
         <tr style="height:150px;">
             <td>
@@ -34,7 +31,6 @@ $funcoes->verificaSessao();
                             <span><strong>Via &Uacute;NICA</strong></span>
                         </td>
                     </tr>
-
                     <tr class="lineExtra">
                         <td style="text-align:center;">
                             <span>Telefone: <?php echo $this->empresa->telefone; ?></span><br />
@@ -76,13 +72,11 @@ $funcoes->verificaSessao();
                 </table>
             </td>
         </tr>
-
         <tr>
             <td style="height:5px;">
                 <hr>
             </td>
         </tr>
-
         <tr>
             <td style="vertical-align:top;height:380px;">
                 <table class="txtSizeNormal" border="0" style="width:100%;margin:0 auto;" cellpadding="0" cellspacing="0">
@@ -93,9 +87,7 @@ $funcoes->verificaSessao();
                         <th style="width:100px;text-align:right;">Unit&aacute;rio</th>
                         <th style="width:100px;text-align:right;">Valor</th>
                     </tr>
-
                     <?php foreach ($this->nota_fiscal_itens as $nota_fiscal_itens): ?>
-
                         <tr>
                             <td style="text-align:left;"><?php echo utf8_decode(utf8_encode($nota_fiscal_itens['desc_servico'])); ?></td>
                             <td style="width:60px;text-align:center;"><?php echo $funcoes->numero($nota_fiscal_itens['quant_contratada']); ?></td>
@@ -103,16 +95,13 @@ $funcoes->verificaSessao();
                             <td style="width:100px;text-align:right;"><?php echo $funcoes->valor($nota_fiscal_itens['total']); ?></td>
                             <td style="width:100px;text-align:right;"><?php echo $funcoes->valor($nota_fiscal_itens['total']); ?></td>
                         </tr>
-
                     <?php endforeach; ?>
-
                 </table>
             </td>
         </tr>
         <tr style="height:150px;">
             <td>
                 <table class="txtSizeNormal" border="0" style="width:100%;margin:0 auto;" cellpadding="0" cellspacing="0">
-
                     <?php if ($this->config->nf_ibpt != '0,00'): ?>
                         <tr style="height:35px;">
                             <td class="negrito" style="vertical-align:top;text-align:center;">
@@ -122,13 +111,9 @@ $funcoes->verificaSessao();
                                 <span>e Municipal R$ </span>
                                 <span><?php echo $funcoes->calcIBPT($this->mestre->valor_total, $this->config->nf_ibpt_municipal); ?> </span>
                                 <span>(<?php echo $this->config->nf_ibpt_municipal; ?>%) - Fonte: IBPT - Chave ca7gi3</span>
-
-
-                                <!--Valor aproximado do Tributo Federal R$ ... (13,45%) e Municipal R$ ... (2,00%) - FONTE IBPT - Chave ca7gi3 -->
                             </td>
                         </tr>
                     <?php endif; ?>
-
                     <?php if ($this->config->nf_boleto == 'S'): ?>
                         <tr style="height:40px;">
                             <td class="negrito" style="vertical-align:top;text-align:left;">
@@ -137,7 +122,6 @@ $funcoes->verificaSessao();
                             </td>
                         </tr>
                     <?php endif; ?>
-
                     <tr>
                         <td>
                             <table class="txtSizeNormal" border="0" style="border:1px solid #000;width:100%;margin:0 auto;" cellpadding="0" cellspacing="0">
@@ -172,7 +156,6 @@ $funcoes->verificaSessao();
                             </table>
                         </td>
                     </tr>
-
                     <?php if ($this->config->nf_optante == 'S'): ?>
                         <tr style="height:60px;">
                             <td class="negrito" style="text-align:center;">
@@ -185,7 +168,6 @@ $funcoes->verificaSessao();
                             <td style="text-align:left;">&nbsp;</td>
                         </tr>
                     <?php endif; ?>
-
                     <tr>
                         <td>
                             <table class="txtSizeNormal" border="0" style="border:1px solid #000;width:100%;margin:0 auto;" cellpadding="0" cellspacing="0">
@@ -202,7 +184,6 @@ $funcoes->verificaSessao();
                             </table>
                         </td>
                     </tr>
-
                     <?php if ($this->config->nf_fust == 'S'): ?>
                         <tr style="height:35px;">
                             <td class="txtSizeNormal" style="text-align:center;">
@@ -210,7 +191,6 @@ $funcoes->verificaSessao();
                             </td>
                         </tr>
                     <?php endif; ?>
-
                     <?php if ($this->config->nf_regime != ''): ?>
                         <tr style="height:30px;">
                             <td class="txtSizeNormal negrito" style="text-align:center;">
@@ -218,7 +198,6 @@ $funcoes->verificaSessao();
                             </td>
                         </tr>
                     <?php endif; ?>
-
                     <?php if ($this->config->nf_mensagem != ''): ?>
                         <tr style="height:35px;">
                             <td class="txtSizeNormal" style="text-align:center;">
@@ -226,15 +205,11 @@ $funcoes->verificaSessao();
                             </td>
                         </tr>
                     <?php endif; ?>
-
                 </table>
             </td>
         </tr>
     </table>
-
     <?php if ($this->mestre->situacao == 'S'): ?>
         <div class="cancelada">CANCELADA</div>
     <?php endif; ?>
-
 </section>
-<!-- /FIM - SECAO: NOTA FISCAL -->
