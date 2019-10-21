@@ -1,5 +1,4 @@
 <div class="telaLogin">
-
     <?php if ($this->empresa->foto == ''): ?>
         <div class="login_topo">
             <div class="box_logo">
@@ -19,13 +18,9 @@
             <img class="img_ico_topo" width="200" height="90" title="<?php echo $this->empresa->fantasia; ?>" src="data:image/jpeg;base64,<?php echo base64_encode($this->empresa->foto); ?>" />
         </div>
     <?php endif; ?>
-
-
     <h1>Recupera&ccedil;&atilde;o da senha de acesso.</h1>
-
     <div class="boxLogin">
         <div class="container">
-
             <?php
             @session_start();
 
@@ -48,25 +43,19 @@
             @session_destroy();
             ?>
             <div style="display:none;" class="messageBox" id="messageBox"></div>
-
             <form name="formLogin" action="recupera" method="post">
-
                 <label>
                     <span>Login</span>
                     <input type="text" class="input" name="txtLogin" id="login" size="20" maxlength="30" autofocus />
                 </label>
-
                 <label style="width:148px;display:inline-block;">
                     <input type="hidden" required="required" name="txtRecuperar" id="txtModSenha" value="RecuperarSenha" maxlength="14" />
                     <input type="submit" class="botaoLogar botaoRecuperar" value="Recuperar" />
                 </label>
-
                 <label style="width:148px;display:inline-block;">
                     <button type="button" class="botaoLogar botaoRecuperar" onClick="window.location = 'index'" value="Cancelar" />Cancelar</button>
                 </label>
-
             </form>
-            <!--<span class="recupera botaoLogar"><a href="index" class="forgot_pass">Logar-se na central</a></span>-->
         </div>
     </div>
 </div>
