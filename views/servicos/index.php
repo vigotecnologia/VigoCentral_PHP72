@@ -14,15 +14,11 @@ $funcoes->verificaSessao();
         </ul>
         <p>O quadro abaixo segue um padr&atilde;o l&oacute;gico de demonstra&ccedil;&atilde;o dos servi&ccedil;os contratados e seus respectivos valores.</p>
         <h3>Servi&ccedil;os Contratados</h3>
-
         <?php if (empty($this->lista_servicos)) { ?>
-
             <div class="tHeader">
                 <span class="align-c vazio">&nbsp;Nenhum servi&ccedil;o contratado !</span>
             </div>
-
         <?php } else { ?>
-
             <ul class="tabela">
                 <div class="tHeader">
                     <li class="tRow">

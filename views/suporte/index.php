@@ -2,10 +2,6 @@
 require_once 'libs/Functions.php';
 $funcoes = new Functions(); // Instancia a classe de FUNÇÕES BÁSICAS
 $funcoes->verificaSessao();
-?>
-
-<?php
-@session_start();
 
 if (isset($_SESSION['ALERTA_MENSAGEM']) AND ( $_SESSION['ALERTA_MENSAGEM'] != NULL)) {
     echo "<div class='messageBox' id='messageBox'><span class='close' onclick=\"javascript:document.getElementById('messageBox').className='fecharMessage';\">&nbsp;</span><div class='" . $_SESSION['ALERTA_TIPO'] . "'><p><strong>" . $_SESSION['ALERTA_TITULO'] . "...</strong><br />" . $_SESSION['ALERTA_MENSAGEM'] . "</p></div></div>";
@@ -20,60 +16,39 @@ unset($_SESSION['ALERTA_TITULO']);
 unset($_SESSION['ALERTA_MENSAGEM']);
 ?>
 <div style="display:none;" class="messageBox" id="messageBox"></div>
-
-<!-- SECAO: ATENDIMENTOS -->
 <section class="dados">
-
     <div class="container">
         <h1>Meus Atendimentos</h1>
-
         <ul class="caminho">
             <span>Voc&ecirc; est&aacute; em: </span>
             <li class="target"><a href="core">HOME</a></li>
             <li class="target"><a href="conectividade">CONECTIVIDADE</a></li>
             <li class="target">MEUS ATENDIMENTOS</li>
         </ul>
-
         <p>O quadro abaixo segue um padr&atilde;o l&oacute;gico de demonstra&ccedil;&atilde;o dos &uacute;ltimos 12 (doze) chamados de atendimento para sua conta e permite um controle de f&aacute;cil visualiza&ccedil;&atilde;o por situa&ccedil;&atilde;o.</p>
-
 <?php if ($_SESSION['CENTRAL_MOD_ABRIR_ATENDIMENTO'] == 'S'): ?>
-            <!-- ABRIR ATENDIMENTO -->
             <a style="position:relative;" class="botao btnTicket btnTicketExtra" id="abrirChamado" href="#abrirAtendimento">Abrir Novo Atendimento</a>
 <?php endif; ?>
-
-        <!-- BOX: DETALHES DO ACESSO -->   
         <div style="display:none;" class="boxExtrato" id="abrirAtendimento">
-
             <span class="close" title="Fechar">&nbsp;</span>
-
             <div class="info" id="boxAtendimento">
-
                 <h2 class="align-c">Abrir Novo Atendimento...</h2>
-
-                <!-- FORMULARIO -->
                 <div class="formAtendimento">
-
                     <form name="formAtendimento" action="chamado" method="post">
-
                         <label id="lblAssunto" for="txtAssunto">
                             <span>Assunto:</span>
                             <input type="text" required="required" name="txtAssunto" id="txtAssunto" class="txtAssunto" maxlength="30" autofocus />
                         </label>
-
                         <label for="txtTipo" class="optTipo">
                             <span>Tipo:</span>
                             <select name="txtTipo" id="txtTipo" required="required">
-
                                 <option value="" selected="selected" disabled="disabled">Selecione&nbsp;&nbsp;</option>
                                 <option value="" disabled="disabled">&nbsp;</option>
-
 <?php foreach ($this->lista_tipos_atendimentos as $tipos_atendimentos) { ?>
                                     <option value="<?php echo $tipos_atendimentos['id']; ?> - <?php echo $tipos_atendimentos['descricao']; ?>"><?php echo $tipos_atendimentos['descricao']; ?></option>
                                 <?php } ?>
-
                             </select>
                         </label>
-
                         <label id="lblMensagem" for="txtMensagem" class="lblMensagem">
                             <span>Mensagem:</span>
                             <textarea class="input textarea" name="txtMensagem" id="txtMensagem" cols="40" rows="5" required="required" onKeyUp="blocTexto(this.value, this.id, 500, contaLimite.id)"></textarea>
@@ -81,28 +56,17 @@ unset($_SESSION['ALERTA_MENSAGEM']);
                                 <div id="statusLimite" class="span">Caracteres restantes:&nbsp;</div><div name="contaLimite" id="contaLimite" class="span">500</div>
                             </div>
                         </label>
-
                         <input class="botao btnExtra" type="submit" value="Enviar" />
-
                     </form>
-
-                </div><!-- /FIM - FORMULARIO -->
-
+                </div>
             </div>
-
-        </div><!-- /FIM - BOX: DETALHES DO ACESSO -->
-        <!-- /FIM - ABRIR ATENDIMENTO -->
-
+        </div>
         <h3>Lista de Atendimentos</h3>
-
 <?php if (empty($this->lista_atendimentos)) { ?>
-
             <div class="tHeader">
                 <span class="align-c vazio">&nbsp;No momento n&atilde;o h&aacute; nenhum chamado de atendimento !</span>
             </div>
-
 <?php } else { ?>
-
             <ul class="tabela">
                 <div class="tHeader">
                     <li class="tRow">
@@ -116,7 +80,6 @@ unset($_SESSION['ALERTA_MENSAGEM']);
                     </li>
                 </div>
                 <div class="tBody">
-
     <?php
     $total_chamados = 0;
 
@@ -141,16 +104,12 @@ unset($_SESSION['ALERTA_MENSAGEM']);
                             <span data-th="Tipo" class="align-l maiusculo"><?php echo $atendimento['desc_tatendimento']; ?></span>
                             <span data-th="Assunto" class="align-l maiusculo"><?php echo $atendimento['descricao']; ?></span>
                             <span data-th="Situa&ccedil;&atilde;o" class="align-l maiusculo"><?php echo $atendimento['situacao']; ?></span>
-
                             <span style="width:100px;position:relative;" class="align-r">
                                 <a class="botao btnDefault" id="<?php echo $atendimento['id'] ?>" href="#box<?php echo $atendimento['id'] ?>"><div class="flaticon-busca align-l"><span class="print">&nbsp;Visualizar</span></div></a>
                             </span>
-
                             <span style="width:95px;position:relative;" class="align-c">
                                 <a class="botao2 btnDefault" id="<?php echo $atendimento['id'] ?>" href="#anexo<?php echo $atendimento['id'] ?>"><div class="flaticon-pasta align-r"><span class="print">&nbsp;Anexos</span></div></a>
                             </span>
-
-                            <!-- BOX: DETALHES DO ATENDIMENTO -->   
                             <div style="display:none;" class="boxExtrato" id="box<?php echo $atendimento['id']; ?>">
                                 <span class="close" title="Fechar">&nbsp;</span>
                                 <div class="info" id="info<?php echo $atendimento['id']; ?>">
@@ -162,9 +121,6 @@ unset($_SESSION['ALERTA_MENSAGEM']);
                                     </p>
                                 </div>
                             </div>
-                            <!-- /FIM - BOX: DETALHES DO ATENDIMENTO -->
-
-                            <!-- BOX: ANEXOS -->   
                             <div style="display:none;" class="boxExtrato" id="anexo<?php echo $atendimento['id']; ?>">
                                 <span class="close" title="Fechar">&nbsp;</span>
                                 <div class="info" id="info2<?php echo $atendimento['id']; ?>" style="overflow-y:scroll;">
@@ -197,16 +153,11 @@ unset($_SESSION['ALERTA_MENSAGEM']);
         ?>
                                 </div>
                             </div>
-                            <!-- /FIM - BOX: ANEXOS -->
                         </li>
-
     <?php } ?>
-
                 </div>
             </ul>
-
                 <?php } ?>
-
         <div class="clear"></div>
     </div><div class="clear"></div>
-</section><!-- /FIM - SECAO: ATENDIMENTOS -->
+</section>
