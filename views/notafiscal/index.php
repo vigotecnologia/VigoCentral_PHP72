@@ -1,10 +1,10 @@
 <?php
 require_once 'libs/Functions.php';
+
 $funcoes = new Functions(); // Instancia a classe de FUNÇÕES BÁSICAS
 $funcoes->verificaSessao();
-?>
-<?php define('BASE', '/central'); ?>
-<title>NOTA FISCAL <?php echo $this->mestre->numero; ?></title>
+
+define('BASE', '/central'); ?><title>NOTA FISCAL <?php echo $this->mestre->numero; ?></title>
 <link rel="stylesheet" type="text/css" href="<?php echo BASE; ?>/public/css/notafiscal.css" />
 <link rel="stylesheet" type="text/css" href="<?php echo BASE; ?>/public/css/nf_print.css" media="print" />
 <section>
