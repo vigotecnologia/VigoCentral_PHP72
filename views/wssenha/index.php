@@ -15,8 +15,7 @@ $_SESSION['ALERTA_MENSAGEM'] = NULL;
 unset($_SESSION['ALERTA_TIPO']);
 unset($_SESSION['ALERTA_TITULO']);
 unset($_SESSION['ALERTA_MENSAGEM']);
-?>
-<section class="wsconfig" style="border:1px solid transparent;padding:0px;margin:0 auto;">
+?><section class="wsconfig" style="border:1px solid transparent;padding:0px;margin:0 auto;">
     <div class="containers" style="border:none;padding:0px;margin:0;">
         <h1 class="align-c">Ol&aacute;, TUDO BEM ?</h1>
         <p><strong>Aviso Legal</strong><br />Antes de utilizar a central de configura&ccedil;&atilde;o, &eacute; necess&aacute;rio que efetue a troca da senha padr&atilde;o.<br />
