@@ -2,7 +2,7 @@
 
 ![screenshot](http://downloads.vigo.com.br/downloads/central-screenshot.png)
 
-Revisão: 11/10/2019: Rafael Labiak Olivastro
+Última Revisão: 22/10/2019: Rafael Labiak Olivastro
 
 Opções:
 
