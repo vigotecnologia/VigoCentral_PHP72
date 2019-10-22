@@ -14,8 +14,7 @@ $_SESSION['ALERTA_MENSAGEM'] = NULL;
 unset($_SESSION['ALERTA_TIPO']);
 unset($_SESSION['ALERTA_TITULO']);
 unset($_SESSION['ALERTA_MENSAGEM']);
-?>
-<div style="display:none;" class="messageBox" id="messageBox"></div>
+?><div style="display:none;" class="messageBox" id="messageBox"></div>
 <section class="dados">
     <div class="container">
         <h1>Alterar Senha</h1>

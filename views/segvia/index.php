@@ -103,8 +103,7 @@ function montalinhadigitavel($valor) {
     imagestring($img, 2, 0, 0, $valor, $cor_texto);
     imagepng($img);
 }
-?>
-<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 4.0 Transitional//EN'>
+?><!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 4.0 Transitional//EN'>
 <html>
     <head>
         <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
@@ -130,9 +129,7 @@ function montalinhadigitavel($valor) {
                     </div>
                 </td>
             </tr>
-
         </table>
-
         <table class="instrucoes" border="0" style="height:90px;">
             <tr>
                 <td style="width:100px;text-align:center;">
@@ -145,7 +142,6 @@ function montalinhadigitavel($valor) {
                 </td>
             </tr>
         </table>
-
         <table>
             <tbody>
                 <tr>
