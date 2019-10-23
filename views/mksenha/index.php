@@ -26,8 +26,7 @@ unset($_SESSION['ALERTA_MENSAGEM']);
             <li class="target">SENHA DE CONEX&Atilde;O</li>
         </ul>
         <h3>Altera&ccedil;&atilde;o da Senha de Conex&atilde;o</h3>
-<?php 
-if (!empty($this->lista_mklogins2)) { ?>
+<?php if (!empty($this->lista_mklogins2)) { ?>
             <div class="formSenha">
                 <form name="formSenha" action="mksenha" method="post">
                     <label for="txtLogin">

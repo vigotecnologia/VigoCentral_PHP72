@@ -2,7 +2,6 @@
 
 @session_start();
 
-// Limpa as variáveis usadas em toda a aplicação
 $_SESSION['ID_CLIENTE'] = NULL;
 $_SESSION['CPFCNPJ'] = NULL;
 $_SESSION['LOGIN'] = NULL;
@@ -47,12 +46,9 @@ unset($_SESSION['CENTRAL_MOD_ATENDIMENTOS']);
 unset($_SESSION['CENTRAL_MOD_ABRIR_ATENDIMENTO']);
 unset($_SESSION['CENTRAL_MOD_MKSENHA']);
 
-// Remove todas as variáveis de sessão
 @session_unset();
 
-// Destrói a sessão
 @session_destroy();
 
-// Redireciona para a página de login
 header("Location: login");
 ?>

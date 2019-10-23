@@ -12,6 +12,7 @@ class GerarBarcode {
         $hight = 50;
         $this->into = $into;
         $this->file = $filename;
+
         for ($count1 = 9; $count1 >= 0; $count1--) {
             for ($count2 = 9; $count2 >= 0; $count2--) {
                 $count = ($count1 * 10) + $count2;
@@ -22,6 +23,7 @@ class GerarBarcode {
                 $this->digitArray[$count] = $text;
             }
         }
+
         $img = imagecreate(100, 73);
         $cl_black = imagecolorallocate($img, 0, 0, 0);
         $cl_white = imagecolorallocate($img, 255, 255, 255);
@@ -31,6 +33,7 @@ class GerarBarcode {
         imagefilledrectangle($img, 2, 5, 2, 65, $cl_white);
         imagefilledrectangle($img, 3, 5, 3, 65, $cl_black);
         imagefilledrectangle($img, 4, 5, 4, 65, $cl_white);
+
         $thin = 1;
 
         if (substr_count(strtoupper($_SERVER['SERVER_SOFTWARE']), "WIN32")) {
@@ -98,6 +101,7 @@ class GerarBarcode {
             header("Content-type: image/gif");
             imagegif($image);
         }
+
         imagedestroy($image);
     }
 }

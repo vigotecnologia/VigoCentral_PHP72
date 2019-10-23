@@ -55,7 +55,7 @@ $funcoes->verificaSessao();
                                                     </form>
                                                 </span>
                                                 </li>
-    <?php } ?>
+                    <?php } ?>
                                     </div>
                                     <div class="tHeader">
                                         <li class="tRow">
@@ -70,7 +70,7 @@ $funcoes->verificaSessao();
                                     </ul>
                                     <p><strong>Aviso Legal</strong><br />Esse extrato &eacute; para consulta particular do cliente e a utiliza&ccedil;&atilde;o do mesmo para qualquer outra finalidade ser&aacute; de responsabilidade exclusiva do cliente.</p>
                                     <p>Caso voc&ecirc; verifique a utiliza&ccedil;&atilde;o indevida de sua senha, providencie a altera&ccedil;&atilde;o imediata ou entre em contato com o Provedor de Acesso.</p>
-<?php } ?>
+        <?php } ?>
                                 <div class="clear"></div>
                             </div><div class="clear"></div>
                         </section>

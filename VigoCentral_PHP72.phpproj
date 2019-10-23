@@ -503,4 +503,7 @@
     <Folder Include="views\wssenha" />
     <Folder Include="views" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="favicon.ico" />
+  </ItemGroup>
 </Project>

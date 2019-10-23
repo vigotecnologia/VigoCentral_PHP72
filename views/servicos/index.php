@@ -27,7 +27,7 @@ $funcoes->verificaSessao();
                     </li>
                 </div>
                 <div class="tBody">
-                    <?php
+                <?php
                     $total_servicos = 0;
                     $valor_total = 0;
 
@@ -35,13 +35,13 @@ $funcoes->verificaSessao();
 
                         $total_servicos ++;
                         $valor_total += $servicos['total'];
-                        ?>
+                ?>
                         <li class="tRow">
                             <span data-th="Descri&ccedil;&atilde;o" class="align-l maiusculo"><div class="lColorAcqua legenda flaticon-checkedCirc">&nbsp;<?php echo utf8_decode(utf8_encode($servicos['descricao'])); ?></div></span>
                             <span data-th="Valor" class="align-r mobile"><?php echo number_format($servicos['total'], 2, ',', '.'); ?></span>
                             <span class="align-r noVisible">&nbsp;</span>
                         </li>
-    <?php } ?>
+                    <?php } ?>
                 </div>
                 <div class="tHeader">
                     <li class="tRow">
@@ -51,7 +51,7 @@ $funcoes->verificaSessao();
                     </li>
                 </div>
             </ul>
-<?php } ?>
+        <?php } ?>
         <div class="clear"></div>
     </div><div class="clear"></div>
 </section>

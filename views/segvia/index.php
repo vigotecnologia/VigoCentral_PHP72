@@ -123,13 +123,14 @@ function montalinhadigitavel($valor) {
             </tr>
             <tr>
                 <td valign="top">
-                    <div class="trace" align="center">
+                    <div align="center">
                         Imprimir em impressora jato de tinta (ink jet) ou laser em qualidade normal. (N&atilde;o use modo econ&ocirc;mico).<br />
                         Utilize folha A4 (210 x 297 mm) ou Carta (216 x 279 mm) - Corte na linha indicada<br />
                     </div>
                 </td>
             </tr>
-        </table>
+        </table><br /><br />
+<!--
         <table class="instrucoes" border="0" style="height:90px;">
             <tr>
                 <td style="width:100px;text-align:center;">
@@ -142,6 +143,7 @@ function montalinhadigitavel($valor) {
                 </td>
             </tr>
         </table>
+-->
         <table>
             <tbody>
                 <tr>
@@ -151,123 +153,119 @@ function montalinhadigitavel($valor) {
                 <tr>
                     <td colspan='5' class='Texto1'>Benefici&aacute;rio<br /><b><?php echo $this->bloqueto_final->cedente; ?></b></td>
                     <td class='DirEsp'>Vencimento<br /><span style='float:right;margin-right:5px;'><b><?php echo $this->bloqueto_final->vencimento; ?></b><span></td>
-                                </tr>
-                                <tr>
-                                    <td class='esp'>Data<br /><span style='float:left;margin-right:5px;'><?php echo $this->bloqueto_final->vencimento; ?></span></td>
-                                    <td>Documento</td>
-                                    <td>Esp&eacute;cie<br />DS</td>
-                                    <td>Aceite<br />N</td>
-                                    <td>Dt.Processamento<br /><?php echo $funcoes->dataToBR($this->bloqueto_final->emissao); ?></td>
-                                    <td class="Dir">Nosso N&uacute;mero<br /><span style='float:right;margin-right:5px;'><?php echo $this->bloqueto_final->nossonumero; ?><span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="esp">Conta</td>
-                                                    <td>Carteira<br /><?php echo $this->bloqueto_final->carteira; ?></td>
-                                                    <td>Esp&eacute;cie<br />Real</td>
-                                                    <td>Quantidade<br /></td>
-                                                    <td>Valor</td>
-                                                    <td class='DirEsp'>(=) Valor do documento<br /><span style='float:right;margin-right:5px;'><?php echo number_format($this->bloqueto_final->valor_original, 2, ',', '.'); ?></span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td rowspan='5' colspan='5' class='Instru'><b>INSTRU&Ccedil;&Otilde;ES DE RESPONSABILIDADE DO BENEFICI&Aacute;RIO:<br /></b>*** VALORES EM REAIS ***<br /><br /><pre><?php echo $this->bloqueto_final->obs; ?></pre></td>
-					<td class='Dir'>(-) Desconto<br /><span style='float:right;margin-right:5px;'>0,00</span></td>
-				</tr>
+                </tr>
                 <tr>
-					<td class='Dir'>(-) Outras dedu&ccedil;&otilde;es<br /><span style='float:right;margin-right:5px;'>0,00</span></td>
-				</tr>
+                    <td class='esp'>Data<br /><span style='float:left;margin-right:5px;'><?php echo $this->bloqueto_final->vencimento; ?></span></td>
+                    <td>Documento</td>
+                    <td>Esp&eacute;cie<br />DS</td>
+                    <td>Aceite<br />N</td>
+                    <td>Dt.Processamento<br /><?php echo $funcoes->dataToBR($this->bloqueto_final->emissao); ?></td>
+                    <td class="Dir">Nosso N&uacute;mero<br /><span style='float:right;margin-right:5px;'><?php echo $this->bloqueto_final->nossonumero; ?><span></td>
+                </tr>
                 <tr>
-					<td class='Dir'>(+) Mora / Multa / Juros<br /><span style='float:right;margin-right:5px;'><b><?php echo number_format($this->bloqueto_final->adicional, 2, ',', '.'); ?></b></span></td>
-				</tr>
+                    <td class="esp">Conta</td>
+                    <td>Carteira<br /><?php echo $this->bloqueto_final->carteira; ?></td>
+                    <td>Esp&eacute;cie<br />Real</td>
+                    <td>Quantidade<br /></td>
+                    <td>Valor</td>
+                    <td class='DirEsp'>(=) Valor do documento<br /><span style='float:right;margin-right:5px;'><?php echo number_format($this->bloqueto_final->valor_original, 2, ',', '.'); ?></span></td>
+                </tr>
                 <tr>
-					<td class='Dir'>(+) Outros acr&eacute;scimos<br /><span style='float:right;margin-right:5px;'>0,00</span></td>
-				</tr>
+                    <td rowspan='5' colspan='5' class='Instru'><b>INSTRU&Ccedil;&Otilde;ES DE RESPONSABILIDADE DO BENEFICI&Aacute;RIO:<br /></b>*** VALORES EM REAIS ***<br /><br /><pre><?php echo $this->bloqueto_final->obs; ?></pre></td>
+                    <td class='Dir'>(-) Desconto<br /><span style='float:right;margin-right:5px;'>0,00</span></td>
+                </tr>
                 <tr>
-					<td class='Dir'>(=) Valor cobrado<br /><span style='float:right;margin-right:5px;'><b><?php echo number_format($this->bloqueto_final->valor, 2, ',', '.'); ?></b></span></td>
-				</tr>
+                    <td class='Dir'>(-) Outras dedu&ccedil;&otilde;es<br /><span style='float:right;margin-right:5px;'>0,00</span></td>
+                </tr>
                 <tr>
-					<td colspan='6' class='Rodape'>Pagador:<br /><?php echo $this->bloqueto_final->nome . " - CPF/CNPJ: " . $this->bloqueto_final->cpfcgc; ?><br /><?php echo $this->bloqueto_final->endereco; ?><br /><?php echo $this->bloqueto_final->cep; ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $this->bloqueto_final->cidade; ?> - <?php echo $this->bloqueto_final->uf; ?></td>
-				</tr>
+                    <td class='Dir'>(+) Mora / Multa / Juros<br /><span style='float:right;margin-right:5px;'><b><?php echo number_format($this->bloqueto_final->adicional, 2, ',', '.'); ?></b></span></td>
+                </tr>
+                <tr>
+                    <td class='Dir'>(+) Outros acr&eacute;scimos<br /><span style='float:right;margin-right:5px;'>0,00</span></td>
+                </tr>
+                <tr>
+                    <td class='Dir'>(=) Valor cobrado<br /><span style='float:right;margin-right:5px;'><b><?php echo number_format($this->bloqueto_final->valor, 2, ',', '.'); ?></b></span></td>
+                </tr>
+                <tr>
+                    <td colspan='6' class='Rodape'>Pagador:<br /><?php echo $this->bloqueto_final->nome . " - CPF/CNPJ: " . $this->bloqueto_final->cpfcgc; ?><br /><?php echo $this->bloqueto_final->endereco; ?><br /><?php echo $this->bloqueto_final->cep; ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $this->bloqueto_final->cidade; ?> - <?php echo $this->bloqueto_final->uf; ?></td>
+                </tr>
             </tbody>
         </table>
-		
-		<div id='Auten'>Autentica&ccedil;&atilde;o Mec&acirc;nica&nbsp;&nbsp;&nbsp;&nbsp;</div>
-		
+        <div id='Auten'>Autentica&ccedil;&atilde;o Mec&acirc;nica&nbsp;&nbsp;&nbsp;&nbsp;</div>
         <table>
             <tbody>
                 <tr>
-					<td><img src='<?php echo $funcoes->baseProjeto(); ?>/public/images/banco-<?php echo substr($this->bloqueto_final->numerobanco, 0, 3); ?>.bmp'></td>
-					<td id='Num'><?php echo $this->bloqueto_final->numerobanco; ?></td>
-					<td colspan='4' id='Numero'>
-                                                                <?php
-                                                                // Renderizar a linha digitável de forma que fique oculto no HTML
+                    <td><img src='<?php echo $funcoes->baseProjeto(); ?>/public/images/banco-<?php echo substr($this->bloqueto_final->numerobanco, 0, 3); ?>.bmp'></td>
+                    <td id='Num'><?php echo $this->bloqueto_final->numerobanco; ?></td>
+                    <td colspan='4' id='Numero'>
+                    <?php
+                    // Renderizar a linha digitável de forma que fique oculto no HTML
 
-                                                                ob_start();
-                                                                montalinhadigitavel($this->bloqueto_final->linhadigitavel);
-                                                                $imagedata = ob_get_contents();
-                                                                ob_end_clean();
+                    ob_start();
+                    montalinhadigitavel($this->bloqueto_final->linhadigitavel);
+                    $imagedata = ob_get_contents();
+                    ob_end_clean();
 
-                                                                echo '<img src="data:image/png;base64,' . base64_encode($imagedata) . '" />';
-
-                                                                //echo $this->bloqueto_final->linhadigitavel; 
-                                                                ?>
-					</td>
-				</tr>
+                    echo '<img src="data:image/png;base64,' . base64_encode($imagedata) . '" />';
+                    ?>
+                    </td>
+                </tr>
                 <tr>
-					<td colspan='5' class='Texto1'>Local de Pagamento<br /><b><?php echo $this->bloqueto_final->localpagamento; ?></b></td>
-					<td class='DirEsp'>Vencimento<br /><span style='float:right;margin-right:5px;'><b><?php echo $this->bloqueto_final->vencimento; ?></b></span></td>
-				</tr>
+                    <td colspan='5' class='Texto1'>Local de Pagamento<br /><b><?php echo $this->bloqueto_final->localpagamento; ?></b></td>
+                    <td class='DirEsp'>Vencimento<br /><span style='float:right;margin-right:5px;'><b><?php echo $this->bloqueto_final->vencimento; ?></b></span></td>
+                </tr>
                 <tr>
-					<td colspan='5' class='Texto1'>Benefici&aacute;rio<br /><b><?php echo $this->bloqueto_final->cedente; ?></b></td>
-					<td class='Dir'>Ag&ecirc;ncia / C&oacute;digo<br /><span style='float:right;margin-right:5px;'><?php echo $this->bloqueto_final->agencia . " / " . $this->bloqueto_final->conta; ?></span></td>
-				</tr>
+                    <td colspan='5' class='Texto1'>Benefici&aacute;rio<br /><b><?php echo $this->bloqueto_final->cedente; ?></b></td>
+                    <td class='Dir'>Ag&ecirc;ncia / C&oacute;digo<br /><span style='float:right;margin-right:5px;'><?php echo $this->bloqueto_final->agencia . " / " . $this->bloqueto_final->conta; ?></span></td>
+                </tr>
                 <tr>
-					<td class="esp">Data<br /><?php echo $this->bloqueto_final->vencimento; ?></td>
-					<td>Documento</td>
-					<td>Esp&eacute;cie<br />DS</td>
-					<td>Aceite<br />N</td><td>Dt.Processamento<br /><?php echo $funcoes->dataToBR($this->bloqueto_final->emissao); ?></td>
-					<td class='Dir'>Nosso N&uacute;mero<br /><span style='float:right;margin-right:5px;'><?php echo $this->bloqueto_final->nossonumero; ?></span></td>
-				</tr>
+                    <td class="esp">Data<br /><?php echo $this->bloqueto_final->vencimento; ?></td>
+                    <td>Documento</td>
+                    <td>Esp&eacute;cie<br />DS</td>
+                    <td>Aceite<br />N</td><td>Dt.Processamento<br /><?php echo $funcoes->dataToBR($this->bloqueto_final->emissao); ?></td>
+                    <td class='Dir'>Nosso N&uacute;mero<br /><span style='float:right;margin-right:5px;'><?php echo $this->bloqueto_final->nossonumero; ?></span></td>
+                </tr>
                 <tr>
-					<td class="esp">Conta</td>
-					<td>Carteira<br /><?php echo $this->bloqueto_final->carteira; ?></td>
-					<td>Esp&eacute;cie<br />Real</td>
-					<td>Quantidade<br /></td>
-					<td>Valor</td>
-					<td class='DirEsp'>(=) Valor do documento<br />&nbsp;&nbsp;<span style='float:right;margin-right:5px;'><?php echo number_format($this->bloqueto_final->valor_original, 2, ',', '.'); ?></span></td>
-				</tr>
+                    <td class="esp">Conta</td>
+                    <td>Carteira<br /><?php echo $this->bloqueto_final->carteira; ?></td>
+                    <td>Esp&eacute;cie<br />Real</td>
+                    <td>Quantidade<br /></td>
+                    <td>Valor</td>
+                    <td class='DirEsp'>(=) Valor do documento<br />&nbsp;&nbsp;<span style='float:right;margin-right:5px;'><?php echo number_format($this->bloqueto_final->valor_original, 2, ',', '.'); ?></span></td>
+                </tr>
                 <tr>
-					<td rowspan='5' colspan='5' class='Instru'><b>INSTRU&Ccedil;&Otilde;ES DE RESPONSABILIDADE DO BENEFICI&Aacute;RIO:</b><br />*** VALORES EM REAIS ***<br /><br /><pre><?php echo $this->bloqueto_final->obs; ?></pre></td>
-					<td class='Dir'>(-) Desconto<br />&nbsp;&nbsp;<span style='float:right;margin-right:5px;'>0,00</span></td>
-				</tr>
+                    <td rowspan='5' colspan='5' class='Instru'><b>INSTRU&Ccedil;&Otilde;ES DE RESPONSABILIDADE DO BENEFICI&Aacute;RIO:</b><br />*** VALORES EM REAIS ***<br /><br /><pre><?php echo $this->bloqueto_final->obs; ?></pre></td>
+                    <td class='Dir'>(-) Desconto<br />&nbsp;&nbsp;<span style='float:right;margin-right:5px;'>0,00</span></td>
+                </tr>
                 <tr>
-					<td class='Dir'>(-) Outras dedu&ccedil;&otilde;es<br />&nbsp;&nbsp;<span style='float:right;margin-right:5px;'>0,00</span></td>
-				</tr>
+                    <td class='Dir'>(-) Outras dedu&ccedil;&otilde;es<br />&nbsp;&nbsp;<span style='float:right;margin-right:5px;'>0,00</span></td>
+                </tr>
                 <tr>
-					<td class='Dir'>(+) Mora / Multa / Juros<br />&nbsp;&nbsp;<span style='float:right;margin-right:5px;'><b><?php echo number_format($this->bloqueto_final->adicional, 2, ',', '.'); ?></b></span></td>
-				</tr>
+                    <td class='Dir'>(+) Mora / Multa / Juros<br />&nbsp;&nbsp;<span style='float:right;margin-right:5px;'><b><?php echo number_format($this->bloqueto_final->adicional, 2, ',', '.'); ?></b></span></td>
+                </tr>
                 <tr>
-					<td class='Dir'>(+) Outros acr&eacute;scimos<br />&nbsp;&nbsp;<span style='float:right;margin-right:5px;'>0,00</span></td>
-				</tr>
+                    <td class='Dir'>(+) Outros acr&eacute;scimos<br />&nbsp;&nbsp;<span style='float:right;margin-right:5px;'>0,00</span></td>
+                </tr>
                 <tr>
-					<td class='Dir'>(=) Valor cobrado<br />&nbsp;&nbsp;<span style='float:right;margin-right:5px;'><b><?php echo number_format($this->bloqueto_final->valor, 2, ',', '.'); ?></b></span></td>
-				</tr>
+                    <td class='Dir'>(=) Valor cobrado<br />&nbsp;&nbsp;<span style='float:right;margin-right:5px;'><b><?php echo number_format($this->bloqueto_final->valor, 2, ',', '.'); ?></b></span></td>
+                </tr>
                 <tr>
-					<td colspan='6' class='Rodape'>Pagador:<br /><?php echo $this->bloqueto_final->nome . " - CPF/CNPJ: " . $this->bloqueto_final->cpfcgc; ?><br /><?php echo $this->bloqueto_final->endereco; ?><br /><?php echo $this->bloqueto_final->cep; ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $this->bloqueto_final->cidade; ?> - <?php echo $this->bloqueto_final->uf; ?></td>
-				</tr>
+                    <td colspan='6' class='Rodape'>Pagador:<br /><?php echo $this->bloqueto_final->nome . " - CPF/CNPJ: " . $this->bloqueto_final->cpfcgc; ?><br /><?php echo $this->bloqueto_final->endereco; ?><br /><?php echo $this->bloqueto_final->cep; ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $this->bloqueto_final->cidade; ?> - <?php echo $this->bloqueto_final->uf; ?></td>
+                </tr>
             </tbody>
         </table>
         <div class='cbarra'>
-                                                    <?php
-                                                    // Renderizar o código de barras de forma que fique oculto no HTML
+        <?php
+        // Renderizar o código de barras de forma que fique oculto no HTML
 
-                                                    ob_start();
-                                                    montacodigodebarras($this->bloqueto_final->codigobarras);
-                                                    $imagedata = ob_get_contents();
-                                                    ob_end_clean();
+        ob_start();
+        montacodigodebarras($this->bloqueto_final->codigobarras);
+        $imagedata = ob_get_contents();
+        ob_end_clean();
 
-                                                    echo '<img src="data:image/png;base64,' . base64_encode($imagedata) . '"/>';
-                                                    ?>
+        echo '<img src="data:image/png;base64,' . base64_encode($imagedata) . '"/>';
+        ?>
         </div>
-		</center>
+        </center>
     </body>
 </html>

@@ -26,7 +26,7 @@ define('BASE', '/central'); ?><title>NOTA FISCAL <?php echo $this->mestre->numer
                             <span class="mrgExtra">Insc. Municipal: <?php echo $this->empresa->im; ?></span>
                         </td>
                         <td class="txtSizeExtraFull" style="width:190px;text-align:center;">
-                            <span>N&Uacute;MERO <strong><?php echo $this->mestre->numero . substr($this->mestre->ano_mes, 2,2) . substr($this->mestre->ano_mes, 0,2); ?></strong></span><br />
+                            <span>N&Uacute;MERO <strong><?php echo $this->mestre->numero; ?></strong></span><br />
                             <span><strong>S&eacute;rie <?php echo $this->mestre->serie; ?></strong></span><br />
                             <span><strong>Via &Uacute;NICA</strong></span>
                         </td>
