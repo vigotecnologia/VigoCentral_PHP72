@@ -2,8 +2,7 @@
 require_once 'libs/Functions.php';
 $funcoes = new Functions(); // Instancia a classe de FUNÇÕES BÁSICAS
 $funcoes->verificaSessao();
-?>
-<section class="home">
+?><section class="home">
     <div class="container">
         <h1>Financeiro</h1>
         <ul class="caminho">

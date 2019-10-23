@@ -4,17 +4,27 @@
 
 Última Revisão: 23/10/2019 - Rafael Labiak Olivastro
 
-Opções:
+Opções do cliente:
 
+- Visualização dos dados cadastrais.
 - Impressão da segunda-via do boleto da mensalidade.
 - Impressão da nota fiscal de comunicação/telecomunicação.
-- Visualização dos dados cadastrais.
+- Visualização dos serviços contratados.
+- Troca da senha da central do assinante.
 - Troca da senha de conexão.
 - Extrato de conexões efetuadas.
 - Gráfico de conexões efetuadas.
 - Abrir chamados para suporte técnico.
 - Visualizar anexos de áudio/imagem/arquivo dos chamados.
 - Visualização do contrato junto ao provedor.
+
+Configurações da central:
+
+- Taxa de multa/juros.
+- Cor do tema.
+- Tipo do contrato, padrão ou individual.
+- Tipo do gráfico a ser usado na consulta de conexões efetuadas.
+- Módulos disponíveis ao cliente.
 
 Desenvolvedores:
 

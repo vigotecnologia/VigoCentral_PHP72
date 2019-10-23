@@ -2,8 +2,7 @@
 require_once 'libs/Functions.php';
 $funcoes = new Functions(); // Instancia a classe de FUNÇÕES BÁSICAS
 $funcoes->verificaSessao();
-?>
-<section class="home">
+?><section class="home">
     <div class="container">
         <h1>Ol&aacute; <strong><?php $nome = explode(' ', utf8_decode(utf8_encode($this->nome))); echo $nome[0]; ?></strong>, TUDO BEM ?</h1>
         <p><?php if (utf8_encode($this->sexo) == 'M') { echo 'Bem vindo';} else { echo 'Bem vinda';} ?> ao seu ambiente virtual !<br />Aqui voc&ecirc; pode acompanhar e gerenciar suas faturas, notas fiscais, servi&ccedil;os contratados, entre outros !</p>

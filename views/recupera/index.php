@@ -36,10 +36,7 @@
             unset($_SESSION['ALERTA_TITULO']);
             unset($_SESSION['ALERTA_MENSAGEM']);
 
-            // Remove todas as variáveis de sessão
             @session_unset();
-
-            // Destrói a sessão
             @session_destroy();
             ?>
             <div style="display:none;" class="messageBox" id="messageBox"></div>

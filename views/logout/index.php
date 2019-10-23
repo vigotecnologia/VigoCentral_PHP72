@@ -47,7 +47,6 @@ unset($_SESSION['CENTRAL_MOD_ABRIR_ATENDIMENTO']);
 unset($_SESSION['CENTRAL_MOD_MKSENHA']);
 
 @session_unset();
-
 @session_destroy();
 
 header("Location: login");

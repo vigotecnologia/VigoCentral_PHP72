@@ -11,7 +11,9 @@ $funcoes = new Functions(); // Instancia a classe de FUNÇÕES BÁSICAS
             <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
                 <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no" />
                 <meta content="Vigo Tecnologia" name="Title" />
-                <meta content="Jorge Valdez" name="Author" />
+                <meta content="Jorge Antônio Valdez dos Santos" name="Author" />
+                <meta content="Clayton de Almeida Alves" name="Author" />
+                <meta content="Rafael Labiak Olivastro" name="Author" />
                 <title><?php $fantasia = explode(' ', utf8_decode(utf8_encode($_SESSION['FANTASIA']))); echo $fantasia[0]; ?> - Central do Cliente</title>
                 <link rel="shortcut icon" href="<?php echo $funcoes->baseProjeto(); ?>/public/images/favicon.ico" type="image/x-icon">
                     <link rel="icon" href="<?php echo $funcoes->baseProjeto(); ?>/public/images/favicon_32.png" sizes="32x32">

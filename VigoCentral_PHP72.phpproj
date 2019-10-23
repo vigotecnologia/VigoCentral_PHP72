@@ -505,5 +505,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
+    <Content Include="public\images\banco-084.bmp" />
   </ItemGroup>
 </Project>
