@@ -141,6 +141,7 @@ class segvia extends Controller {
             '356' => '356-5',
             '099' => '099',
             '041' => '041-8',
+            '389' => '389-1',
             '085' => '085-0');
 
         // Verifica o vencimento, caso esteja vencido, altera o vencimento, recalcula o valor, código de barras e linha digitável

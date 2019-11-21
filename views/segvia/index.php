@@ -157,7 +157,7 @@ function montalinhadigitavel($valor) {
                 <tr>
                     <td class='esp'>Data<br /><span style='float:left;margin-right:5px;'><?php echo $this->bloqueto_final->vencimento; ?></span></td>
                     <td>Documento</td>
-                    <td>Esp&eacute;cie<br />DS</td>
+                    <td>Esp&eacute;cie<br />DM</td>
                     <td>Aceite<br />N</td>
                     <td>Dt.Processamento<br /><?php echo $funcoes->dataToBR($this->bloqueto_final->emissao); ?></td>
                     <td class="Dir">Nosso N&uacute;mero<br /><span style='float:right;margin-right:5px;'><?php echo $this->bloqueto_final->nossonumero; ?><span></td>
@@ -221,7 +221,7 @@ function montalinhadigitavel($valor) {
                 <tr>
                     <td class="esp">Data<br /><?php echo $this->bloqueto_final->vencimento; ?></td>
                     <td>Documento</td>
-                    <td>Esp&eacute;cie<br />DS</td>
+                    <td>Esp&eacute;cie<br />DM</td>
                     <td>Aceite<br />N</td><td>Dt.Processamento<br /><?php echo $funcoes->dataToBR($this->bloqueto_final->emissao); ?></td>
                     <td class='Dir'>Nosso N&uacute;mero<br /><span style='float:right;margin-right:5px;'><?php echo $this->bloqueto_final->nossonumero; ?></span></td>
                 </tr>
