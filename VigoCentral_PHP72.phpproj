@@ -475,6 +475,7 @@
     <Folder Include="public\js\jqwidgets" />
     <Folder Include="public\js" />
     <Folder Include="public" />
+    <Folder Include="public\contrato\" />
     <Folder Include="views\acessos" />
     <Folder Include="views\conectividade" />
     <Folder Include="views\conta" />
@@ -505,6 +506,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
+    <Content Include="public\contrato\index.html" />
     <Content Include="public\images\banco-084.bmp" />
   </ItemGroup>
 </Project>

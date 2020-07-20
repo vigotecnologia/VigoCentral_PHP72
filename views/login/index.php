@@ -1,3 +1,3 @@
 <?php
-header("Location: /central/index");
+header("Location: " . $funcoes->baseProjeto() . "/index");
 ?>
