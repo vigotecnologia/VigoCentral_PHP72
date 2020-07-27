@@ -29,7 +29,28 @@ $funcoes->verificaSessao();
             <?php if ($_SESSION['CENTRAL_MOD_ATENDIMENTOS'] == 'S'): ?>
                 <li><a href="suporte" title="Meus Atendimentos"><span class="flaticon-suporte"></span><div>Atendimentos</div></a></li>
             <?php endif; ?>
+            <li><a id="botao_confianca" href="#" title="Liberação por confiança"><span class="flaticon-senha"></span><div>Liberação</div></a></li>
         </ul>
         <div class="clear"></div>
     </div><div class="clear"></div>
 </section>
+<div id="confianca1" class="messageBox" style="display: none;"><span class="close" onclick="javascript:document.getElementById('messageBox').className='fecharMessage';">&nbsp;</span><div class="sucesso"><p><strong>ACESSO LIBERADO</strong></p><p>O acesso foi liberado por confiança, desligue o roteador e aguarde alguns minutos para ligá-lo novamente.</p></div></div>
+<div id="confianca2" class="messageBox" style="display: none;"><span class="close" onclick="javascript:document.getElementById('messageBox').className='fecharMessage';">&nbsp;</span><div class="erro"><p><strong>ERRO</strong></p><p>O acesso não está bloqueado para ser liberado.</p></div></div>
+<div id="confianca3" class="messageBox" style="display: none;"><span class="close" onclick="javascript:document.getElementById('messageBox').className='fecharMessage';">&nbsp;</span><div class="erro"><p><strong>ERRO</strong></p><p>O acesso foi liberado por confiança recentemente, só é permitido uma liberação por confiança a cada 30 dias.</p></div></div>
+<script>
+    $("#botao_confianca").click(function () {
+        var posting = $.post("https://<?= str_replace("/", "", $funcoes->baseProjeto()) ?>.vigoweb.com.br/api/central_libera?cpf_cnpj=<?= str_replace(["/", "-", "."], "", $this->cpfcgc) ?>");
+        posting.done(function (data) {
+            if (data === "OK") {
+                document.getElementById('confianca1').style.display = 'block';
+                setTimeout(function () { document.getElementById('confianca1').style.display = 'none'; }, 5000);
+            } else if (data === "NOK") {
+                document.getElementById('confianca2').style.display = 'block';
+                setTimeout(function () { document.getElementById('confianca2').style.display = 'none'; }, 5000);
+            } else if (data === "ERRO2") {
+                document.getElementById('confianca3').style.display = 'block';
+                setTimeout(function () { document.getElementById('confianca3').style.display = 'none'; }, 5000);
+            }
+        });
+    });
+</script>
