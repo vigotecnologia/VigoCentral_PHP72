@@ -37,9 +37,10 @@ $funcoes->verificaSessao();
 <div id="confianca1" class="messageBox" style="display: none;"><span class="close" onclick="javascript:document.getElementById('messageBox').className='fecharMessage';">&nbsp;</span><div class="sucesso"><p><strong>ACESSO LIBERADO</strong></p><p>O acesso foi liberado por confiança, desligue o roteador e aguarde alguns minutos para ligá-lo novamente.</p></div></div>
 <div id="confianca2" class="messageBox" style="display: none;"><span class="close" onclick="javascript:document.getElementById('messageBox').className='fecharMessage';">&nbsp;</span><div class="erro"><p><strong>ERRO</strong></p><p>O acesso não está bloqueado para ser liberado.</p></div></div>
 <div id="confianca3" class="messageBox" style="display: none;"><span class="close" onclick="javascript:document.getElementById('messageBox').className='fecharMessage';">&nbsp;</span><div class="erro"><p><strong>ERRO</strong></p><p>O acesso foi liberado por confiança recentemente, só é permitido uma liberação por confiança a cada 30 dias.</p></div></div>
+<div id="confianca4" class="messageBox" style="display: none;"><span class="close" onclick="javascript:document.getElementById('messageBox').className='fecharMessage';">&nbsp;</span><div class="erro"><p><strong>ERRO</strong></p><p>Ocorreu um erro ao tentar liberar cadastro.</p></div></div>
 <script>
     $("#botao_confianca").click(function () {
-        var posting = $.post("https://<?= str_replace("/", "", $funcoes->baseProjeto()) ?>.vigoweb.com.br/api/central_libera?cpf_cnpj=<?= str_replace(["/", "-", "."], "", $this->cpfcgc) ?>");
+        var posting = $.post("libera");
         posting.done(function (data) {
             if (data === "OK") {
                 document.getElementById('confianca1').style.display = 'block';
@@ -50,6 +51,9 @@ $funcoes->verificaSessao();
             } else if (data === "ERRO2") {
                 document.getElementById('confianca3').style.display = 'block';
                 setTimeout(function () { document.getElementById('confianca3').style.display = 'none'; }, 5000);
+            } else if (data === "ERRO") {
+                document.getElementById('confianca4').style.display = 'block';
+                setTimeout(function () { document.getElementById('confianca4').style.display = 'none'; }, 5000);
             }
         });
     });

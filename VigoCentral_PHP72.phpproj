@@ -28,6 +28,7 @@
     <Compile Include="controllers\core.php" />
     <Compile Include="controllers\dados.php" />
     <Compile Include="controllers\download.php" />
+    <Compile Include="controllers\libera.php" />
     <Compile Include="controllers\erro.php" />
     <Compile Include="controllers\faturas.php" />
     <Compile Include="controllers\financeiro.php" />
