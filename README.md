@@ -2,7 +2,7 @@
 
 ![screenshot](http://downloads.vigo.com.br/downloads/central-screenshot.png)
 
-Última Revisão: 28/10/2019 - Rafael Labiak Olivastro
+Última Revisão: 27/07/2020 - Rafael Labiak Olivastro
 
 Opções do cliente:
 
@@ -17,6 +17,7 @@ Opções do cliente:
 - Abrir chamados para suporte técnico.
 - Visualizar anexos de áudio/imagem/arquivo dos chamados.
 - Visualização do contrato junto ao provedor.
+- Liberação de acesso por confiança (VigoWEB).
 
 Configurações da central:
 

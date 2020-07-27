@@ -55,6 +55,7 @@ class Libera extends Controller {
         if(!$result){die("ERRO");}
 
         echo $result;
+        die;
     }
 }
 ?>

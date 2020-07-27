@@ -42,16 +42,16 @@ $funcoes->verificaSessao();
     $("#botao_confianca").click(function () {
         var posting = $.post("libera");
         posting.done(function (data) {
-            if (data === "OK") {
+            if (data.trim() === "OK") {
                 document.getElementById('confianca1').style.display = 'block';
                 setTimeout(function () { document.getElementById('confianca1').style.display = 'none'; }, 5000);
-            } else if (data === "NOK") {
+            } else if (data.trim() === "NOK") {
                 document.getElementById('confianca2').style.display = 'block';
                 setTimeout(function () { document.getElementById('confianca2').style.display = 'none'; }, 5000);
-            } else if (data === "ERRO2") {
+            } else if (data.trim() === "ERRO2") {
                 document.getElementById('confianca3').style.display = 'block';
                 setTimeout(function () { document.getElementById('confianca3').style.display = 'none'; }, 5000);
-            } else if (data === "ERRO") {
+            } else if (data.trim() === "ERRO") {
                 document.getElementById('confianca4').style.display = 'block';
                 setTimeout(function () { document.getElementById('confianca4').style.display = 'none'; }, 5000);
             }
