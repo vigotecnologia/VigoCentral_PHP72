@@ -28,6 +28,7 @@
     <Compile Include="controllers\core.php" />
     <Compile Include="controllers\dados.php" />
     <Compile Include="controllers\download.php" />
+    <Compile Include="controllers\debitos.php" />
     <Compile Include="controllers\libera.php" />
     <Compile Include="controllers\erro.php" />
     <Compile Include="controllers\faturas.php" />
@@ -421,6 +422,7 @@
     <Compile Include="views\dados\index.php" />
     <Compile Include="views\envia\index.php" />
     <Compile Include="views\erro\index.php" />
+    <Compile Include="views\debitos\index.php" />
     <Compile Include="views\faturas\index.php" />
     <Compile Include="views\financeiro\index.php" />
     <Compile Include="views\graficos\index.php" />
@@ -487,6 +489,7 @@
     <Folder Include="views\envia" />
     <Folder Include="views\erro" />
     <Folder Include="views\faturas" />
+    <Folder Include="views\debitos\" />
     <Folder Include="views\financeiro" />
     <Folder Include="views\graficos" />
     <Folder Include="views\index" />

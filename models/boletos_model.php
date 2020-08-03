@@ -21,5 +21,15 @@ class Boletos_Model extends Model {
 
         return $row;
     }
+
+    public function Lista_Debitos($cliente) {
+
+        $this->Conecta();
+        $query = "SELECT * FROM financeiro_debconta_cliente WHERE id_cliente='" . $cliente . "' ORDER BY dt_vencimento DESC";
+        $row = $this->read($query);
+        $this->Desconecta();
+
+        return $row;
+    }
 }
 ?>

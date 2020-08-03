@@ -2,7 +2,7 @@
 
 ![screenshot](http://downloads.vigo.com.br/downloads/central-screenshot.png)
 
-Última Revisão: 27/07/2020 - Rafael Labiak Olivastro
+Última Revisão: 03/08/2020 - Rafael Labiak Olivastro
 
 Opções do cliente:
 
@@ -10,6 +10,7 @@ Opções do cliente:
 - Impressão da segunda-via do boleto da mensalidade.
 - Impressão da nota fiscal de comunicação/telecomunicação.
 - Visualização dos serviços contratados.
+- Visualização dos débitos em conta efetuados.
 - Troca da senha da central do assinante.
 - Troca da senha de conexão.
 - Extrato de conexões efetuadas.

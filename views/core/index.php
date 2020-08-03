@@ -29,6 +29,7 @@ $funcoes->verificaSessao();
             <?php if ($_SESSION['CENTRAL_MOD_ATENDIMENTOS'] == 'S'): ?>
                 <li><a href="suporte" title="Meus Atendimentos"><span class="flaticon-suporte"></span><div>Atendimentos</div></a></li>
             <?php endif; ?>
+            <li><a href="debitos" title="Débitos em Conta"><span class="flaticon-faturas"></span><div>Débitos Conta</div></a></li>
             <li><a id="botao_confianca" href="#" title="Liberação por confiança"><span class="flaticon-senha"></span><div>Liberação</div></a></li>
         </ul>
         <div class="clear"></div>
