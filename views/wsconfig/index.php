@@ -26,6 +26,7 @@ unset($_SESSION['ALERTA_MENSAGEM']);
             <li><a id="lnkTema" href="#tema" title="Tema da Central"><span class="flaticon-nfiscal"></span><div>Tema</div></a></li>
             <li><a id="lnkContrato" href="#contratos" title="Tipo de Contrato"><span class="flaticon-contrato"></span><div>Contrato</div></a></li>
             <li><a id="lnkGrafico" href="#grafico" title="Tipo de Gr&aacute;fico"><span class="flaticon-graficos"></span><div>Gr&aacute;fico</div></a></li>
+            <li><a id="lnkAceite" href="#aceite" title="Termo de Aceite"><span class="flaticon-suporte"></span><div>Termo de Aceite</div></a></li>
             <li><a id="lnkPermissoes" href="#permissoes" title="M&oacute;dulos da Central"><span class="flaticon-mikrotik"></span><div>M&oacute;dulos</div></a></li>
         </ul>
         <div class="boxWSConfig" id="alterarSenha" style="display:none;">
@@ -246,6 +247,36 @@ unset($_SESSION['ALERTA_MENSAGEM']);
                         </label>
                         <input type="hidden" required="required" name="txtContrato" id="txtContrato" value="AlterarContrato" maxlength="15" />
                         <input class="botao btnExtra" type="submit" value="Alterar" />
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div style="display:none;" class="boxWSConfig" id="alterarAceite">
+            <span class="close" title="Fechar">&nbsp;</span>
+            <div class="infoWSConfig" id="boxAceite">
+                <h2 class="align-c">Termo de Aceite...</h2>
+                <div class="formWSConfig">
+                    <form name="formContrato" action="wsconfig" method="post" enctype="multipart/form-data" >
+                        <div class="label optTema lblHint" title="<?php echo $this->central_termo_aceite_descricao; ?>" style="display:flex;flex-direction:column;align-content:center;justify-content:space-between;">
+                            <span>Deseja ativar o termo de aceite?</span>
+                            <div>
+                                <label class="reset" title="Sim">
+                                    <span class="lblRadio"><input class="txtRadio" type="radio" id="arquivoCustom" name="txtAtivarTermo" value="1" <?php if ($this->central_termo_aceite_valor == 'S') { echo 'checked="checked"'; } ?> /> Sim</span>
+                                </label>
+                                <label class="reset" title="Não">
+                                    <span class="lblRadio"><input class="txtRadio" type="radio" id="arquivoDefault" name="txtAtivarTermo" value="0" <?php if ($this->central_termo_aceite_valor == 'N') { echo 'checked="checked"'; } ?> /> Não</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <label id="lblArquivo" class="label-richtext optTema lblHint" title="Define o texto do termo de aceite" style="border-top:none;">
+                            <span>Texto do termo de aceite:</span>
+                            <div class="richtext-content">
+                                <textarea id="cv_editor" class="richtext-editor" name="txtTextAccept" placeholder="Adicione o texto do termo de aceite"><?= $this->termo_aceite; ?></textarea>
+                            </div>
+                        </label>
+                        <input type="hidden" required="required" name="txtTermAction" id="txtContrato" value="GravarTermo" maxlength="15" />
+                        <input class="botao btnExtra" type="submit" value="Gravar Termo" />
                     </form>
                 </div>
             </div>

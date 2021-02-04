@@ -126,6 +126,7 @@ class Logar extends Controller {
                     $central_mod_atendimentos = $config_model->Sistema_Config('CENTRAL_MOD_ATENDIMENTOS');
                     $central_mod_abrir_atendimento = $config_model->Sistema_Config('CENTRAL_MOD_ABRIR_ATENDIMENTO');
                     $central_mod_alterar_mksenha = $config_model->Sistema_Config('CENTRAL_MOD_ALTERAR_MKSENHA');
+                    $central_mod_termo_aceite = $config_model->Sistema_Config('CENTRAL_MOD_TERMO_ACEITE');
 
                     // Cria $_SESSION com as chaves de configurações
                     $_SESSION['CENTRAL_TEMA'] = $central_tema[0]['valor'];
@@ -143,6 +144,7 @@ class Logar extends Controller {
                     $_SESSION['CENTRAL_MOD_ATENDIMENTOS'] = $central_mod_atendimentos[0]['valor'];
                     $_SESSION['CENTRAL_MOD_ABRIR_ATENDIMENTO'] = $central_mod_abrir_atendimento[0]['valor'];
                     $_SESSION['CENTRAL_MOD_MKSENHA'] = $central_mod_alterar_mksenha[0]['valor'];
+                    $_SESSION['CENTRAL_MOD_TERMO_ACEITE'] = $central_mod_termo_aceite[0]['valor'];
 
                     // Captura as informações do cliente autenticado corretamente
                     $dados = $logar_model->Dados_Cliente($login_informado);
@@ -158,6 +160,9 @@ class Logar extends Controller {
                     $this->view->uf = $dados[0]['uf'];
                     $this->view->dt_entrada = $this->funcoes->dataToBR($dados[0]['dt_entrada']);
                     $this->view->login = $dados[0]['login'];
+                    $this->view->contrato_aceito = $dados[0]['contrato_aceito'];
+                    $this->view->contrato_data = $dados[0]['contrato_data'];
+                    $this->view->contrato_hora = $dados[0]['contrato_hora'];
 
                     // Cria $_SESSION do cliente logando
                     $_SESSION['ID_CLIENTE'] = $dados[0]['id'];
@@ -167,8 +172,16 @@ class Logar extends Controller {
                     $_SESSION['FANTASIA'] = $dados[0]['fantasia'];
                     $_SESSION['FOTO_EMPRESA'] = $dados[0]['foto'];
 
-                    // Redireciona para o controller relacionado
-                    @@header("Location: core");
+                    // Verifica se o termo de aceite está ativado e o cliente ainda não aceitou
+                    if (($dados[0]['contrato_aceito'] == 'N') && ($central_mod_termo_aceite[0]['valor'] == 'S')) {
+
+                        // Se for a senha padrão, força a troca da senha
+                        @@header("Location: aceite");
+                        exit;
+                    }else{
+                        // Redireciona para o controller relacionado
+                        @@header("Location: core");
+                    }
                 }
             }
         }

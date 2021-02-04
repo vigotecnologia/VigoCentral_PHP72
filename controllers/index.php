@@ -42,6 +42,7 @@ class Index extends Controller {
         if (!$config_model->Sistema_Config('CENTRAL_MOD_ABRIR_ATENDIMENTO')) { $config_model->Chave_Add('CENTRAL_MOD_ABRIR_ATENDIMENTO', 'S', 'Permite o cliente abrir atendimentos pela central'); }
         if (!$config_model->Sistema_Config('CENTRAL_MOD_ALTERAR_MKSENHA')) { $config_model->Chave_Add('CENTRAL_MOD_ALTERAR_MKSENHA', 'S', 'Permite o cliente alterar a senha de conexao'); }
         if (!$config_model->Sistema_Config('NF_IBPT_MUNICIPAL')) { $config_model->Chave_Add('NF_IBPT_MUNICIPAL', '2,00', 'Valor aproximado dos tributos municipais, fonte: IBPT'); }
+        if (!$config_model->Sistema_Config('CENTRAL_MOD_TERMO_ACEITE')) { $config_model->Chave_Add('CENTRAL_MOD_TERMO_ACEITE', 'N', 'Define o termo de aceite para o cliente'); }
 
         // Aplica o tema da central
         $central_tema = $config_model->Sistema_Config('CENTRAL_TEMA');

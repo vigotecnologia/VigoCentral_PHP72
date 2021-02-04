@@ -5,7 +5,8 @@ class Functions {
     // Define a pasta raiz do projeto
     public function baseProjeto() {
 
-        return '/central';
+//        return '/central';
+        return '/git_projetos/VigoCentral_PHP72';
     }
 
     // Verifica se existe sessão aberta
@@ -51,6 +52,51 @@ class Functions {
             $inifile['mail']['password']);
 
         return $bd;
+    }
+
+    // Carrega o conteúdo do arquivo de termo de aceite
+    public function carregaAceite() {
+
+        // Arquivo para leitura
+        $filename = "libs/setup/aceite.conf";
+
+        // Verifica se o arquivo existe
+        if (file_exists($filename) && is_readable($filename)):
+            // Abre o arquvio no modo r (para leitura)
+            $text = file_get_contents($filename);
+        else:
+            $text = "";
+        endif;
+
+        return $text;
+    }
+
+    // Grava o conteúdo no arquivo de termo de aceite
+    public function salvarAceite($text) {
+
+        // Arquivo para leitura
+        $filename = "libs/setup/aceite.conf";
+
+        // Verifica se o arquivo existe
+        if (file_exists($filename)):
+            // Abre o arquivo no modo w+ (para escrita e leitura)
+            $content = fopen($filename, "w+");
+
+            // Escreve o conteúdo do arquivo
+            fwrite($content, $text);
+
+            // Fecha o arquivo aberto
+            fclose($content);
+        else:
+            // Cria o arquivo no modo w+ (para escrita e leitura)
+            $content = fopen($filename, "w+");
+
+            // Escreve o conteúdo do arquivo
+            fwrite($content, $text);
+
+            // Fecha o arquivo aberto
+            fclose($content);
+        endif;
     }
 
     // Remove aspas simples e aspas duplas

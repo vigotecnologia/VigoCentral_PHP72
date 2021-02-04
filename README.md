@@ -2,7 +2,7 @@
 
 ![screenshot](http://downloads.vigo.com.br/downloads/central-screenshot.png)
 
-Última Revisão: 03/08/2020 - Rafael Labiak Olivastro
+Última Revisão: 04/02/2021 - Rafael Labiak Olivastro
 
 Opções do cliente:
 
@@ -19,6 +19,7 @@ Opções do cliente:
 - Visualizar anexos de áudio/imagem/arquivo dos chamados.
 - Visualização do contrato junto ao provedor.
 - Liberação de acesso por confiança (VigoWEB).
+- Aceite online dos termos e condições de uso.
 
 Configurações da central:
 

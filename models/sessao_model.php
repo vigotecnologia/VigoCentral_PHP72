@@ -75,7 +75,7 @@ class Sessao_Model extends Model {
     public function Dados_Cliente($login) {
 
         $this->Conecta();
-        $query = "SELECT cadastro_clientes.id, cadastro_clientes.idempresa, cadastro_clientes.nome, cadastro_clientes.sexo, cadastro_clientes.endereco, cadastro_clientes.bairro, cadastro_clientes.cep, cadastro_clientes.cpfcgc, cadastro_clientes.cidade, cadastro_clientes.uf, cadastro_clientes.telefone, cadastro_clientes.celular, cadastro_clientes.email, cadastro_clientes.dt_entrada, cadastro_clientes.login, cadastro_clientes.senha, sistema_empresas.fantasia, sistema_empresas.foto FROM cadastro_clientes, sistema_empresas WHERE cadastro_clientes.idempresa=sistema_empresas.id AND cadastro_clientes.login='" . $login . "' LIMIT 1";
+        $query = "SELECT cadastro_clientes.id, cadastro_clientes.idempresa, cadastro_clientes.nome, cadastro_clientes.sexo, cadastro_clientes.endereco, cadastro_clientes.bairro, cadastro_clientes.cep, cadastro_clientes.cpfcgc, cadastro_clientes.cidade, cadastro_clientes.uf, cadastro_clientes.telefone, cadastro_clientes.celular, cadastro_clientes.email, cadastro_clientes.dt_entrada, cadastro_clientes.login, cadastro_clientes.senha, cadastro_clientes.contrato_aceito, cadastro_clientes.contrato_data, cadastro_clientes.contrato_hora, sistema_empresas.fantasia, sistema_empresas.foto FROM cadastro_clientes, sistema_empresas WHERE cadastro_clientes.idempresa=sistema_empresas.id AND cadastro_clientes.login='" . $login . "' LIMIT 1";
         $row = $this->read($query);
         $this->Desconecta();
 

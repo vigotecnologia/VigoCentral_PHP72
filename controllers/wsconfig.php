@@ -8,6 +8,8 @@ class WSConfig extends Controller {
 
         @session_start();
 
+        $funcoes = new Functions();
+
         // Instancia a classe de MODEL relacionado
         require 'models/config_model.php';
         $config_model = new Config_Model();
@@ -394,6 +396,37 @@ class WSConfig extends Controller {
             }
         }
 
+        // Definir Termo de Aceite
+        if ((@$_POST['txtTermAction']) && (@$_POST['txtTermAction'] == 'GravarTermo')) {
+
+            $PostData = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+
+            if ($PostData && $PostData['txtTermAction'] && $PostData['txtTermAction'] == "GravarTermo" && $PostData['txtAtivarTermo'] == "1"):
+                // Ativa o termo de aceite da central
+                $config_model->Chave_Edit('CENTRAL_MOD_TERMO_ACEITE', 'S');
+                $funcoes->salvarAceite($PostData['txtTextAccept']);
+
+                // Exibe a mensagem informando que o termo de aceite foi ATIVADO
+                $_SESSION['ALERTA_TIPO'] = 'sucesso';
+                $_SESSION['ALERTA_TITULO'] = 'TUDO CERTO: TERMO DE ACEITE ATIVADO';
+                $_SESSION['ALERTA_MENSAGEM'] = 'O termo de aceite foi ativado com sucesso.';
+
+                header("Location: wsconfig");
+                exit;
+            else:
+                // Desativa o termo de aceite da central
+                $config_model->Chave_Edit('CENTRAL_MOD_TERMO_ACEITE', 'N');
+
+                // Exibe a mensagem informando que o termo de aceite foi DESATIVADO
+                $_SESSION['ALERTA_TIPO'] = 'sucesso';
+                $_SESSION['ALERTA_TITULO'] = 'TUDO CERTO: TERMO DE ACEITE DESATIVADO';
+                $_SESSION['ALERTA_MENSAGEM'] = 'O termo de aceite foi desativado com sucesso.';
+
+                header("Location: wsconfig");
+                exit;
+            endif;
+        }
+
         // Consulta a taxa de multa
         $taxa_multa = $config_model->Sistema_Config('MULTA');
         $this->view->taxa_multa_valor = $taxa_multa[0]['valor'];
@@ -459,6 +492,12 @@ class WSConfig extends Controller {
         $modulo_mksenha = $config_model->Sistema_Config('CENTRAL_MOD_ALTERAR_MKSENHA');
         $this->view->modulo_mksenha_permissao = $modulo_mksenha[0]['valor'];
         $this->view->modulo_mksenha_descricao = utf8_encode($modulo_mksenha[0]['descricao']);
+
+        $modulo_termo_aceite = $config_model->Sistema_Config('CENTRAL_MOD_TERMO_ACEITE');
+        $this->view->central_termo_aceite_valor = $modulo_termo_aceite[0]['valor'];
+        $this->view->central_termo_aceite_descricao = utf8_encode($modulo_termo_aceite[0]['descricao']);
+
+        $this->view->termo_aceite = $funcoes->carregaAceite();
 
         // Renderiza a view relacionada
         $this->view->renderConfig('wsconfig/index');

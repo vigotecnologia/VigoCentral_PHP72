@@ -7,6 +7,12 @@ header h1 a{color:rgba(0,0,0,0.8);text-decoration:none;}
 .botao:hover, .dados .botao:hover{background:#FFDD00;border:1px solid #FFDD00;}
 .botao2:hover, .dados .botao2:hover{background:#FFDD00;border:1px solid #FFDD00;}
 .caminho li a:hover{color:#FFDD00;}/*background-color:#FFDD00;*/
+.telaAceite h1 {background-repeat:no-repeat;color:#333;background-color:#FFDD00;box-sizing:border-box;}
+.telaAceite .boxAceite {background-repeat:no-repeat;color:#333;background-color:#fff;box-sizing:border-box;}
+.telaAceite input[type=checkbox]::before {content: ""; background-color:#fff; border: 2px solid #FFDD00;}
+.telaAceite input:checked::before {content: ""; background-color: #FFDD00;}
+.btnTermAgree{font-size:18px;width:100%;height:40px;border:2px solid #FFDD00;background:#fff;color:#FFDD00;cursor:pointer;display:block;margin:0 auto;}
+.btnTermAgree:hover{border:2px solid #FFDD00;background:#FFDD00;color:#fff;box-shadow: 0px 0px 25px #FFDD00;}
 .telaLogin .boxLogin {background-repeat:no-repeat;color:#fff;background-color:#FFDD00;box-sizing:border-box;}
 .login_topo > span{color:#FFDD00;opacity:0.5;filter:alpha(opacity=50);}
 .seta-01:before{top:0px;left:35px;position:absolute;content:"";display:inline-block;vertical-align:middle;margin-right:0px;width:0;height:0;border-left:15px solid transparent;border-right:15px solid transparent;border-bottom:15px solid #FFDD00;opacity:1;filter:alpha(opacity=100);}
