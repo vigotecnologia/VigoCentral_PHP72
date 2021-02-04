@@ -18,6 +18,8 @@
     <Compile Include=".vs\slnx.sqlite" />
     <Compile Include=".vs\VSWorkspaceState.json" />
     <Compile Include="controllers\.htaccess" />
+    <Compile Include="controllers\aceitar.php" />
+    <Compile Include="controllers\aceite.php" />
     <Compile Include="controllers\acessos.php" />
     <Compile Include="controllers\barcode.php" />
     <Compile Include="controllers\chamado.php" />
@@ -66,6 +68,7 @@
     <Compile Include="libs\Model.php" />
     <Compile Include="libs\View.php" />
     <Compile Include="models\.htaccess" />
+    <Compile Include="models\aceite_model.php" />
     <Compile Include="models\boletos_model.php" />
     <Compile Include="models\config_model.php" />
     <Compile Include="models\contratos_model.php" />
@@ -412,6 +415,7 @@
     <Compile Include="public\js\jqwidgets\jqxdraw.js" />
     <Compile Include="public\js\jquery.js" />
     <Compile Include="public\js\jquery.maskMoney.js" />
+    <Compile Include="views\aceite\index.php" />
     <Compile Include="views\acessos\index.php" />
     <Compile Include="views\conectividade\index.php" />
     <Compile Include="views\conta\index.php" />
@@ -479,6 +483,7 @@
     <Folder Include="public\js" />
     <Folder Include="public" />
     <Folder Include="public\contrato\" />
+    <Folder Include="public\richtext\" />
     <Folder Include="views\acessos" />
     <Folder Include="views\conectividade" />
     <Folder Include="views\conta" />
@@ -497,6 +502,7 @@
     <Folder Include="views\login" />
     <Folder Include="views\logout" />
     <Folder Include="views\mksenha" />
+    <Folder Include="views\aceite\" />
     <Folder Include="views\notafiscal" />
     <Folder Include="views\notasfiscais" />
     <Folder Include="views\recupera" />
@@ -512,5 +518,7 @@
     <Content Include="favicon.ico" />
     <Content Include="public\contrato\index.html" />
     <Content Include="public\images\banco-084.bmp" />
+    <Content Include="public\richtext\jquery.richtext.js" />
+    <Content Include="public\richtext\style.richtext.css" />
   </ItemGroup>
 </Project>
