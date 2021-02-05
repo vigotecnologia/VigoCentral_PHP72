@@ -1,7 +1,5 @@
 <?php
 
-define("endereco_local", "/central");
-
 class Functions {
 
     // Define a pasta raiz do projeto

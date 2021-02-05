@@ -4,6 +4,8 @@ class Bootstrap {
 
     function __construct() {
 
+        define("endereco_local", "/" . explode("/", $_SERVER[REQUEST_URI])[1]);
+
         $url = isset($_GET['url']) ? $_GET['url'] : null;
         $url = rtrim($url, '/');
         $url = explode('/', $url);
