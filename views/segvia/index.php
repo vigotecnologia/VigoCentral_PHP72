@@ -147,7 +147,7 @@ function montalinhadigitavel($valor) {
         <table>
             <tbody>
                 <tr>
-                    <td id='logo'><img src='<?php echo $funcoes->baseProjeto(); ?>/public/images/banco-<?php echo substr($this->bloqueto_final->numerobanco, 0, 3); ?>.bmp'></td>
+                    <td id='logo'><img src='<?php echo $funcoes->baseProjeto(); ?>/public/images/banco-<?php echo substr($this->bloqueto_final->codigobarras, 0, 3); ?>.bmp'></td>
                     <td colspan='5' id='Titulo'>RECIBO DO SACADO</td>
                 </tr>
                 <tr>
@@ -195,7 +195,7 @@ function montalinhadigitavel($valor) {
         <table>
             <tbody>
                 <tr>
-                    <td><img src='<?php echo $funcoes->baseProjeto(); ?>/public/images/banco-<?php echo substr($this->bloqueto_final->numerobanco, 0, 3); ?>.bmp'></td>
+                    <td><img src='<?php echo $funcoes->baseProjeto(); ?>/public/images/banco-<?php echo substr($this->bloqueto_final->codigobarras, 0, 3); ?>.bmp'></td>
                     <td id='Num'><?php echo $this->bloqueto_final->numerobanco; ?></td>
                     <td colspan='4' id='Numero'>
                     <?php

@@ -517,6 +517,7 @@
   <ItemGroup>
     <Content Include="favicon.ico" />
     <Content Include="public\contrato\index.html" />
+    <Content Include="public\images\banco-383.bmp" />
     <Content Include="public\images\banco-084.bmp" />
     <Content Include="public\richtext\jquery.richtext.js" />
     <Content Include="public\richtext\style.richtext.css" />
