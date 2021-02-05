@@ -5,8 +5,8 @@ $funcoes = new Functions(); // Instancia a classe de FUNÇÕES BÁSICAS
 $funcoes->verificaSessao();
 
 define('BASE', '/central'); ?><title>NOTA FISCAL <?php echo $this->mestre->numero; ?></title>
-<link rel="stylesheet" type="text/css" href="<?php echo BASE; ?>/public/css/notafiscal.css" />
-<link rel="stylesheet" type="text/css" href="<?php echo BASE; ?>/public/css/nf_print.css" media="print" />
+<link rel="stylesheet" type="text/css" href="<?php echo endereco_local; ?>/public/css/notafiscal.css" />
+<link rel="stylesheet" type="text/css" href="<?php echo endereco_local; ?>/public/css/nf_print.css" media="print" />
 <section>
     <table border="0" style="width:100%;height:100%;margin:0 auto;" cellpadding="0" cellspacing="0">
         <tr style="height:150px;">

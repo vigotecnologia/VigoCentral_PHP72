@@ -1,12 +1,13 @@
 <?php
 
+define("endereco_local", "/central");
+
 class Functions {
 
     // Define a pasta raiz do projeto
     public function baseProjeto() {
 
-//        return '/central';
-        return '/git_projetos/VigoCentral_PHP72';
+        return endereco_local;
     }
 
     // Verifica se existe sessão aberta
@@ -15,7 +16,7 @@ class Functions {
         @session_start();
 
         if (!isset($_SESSION['ID_CLIENTE']) || !isset($_SESSION['LOGIN'])) {
-            header("Location: /central/login");
+            header("Location: " . endereco_local . "/login");
             exit;
         }
     }
@@ -26,7 +27,7 @@ class Functions {
         @session_start();
 
         if (!isset($_SESSION['LOGIN'])) {
-            header("Location: /central/login");
+            header("Location: " . endereco_local . "/login");
             exit;
         }
     }

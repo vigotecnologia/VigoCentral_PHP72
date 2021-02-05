@@ -2,8 +2,6 @@
 
 ![screenshot](http://downloads.vigo.com.br/downloads/central-screenshot.png)
 
-Última Revisão: 04/02/2021 - Rafael Labiak Olivastro
-
 Opções do cliente:
 
 - Visualização dos dados cadastrais.
